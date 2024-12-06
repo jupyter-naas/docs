@@ -79,11 +79,6 @@ const config = {
         },
         items: [
           {
-            to: "mission/building-trust-in-ai",
-            position: "left",
-            label: `Getting Started`,
-          },
-          {
             to: "platform/introduction",
             position: "left",
             label: `Platform Overview`,
@@ -92,6 +87,11 @@ const config = {
             to: "usage/foundation-ai-models",
             position: "left",
             label: `Capabilities`,
+          },
+          {
+            to: "mission/building-trust-in-ai",
+            position: "left",
+            label: `Getting Started`,
           },
           {
             to: "category/resources",
