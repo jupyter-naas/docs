@@ -7,11 +7,11 @@
 const config = {
   title: "️️Universal Data & AI Platform",
   tagline:
-    "Naas is an open alternative to ChatGPT that you can customize to your own needs. It integrates analytics, automation an AI into your workflows thanks to low-code templates and the best generative AI models.",
+    "Naas is an open alternative to Palantir that you can customize to your own needs. It unifies AI models, workflows, analytics, ontologies, integrations into to transform how organizations operate",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://site.naas.ai",
+  url: "https://docs.naas.ai",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
@@ -79,33 +79,38 @@ const config = {
         },
         items: [
           {
-            to: "https://naas.ai/auth/signin",
+            to: "usage/foundation-ai-models",
             position: "left",
-            label: `Platform`,
+            label: `Capabilities`,
+          },
+          {
+            to: "mission/building-trust-in-ai",
+            position: "left",
+            label: `Getting Started`,
           },
           {
             to: "platform/introduction",
             position: "left",
-            label: `Docs`,
+            label: `Platform Overview`,
+          },
+          {
+            to: "category/resources",
+            position: "left",
+            label: `Resources`,
           },
           {
             to: "https://api.naas.ai/redoc#tag/AI-Model-API",
-            position: "left",
-            label: `API`,
-          },
-          {
-            to: "https://calendly.com/jeremyravenel/15-min-call",
             position: "right",
-            label: `Request a demo`,
+            label: `API Reference`,
           },
           {
-            to: "https://leandata.substack.com/",
-            label: `Blog`,
+            to: "https://github.com/jupyter-naas",
+            label: "GitHub",
             position: "right",
           },
           {
-            to: "https://naas.ai/auth/signin",
-            label: "Sign In",
+            to: "https://naas.ai/",
+            label: "Platform Access",
             position: "right",
           },
         ],

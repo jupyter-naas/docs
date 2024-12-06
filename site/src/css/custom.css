@@ -38,6 +38,10 @@
   padding-bottom: 110px !important;
 }
 
+.textRight {
+  text-align: right;
+}
+
 @media (max-width: 767px) {
   .textCenter {
     text-align: center;

@@ -36,6 +36,11 @@
   }
 }
 
+
+.textRight {
+  text-align: left;
+}
+
 .buttons {
   display: flex;
   align-items: center;
@@ -44,21 +49,20 @@
 
 .title {
   font-size: 3.5rem; /* 72px */
-  line-height: 1.2;
-  font-weight: 700 !important;
-  margin: 0 0 20px;
-  white-space: pre-line;
+  line-height: 1.5;
+  font-weight: 800 !important;
+  text-align: left;
   z-index: 1;
 }
 
 .tagline {
-  font-size: 1.5rem;
+  font-size: 20px;
   font-weight: 400;
-  margin-top: 2.5rem;
-  width: 750px;
+  margin-top: 5px;
+  width: 700px;
   white-space: pre-line;
   line-height: 2rem;
-  color: #D1D1D2;
+  color: white;
   display: flex;
   justify-content: center;
   z-index: 1;

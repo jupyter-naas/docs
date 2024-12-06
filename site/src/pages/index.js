@@ -12,15 +12,14 @@ function HomepageHeader() {
   return (
     <div>
       <div className={styles.heroBanner}>
-        {/* <div className="container"> */}
-        <h1 className={styles.title}>️ 📗 Welcome to the Naas Docs</h1>
-        <p className={clsx(styles.tagline, styles.textCenter)}>Discover the power of Naas, unlock the potential of data & AI products in your daily operations. Whether you're a data or a business professional, Naas offers an open and customizable way to put your data to work.</p>
-        <div className={styles.buttonContainer}>
+        <h1 className={clsx(styles.title, styles.textRight)}>NaasAI Documentation</h1>
+        <p className={clsx(styles.tagline, styles.textRight)}>NaasAI is revolutionizing how organizations operate with our Universal Data & AI Platform. We seamlessly integrate data, AI models, workflows, analytics, ontologies, and external systems to create a powerful ecosystem of AI assistants. Our mission is to empower entities of all sizes and sectors to harness the full potential of their data and AI capabilities, driving unprecedented efficiency, insight, and innovation across every aspect of their operations.</p>
+        <div className={clsx(styles.buttonContainer, styles.textRight)}>
           <a
             className={styles.cta}
             href="/mission/building-trust-in-ai"
           >
-            Learn more
+            Learn more →
           </a>
         </div>
         {/* </div> */}
@@ -34,7 +33,7 @@ export default function Home() {
   return (
     <Layout
       title={`Naas Docs`}
-      description="The open alternative to ChatGPT you can truly customize to your needs">
+      description="On a mission to build trust in AI">
       <HomepageHeader />
       <main>
         {/* <HomepageFeatures /> */}
