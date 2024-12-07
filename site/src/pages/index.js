@@ -12,8 +12,8 @@ function HomepageHeader() {
   return (
     <div>
       <div className={styles.heroBanner}>
-        <h1 className={clsx(styles.title, styles.textRight)}>NaasAI Documentation</h1>
-        <p className={clsx(styles.tagline, styles.textRight)}>NaasAI is revolutionizing how organizations operate with our Universal Data & AI Platform. We seamlessly integrate data, AI models, workflows, analytics, ontologies, and external systems to create a powerful ecosystem of AI assistants. Our mission is to empower entities of all sizes and sectors to harness the full potential of their data and AI capabilities, driving unprecedented efficiency, insight, and innovation across every aspect of their operations.</p>
+        <h1 className={clsx(styles.title, styles.Center)}>NaasAI Documentation</h1>
+        <p className={clsx(styles.tagline, styles.Center)}>Naas is a Universal Data & AI Platform helping any organization create a powerful ecosystem of AI assistants. It leverages ontologies as a unifying field integrating data, AI models, workflows, analytics, and external systems to focus on outcomes over outputs.</p>
         <div className={clsx(styles.buttonContainer, styles.textRight)}>
           <a
             className={styles.cta}

@@ -7,7 +7,7 @@
 const config = {
   title: "️️Universal Data & AI Platform",
   tagline:
-    "Naas is an open alternative to Palantir that you can customize to your own needs. It unifies AI models, workflows, analytics, ontologies, integrations into to transform how organizations operate",
+    "Naas is Universal Data & AI Platform helping any organization create a powerful ecosystem of AI assistants. It leverages ontologies as a unifying field integrating data, AI models, workflows, analytics, and external systems to focus on outcomes over outputs.",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
