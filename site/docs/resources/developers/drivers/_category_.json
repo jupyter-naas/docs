@@ -1,8 +1,0 @@
-{
-  "label": "Drivers",
-  "position": 3,
-  "link": {
-    "type": "generated-index",
-    "description": "Naas Drivers is a powerful Python library that provides a collection of low-code formulas, enabling you to quickly and easily access various tools and data sources. Whether you need to connect to APIs, extract data from databases, or interact with popular platforms, Naas Drivers simplifies the process, allowing you to focus on building your Data & AI Products."
-  }
-}

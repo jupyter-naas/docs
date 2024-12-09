@@ -6,6 +6,10 @@ dcd = $(dc) --workdir /app/$(project_name) docusaurus
 start: $(project_name) setup
 	docker-compose up
 
+
+up: 
+	docker-compose up
+
 down:
 	docker-compose down
 
@@ -28,4 +32,4 @@ serve: $(project_name) $(project_name)/build
 $(project_name):
 	$(dc) docusaurus npx create-docusaurus@latest $(project_name) classic
 
-.PHONY: start build setup
+.PHONY: start build setup up
