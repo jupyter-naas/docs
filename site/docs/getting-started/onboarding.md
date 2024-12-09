@@ -82,7 +82,7 @@ Use these frameworks for better results:
 - Technical support: support@naas.ai
 - In-app support chat: Available in profile dropdown
 - Documentation: [docs.naas.ai](https://docs.naas.ai)
-- Social media updates: Follow us on [LinkedIn](https://linkedin.com/company/naas) and [Twitter](https://twitter.com/naas)
+- Social media updates: Follow us on [LinkedIn](https://linkedin.com/company/naas-ai) and [Twitter](https://twitter.com/JupyterNaas)
 
 ## Next Steps
 - Create your first custom assistant
