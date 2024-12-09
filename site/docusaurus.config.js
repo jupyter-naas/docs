@@ -79,27 +79,22 @@ const config = {
         },
         items: [
           {
-            to: "usage/foundation-ai-models",
+            to: "getting-started/building-trust-in-ai",
             position: "left",
-            label: `Capabilities`,
+            label: `Docs`,
           },
           {
-            to: "mission/building-trust-in-ai",
+            to: "blog",
             position: "left",
-            label: `Getting Started`,
+            label: `Blog`,
           },
           {
-            to: "platform/introduction",
+            to: "https://join.slack.com/t/naas-club/shared_invite/zt-1970s5rie-dXXkigAdEJYc~LPdQIEaLA",
+            label: "Community",
             position: "left",
-            label: `Platform Overview`,
           },
           {
-            to: "category/resources",
-            position: "left",
-            label: `Resources`,
-          },
-          {
-            to: "https://api.naas.ai/redoc#tag/AI-Model-API",
+            to: "https://api.naas.ai/redoc",
             position: "right",
             label: `API Reference`,
           },
@@ -108,6 +103,7 @@ const config = {
             label: "GitHub",
             position: "right",
           },
+
           {
             to: "https://naas.ai/",
             label: "Platform Access",
@@ -117,175 +113,7 @@ const config = {
       },
       footer: {
         style: "light",
-        links: [
-          {
-            title: "Goals",
-            items: [
-              {
-                label: "Build Trust in AI",
-                to: "mission/building-trust-in-ai",
-              },
-              {
-                label: "Map Business Knowledge",
-                to: "mission/mapping-business-knowledge",
-              },
-              {
-                label: "Unlock Monetization",
-                to: "mission/unlocking-monetization-opportunities",
-              },
-            ],
-          },
-          {
-            title: "Platform",
-            items: [
-              {
-                label: "Architecture",
-                to: "platform/introduction",
-              },
-              {
-                label: "Frameworks",
-                to: "platform/frameworks",
-              },
-              {
-                label: "Features",
-                to: "platform/key-features",
-              },
-              {
-                label: "Components",
-                to: "platform/platform-components",
-              },
-            ],
-          },
-          {
-            title: "Usage",
-            items: [
-              {
-                label: "Generative AI Models",
-                to: "usage/foundation-ai-models",
-              },
-              {
-                label: "AIA: Personal AI Assistant",
-                to: "usage/aia-personal-ai-assistant",
-              },
-              {
-                label: "ABI: Mixture of Assistants",
-                href: "usage/abi/introduction",
-              },
-              {
-                label: "Custom Assistants",
-                to: "usage/custom-ai-assistants",
-              },
-            ],
-          },
-          {
-            title: "Developers",
-            items: [
-              {
-                label: "Quickstart",
-                to: "resources/developers/overview",
-              },
-              {
-                label: "Notebook Templates",
-                to: "resources/developers/templates",
-              },
-              {
-                label: "Build Data & AI Products",
-                to: "resources/developers/jobs/space",
-              },
-              {
-                label: "Development Environment",
-                to: "resources/developers/development",
-              },
-              {
-                label: "Schedule Workflows",
-                to: "resources/developers/jobs/scheduler",
-              },
-              {
-                label: "Generate Assets",
-                to: "resources/developers/jobs/asset",
-              },
-              {
-                label: "Trigger Webhooks",
-                to: "resources/developers/jobs/webhook",
-              },
-              {
-                label: "Send Notifications",
-                to: "resources/developers/jobs/notification",
-              },
-              {
-                label: "Build Pipelines",
-                to: "resources/developers/jobs/pipeline",
-              },
-              {
-                label: "Manage Secrets",
-                to: "resources/developers/jobs/secret",
-              },
-            ],
-          },
-          {
-            title: "Community",
-            items: [
-              {
-                label: "Join our Slack",
-                href: "https://join.slack.com/t/naas-club/shared_invite/zt-1970s5rie-8udGv9TsAw9StcI8SB8eqw",
-              },
-              {
-                label: "GitHub",
-                href: "https://github.com/jupyter-naas",
-              },
-              {
-                label: "How to contribute?",
-                href: "resources/community/how-to-contribute",
-              },
-              {
-                label: "Roadmap",
-                href: "https://github.com/orgs/jupyter-naas/projects/12/views/2",
-              },
-            ],
-          },
-          {
-            title: "Company",
-            items: [
-              {
-                label: "Request a demo",
-                href: "https://calendly.com/jeremyravenel",
-              },
-              {
-                label: "Enterprise Plan",
-                href: "https://share.hsforms.com/11Ie8odLzQdO6ggAtrXFcTg1h10o",
-              },
-              {
-                label: "Teams",
-                href: "https://github.com/orgs/jupyter-naas/teams",
-              },
-              {
-                label: "Terms of Service",
-                to: "policies/terms",
-              },
-              {
-                label: "Privacy",
-                to: "policies/privacy",
-              },
-              {
-                label: "Github",
-                href: "https://github.com/jupyter-naas",
-              },
-              {
-                label: "Twitter",
-                href: "https://twitter.com/jupyternaas",
-              },
-              {
-                label: "LinkedIn",
-                href: "https://www.linkedin.com/company/naas-ai/",
-              },
-              {
-                label: "Youtube",
-                href: "https://www.youtube.com/channel/UCKKG5hzjXXU_rRdHHWQ8JHQ",
-              },
-            ],
-          },
-        ],
-        copyright: `<br><br>Copyright © ${new Date().getFullYear()} <a href="#" target="_blank" rel="noopener noreferrer">NaasAI</a>, Inc.`,
+        copyright: `<br><br>Copyright © ${new Date().getFullYear()} <a href="https://home.naas.ai" target="_blank" rel="noopener noreferrer">NaasAI</a>, Inc.`,
       },
       //   navbar: {
       //   items: [

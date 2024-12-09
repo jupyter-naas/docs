@@ -12,7 +12,7 @@ function HomepageHeader() {
   return (
     <div>
       <div className={styles.heroBanner}>
-        <h1 className={clsx(styles.title, styles.Center)}>NaasAI Documentation</h1>
+        <h1 className={clsx(styles.title, styles.Center)}>Platform Documentation</h1>
         <p className={clsx(styles.tagline, styles.Center)}>Naas is a Universal Data & AI Platform helping any organization create a powerful ecosystem of AI assistants. It leverages ontologies as a unifying field integrating data, AI models, workflows, analytics, and external systems to focus on outcomes over outputs.</p>
         <div className={clsx(styles.buttonContainer, styles.textRight)}>
           <a
@@ -32,8 +32,8 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Naas Docs`}
-      description="On a mission to build trust in AI">
+      title={`NaasAI`}
+      description="On a mission to build a Universal Data & AI Platform">
       <HomepageHeader />
       <main>
         {/* <HomepageFeatures /> */}
