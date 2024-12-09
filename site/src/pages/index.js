@@ -17,7 +17,7 @@ function HomepageHeader() {
         <div className={clsx(styles.buttonContainer, styles.textRight)}>
           <a
             className={styles.cta}
-            href="/mission/building-trust-in-ai"
+            href="/getting-started/building-trust-in-ai"
           >
             Learn more →
           </a>
