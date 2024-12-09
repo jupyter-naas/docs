@@ -57,11 +57,22 @@ In addition to personalization, the AIA is engineered for seamless integration w
 Whether orchestrating meetings, handling emails, generating reports from business intelligence tools, or collaborating with other AI-driven assistants for specialized tasks, the AIA offers a comprehensive solution. It can be finely tuned to perform a diverse range of actions, perfectly aligning with users' operational demands and preferences, thus ensuring a highly efficient and personalized working environment.
 
 
-## 🌍 Ecosystem Intelligence Assistant
+## 🌍 Open Source Intelligence Assistant
 ---
 ![intelligence-assistant](/img/opendata-assistant.png)
-### Purpose
-Harness external data for enriching business intelligence and supporting strategic adaptation.
+### Definition
+The Open Data Intelligence Assistant (ODIA) is an advanced AI-powered system designed to collect, analyze, and synthesize information from publicly available structured datasets. It transforms raw open data into actionable business intelligence, supporting strategic decision-making and adaptive planning.
+
+Key aspects of ODIA include:
+- Automated data collection from diverse open sources
+- Intelligent analysis and integration of external data with internal business metrics
+- Real-time insights and predictive analytics for strategic planning
+- Customizable outputs tailored to specific business needs and industries
+
+### Objectives
+- Automate the collection and analysis of open data
+- Provide actionable insights for business decision-making
+- Support strategic planning and adaptation to external events
 
 #### Scope
 This SOP is for data analysts, strategic planners, and business intelligence professionals utilizing open data to inform business decisions.
