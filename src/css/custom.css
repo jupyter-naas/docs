@@ -1,0 +1,702 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  /* Add modern system font stack */
+  --ifm-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  --ifm-heading-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  
+  --ifm-color-primary: #4cdf88; /* New green primary color */
+  --ifm-color-primary-dark: #35d976;
+  --ifm-color-primary-darker: #28d66d;
+  --ifm-color-primary-darkest: #1db059;
+  --ifm-color-primary-light: #63e39a;
+  --ifm-color-primary-lighter: #70e6a3;
+  --ifm-color-primary-lightest: #94edb9;
+  
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  
+  /* Custom variables */
+  --custom-background-color: #ffffff; /* Light mode background */
+  --custom-card-background: #ffffff;
+  --custom-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  --custom-border-radius: 8px;
+  --custom-font-weight-bold: 600;
+  --custom-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  /* Footer styling with dark theme and green accents */
+  --ifm-footer-background-color: #181a1c; /* Dark theme color */
+  --ifm-footer-link-hover-color: #4cdf88; /* Green accent */
+  --ifm-footer-title-color: #4cdf88; /* Green accent */
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-background-color: #181a1c;
+  --ifm-background-surface-color: #242526;
+  
+  /* Keep existing dark mode variables */
+  --ifm-color-primary: #4cdf88;
+  --ifm-color-primary-dark: #35d976;
+  --ifm-color-primary-darker: #28d66d;
+  --ifm-color-primary-darkest: #1db059;
+  --ifm-color-primary-light: #63e39a;
+  --ifm-color-primary-lighter: #70e6a3;
+  --ifm-color-primary-lightest: #94edb9;
+  
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  
+  /* Custom dark mode variables */
+  --custom-background-color: #181a1c; /* Dark theme background */
+  --custom-card-background: #242526;
+  --custom-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
+}
+
+/* Global styles */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--custom-background-color);
+}
+
+.container {
+  padding: 0 24px;
+}
+
+/* Add smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Typography enhancements */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--custom-font-weight-bold);
+  letter-spacing: -0.02em;
+}
+
+/* Improve spacing for text content */
+p, ul, ol {
+  line-height: 1.7;
+}
+
+/* Modern button styling */
+.button {
+  border-radius: 6px;
+  font-weight: var(--custom-font-weight-bold);
+  transition: var(--custom-transition);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  position: relative;
+  z-index: 5;
+}
+
+.button--secondary {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--ifm-color-primary-dark);
+}
+
+.button--secondary:hover {
+  background-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Card improvements */
+.card {
+  border: none;
+  box-shadow: var(--custom-shadow);
+  transition: var(--custom-transition);
+  border-radius: var(--custom-border-radius);
+  background-color: var(--custom-card-background);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Button improvements */
+.button--primary {
+  background-color: var(--ifm-color-primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.button--primary:hover {
+  background-color: var(--ifm-color-primary-darker);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar enhancements */
+.navbar {
+  box-shadow: var(--custom-shadow);
+  backdrop-filter: blur(10px);
+}
+
+[data-theme='dark'] .navbar {
+  background-color: rgba(36, 37, 38, 0.8);
+}
+
+[data-theme='light'] .navbar {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Footer improvements */
+.footer {
+  --ifm-footer-background-color: #181a1c; /* Dark theme color */
+  padding: 4rem 0;
+  border-top: 3px solid #4cdf88; /* Changed from gold to green */
+}
+
+.footer__title {
+  color: #4cdf88; /* Changed from gold to green */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 1.1rem;
+}
+
+.footer__item {
+  font-size: 0.95rem;
+}
+
+/* Target all footer links to ensure consistent styling */
+.footer__link-item,
+.footer a {
+  color: #d4d4d4;
+  transition: color 0.2s ease;
+}
+
+.footer__link-item:hover,
+.footer a:hover {
+  color: #b88b1d;
+  text-decoration: none;
+}
+
+/* Special styling for copyright section links */
+.footer__copyright a,
+.footer__bottom a {
+  color: #b0b0b0;
+  transition: color 0.2s ease;
+}
+
+.footer__copyright a:hover,
+.footer__bottom a:hover {
+  color: #b88b1d;
+}
+
+/* Email links in footer */
+.footer .footer__col a[href^="mailto:"] {
+  color: #d4d4d4;
+  transition: color 0.2s ease;
+}
+
+.footer .footer__col a[href^="mailto:"]:hover {
+  color: #b88b1d;
+}
+
+.footer__copyright {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.footer__logo {
+  max-width: 160px;
+  margin-bottom: 1.5rem;
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+  margin-top: 2rem;
+}
+
+.footer__col {
+  margin-bottom: 2rem;
+}
+
+/* Animation for elements to fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* More aggressive fix for logo visibility in light mode */
+[data-theme='light'] .navbar__logo img {
+  background: #f5e1a4; /* Keep the gold background */
+  padding: 4px;
+  border: none;
+  box-shadow: none; 
+}
+
+/* Keep the dark mode styling */
+[data-theme='dark'] .navbar__logo img {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Maintain consistent sizing */
+.navbar__logo img {
+  height: 2.3rem;
+  width: auto;
+  /* Remove the border-radius to fix the circular cropping */
+  border-radius: 0;
+  transition: none;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+}
+
+.navbar__logo:before,
+.navbar__logo:after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Improve image load-time appearance */
+.navbar__logo {
+  min-height: 2.5rem; /* Reserve space for logo */
+  min-width: 2.5rem;
+}
+
+/* Fix text color in hero section for light mode */
+[data-theme='light'] .hero__title,
+[data-theme='light'] .hero__subtitle {
+  color: #000000; /* Pure black */
+}
+
+/* Optional: If you want a slightly softer black */
+/* [data-theme='light'] .hero__title,
+[data-theme='light'] .hero__subtitle {
+  color: #212121; 
+} */
+
+/* Keep good contrast in dark mode */
+[data-theme='dark'] .hero__title,
+[data-theme='dark'] .hero__subtitle {
+  color: #ffffff; /* White for dark mode */
+}
+
+/* Replace icons with actual images in cards */
+.feature-card-icon {
+  display: none; /* Hide the original icons */
+}
+
+/* Style for the new card images */
+.feature-card-image {
+  display: none;
+}
+
+/* Adding Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700;900&display=swap');
+
+/* Apply Merriweather to headings */
+h1, h2, h3.title, .heroTitle, .peopleTitle, .sectionTitle {
+  font-family: 'Merriweather', serif;
+}
+
+/* Regular body text using Inter */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Make sure headings have proper weight */
+h1 {
+  font-weight: 700;
+}
+
+h2 {
+  font-weight: 600;
+}
+/* Also adjust article page titles which may use a different class */
+article h1:first-child {
+  font-size: 2rem;
+  line-height: 1.3;
+  padding-top: 1.5rem; /* Added top padding */
+}
+
+/* If the above selector doesn't work, this is a more targeted approach */
+[class*='homepage'] h2, 
+#__docusaurus main h2,
+.home-page h2 {
+  font-size: 1.5rem;
+  line-height: 1.3;
+}
+
+/* Board of Directors page styling */
+.board-members-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.board-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(33.33% - 1.5rem);
+  min-width: 250px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.board-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.board-member-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid #f0f7ff;
+}
+
+.board-member-info {
+  text-align: center;
+  width: 100%;
+}
+
+.board-member-info h3 {
+  font-family: 'Merriweather', serif;
+  margin-bottom: 0.25rem;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.board-member-role {
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+}
+
+.board-member-affiliation {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .board-member {
+  background: #2d2d2d;
+}
+
+[data-theme='dark'] .board-member-info h3 {
+  color: #f5f5f5;
+}
+
+[data-theme='dark'] .board-member-affiliation {
+  color: #aaa;
+}
+
+/* Responsive design */
+@media (max-width: 996px) {
+  .board-member {
+    width: calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 576px) {
+  .board-members-container {
+    gap: 1.5rem;
+  }
+  
+  .board-member {
+    width: 100%;
+  }
+}
+
+/* Improved Footer Mobile Styling */
+@media (max-width: 996px) {
+  .footer__col {
+    flex-basis: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 2rem;
+    padding-right: 0;
+    margin-right: 0;
+  }
+  
+  .footer__title {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    padding-left: 0;  /* Remove any left padding */
+    text-align: left;  /* Force left alignment */
+  }
+  
+  .footer__link-item {
+    font-size: 1rem;
+    line-height: 2;
+  }
+  
+  /* Improve spacing for contact info */
+  .footer__col:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Increase readability of NCOR description */
+  .footer__col:first-child p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+  
+  /* Stack columns in better order */
+  .footer__links {
+    flex-direction: column;
+  }
+  
+  /* Ensure all footer content has consistent alignment */
+  .footer__col {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
+  /* Make contact information align with headings */
+  .footer__col:last-child div {
+    padding-left: 0;
+    margin-left: 0;
+  }
+  
+  /* Fix any SVG icon alignment in contact section */
+  .footer__col:last-child svg {
+    margin-left: 0;
+  }
+  
+  /* Remove any HTML-specific margins that might be causing issues */
+  .footer__col:first-child .footer__items div,
+  .footer__col:last-child .footer__items div {
+    margin-left: 0;
+    padding-left: 0;
+  }
+}
+
+/* Extra small device improvements */
+@media (max-width: 480px) {
+  .footer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .footer__bottom {
+    flex-direction: column;
+  }
+  
+  .footer__copyright {
+    margin-top: 1rem;
+    text-align: center;
+  }
+}
+
+/* Simplified Greek Ontology-Inspired Hero Background */
+.heroBanner {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #253746 0%, #1a2a3a 100%);
+}
+
+.heroBanner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle at 15% 75%, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0) 60%),
+                    radial-gradient(circle at 85% 25%, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0) 60%),
+                    radial-gradient(circle at 45% 40%, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0) 60%),
+                    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 20px 20px;
+  opacity: 0.8;
+  z-index: 0;
+}
+
+/* Animated network effect */
+.heroBanner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 30% 20%, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 20%),
+    radial-gradient(circle at 70% 60%, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 20%),
+    radial-gradient(circle at 50% 40%, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 30%);
+  background-size: 200% 200%;
+  opacity: 0.5;
+  animation: pulse 15s infinite alternate, drift 30s infinite linear;
+  z-index: 0;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.05; }
+  50% { opacity: 0.15; }
+  100% { opacity: 0.05; }
+}
+
+@keyframes drift {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 5% 5%; }
+  100% { background-position: 0% 0%; }
+}
+
+/* Ensure content remains above the background */
+.heroContent {
+  position: relative;
+  z-index: 1;
+}
+
+/* Add a logo preload hint in the head */
+/* Add this to docusaurus.config.js headTags array */
+/*
+  {
+    tagName: 'link',
+    attributes: {
+      rel: 'preload',
+      href: '/img/ncor-network-logo.png',
+      as: 'image'
+    }
+  }
+*/
+
+/* Change text selection color to green */
+::selection {
+  background-color: rgba(76, 223, 136, 0.3); /* Light green with transparency */
+  color: inherit;
+}
+
+/* For Firefox */
+::-moz-selection {
+  background-color: rgba(76, 223, 136, 0.3); /* Light green with transparency */
+  color: inherit;
+}
+
+/* Get Started button in navbar */
+.navbar-join-button {
+  background-color: #4cdf88; /* Changed from gold to green */
+  color: #181a1c; /* Dark text for better contrast */
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  margin-left: 0.5rem;
+  transition: all 0.3s ease;
+  border: none;
+  position: relative;
+  z-index: 5;
+}
+
+.navbar-join-button:hover {
+  background-color: #35d976; /* Darker green on hover */
+  color: #181a1c;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode adjustments if needed */
+html[data-theme='dark'] .navbar-join-button {
+  background-color: #4cdf88; /* Changed from gold to green */
+}
+
+html[data-theme='dark'] .navbar-join-button:hover {
+  background-color: #35d976; /* Darker green on hover */
+}
+
+/* Override H2 font styles */
+.markdown h2 {
+  font-family: 'Open Sans', system-ui, -apple-system, sans-serif;
+  font-weight: 600;
+  margin-top: 1.5rem;      /* Reduced from default */
+  margin-bottom: 0.75rem;  /* Reduced from default */
+}
+
+/* Ensure announcement bar is visible */
+div[class^='announcementBar_'] {
+  display: block !important;
+  z-index: 1000 !important;
+  position: relative !important;
+}
+
+/* Fix z-index stacking for interactive elements */
+.button, .navbar-join-button, a {
+  position: relative;
+  z-index: 5; /* Ensure higher z-index than overlays */
+}
+
+/* Ensure clickable elements are accessible */
+.main-wrapper {
+  position: relative;
+  z-index: 3;
+}
+
+/* Adjust overlay behaviors */
+[class*='overlay'], [class*='Overlay'] {
+  pointer-events: none; /* Allow clicks to pass through any overlay */
+}
+
+/* But ensure overlay content can be clicked if needed */
+[class*='overlay'] *, [class*='Overlay'] * {
+  pointer-events: auto;
+}
+
+/* Additional helper styles to ensure buttons are clickable throughout the site */
+.button--primary,
+.button--secondary,
+.navbar__link,
+.footer__link-item,
+a[class*="link"],
+button:not([aria-hidden="true"]) {
+  position: relative;
+  z-index: 10 !important; /* Using !important to override any other z-index values */
+  pointer-events: auto !important;
+}
+
+/* Enhance clickability of all important interaction elements */
+.text--center a,
+.container a,
+.row a,
+.col a,
+.markdown a,
+.main-wrapper a,
+main a {
+  position: relative;
+  z-index: 5;
+  pointer-events: auto !important;
+}
+
+/* Ensure specific section buttons are always clickable */
+[class*="AboutSection"] a,
+[class*="section"] a,
+[class*="Section"] a {
+  position: relative;
+  z-index: 15 !important;
+  pointer-events: auto !important;
+}

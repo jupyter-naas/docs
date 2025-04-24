@@ -1,0 +1,272 @@
+.videosContainer {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: relative;
+  border-top: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+}
+
+/* Subtle texture overlay */
+.videosContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  color: #9e7418;
+}
+
+.sectionDescription {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.videosGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.videoCard {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #fff;
+  height: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.videoCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+}
+
+.thumbnailContainer {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  overflow: hidden;
+}
+
+.thumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholderThumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #adb5bd;
+}
+
+.playButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+  z-index: 1;
+}
+
+.videoCard:hover .playButton {
+  transform: translate(-50%, -50%) scale(1.1);
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.playButton svg {
+  width: 60px;
+  height: 60px;
+}
+
+.videoInfo {
+  padding: 15px;
+}
+
+.videoTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #9e7418;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.videoMeta {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.presenter {
+  margin-bottom: 4px;
+}
+
+.date {
+  color: #888;
+}
+
+.viewAllContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.youtubeButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #aa0000;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.youtubeButton:hover {
+  background-color: #880000;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  color: white;
+}
+
+.youtubeIcon {
+  margin-right: 10px;
+}
+
+.arrowIcon {
+  margin-left: 8px;
+  transition: transform 0.2s ease;
+}
+
+.youtubeButton:hover .arrowIcon {
+  transform: translateX(3px);
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .videosGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 996px) {
+  .videosGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .sectionDescription {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .videosContainer {
+    padding: 60px 0;
+  }
+  
+  .videosGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+  
+  .sectionDescription {
+    font-size: 1rem;
+  }
+}
+
+/* Add these styles to your existing CSS file */
+.thumbnailImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.videoCard:hover .thumbnailImage {
+  transform: scale(1.05);
+}
+
+/* Loading indicator styles */
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.loadingSpinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(158, 116, 24, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid #9e7418;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+} 

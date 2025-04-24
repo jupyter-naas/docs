@@ -1,0 +1,240 @@
+.peopleSection {
+  padding: 80px 0;
+  position: relative;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-top: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.peopleSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  color: #9e7418;
+}
+
+.sectionDescription {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.peopleGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.personCard {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.personCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.avatarCircle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: rgba(158, 116, 24, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: #9e7418;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.avatarImage {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 3px solid #9e7418;
+}
+
+.avatarImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.personCard:hover .avatarImage img {
+  transform: scale(1.05);
+}
+
+.personName {
+  font-size: 1.35rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #1c1e21;
+}
+
+.personTitle {
+  color: #9e7418;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+}
+
+.personAffiliation {
+  color: #606770;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.viewProfileLink {
+  color: #9e7418;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.viewProfileLink:hover {
+  text-decoration: underline;
+}
+
+.joinSection {
+  background: white;
+  border-radius: 12px;
+  padding: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.joinContent {
+  max-width: 60%;
+}
+
+.joinTitle {
+  font-size: 1.8rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  color: #1c1e21;
+}
+
+.joinDescription {
+  color: #606770;
+  line-height: 1.6;
+}
+
+.joinButtons {
+  display: flex;
+  gap: 1rem;
+}
+
+.button {
+  padding: 0.8rem 1.8rem;
+  font-weight: 600;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background-color: #9e7418;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #b88b1d;
+  text-decoration: none;
+  color: white;
+}
+
+@media screen and (max-width: 996px) {
+  .joinSection {
+    flex-direction: column;
+    text-align: center;
+    padding: 2.5rem;
+  }
+  
+  .joinContent {
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  
+  .joinButtons {
+    margin-top: 1rem;
+    justify-content: center;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .sectionDescription {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .peopleGrid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .personCard {
+    padding: 1.5rem;
+  }
+  
+  .avatarImage {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .joinButtons {
+    flex-direction: column;
+  }
+  
+  .button {
+    width: 100%;
+  }
+} 

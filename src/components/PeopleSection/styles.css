@@ -1,0 +1,217 @@
+.peopleSection {
+  padding: 5rem 0;
+  background-color: #f0f7ff;
+  width: 100%;
+}
+
+.peopleHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.highlight {
+  color: #3578e5; /* Match the blue in the reference design */
+  font-family: 'Merriweather', serif;
+}
+
+.peopleDescription {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #525860;
+  line-height: 1.6;
+}
+
+.peopleCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.personCard {
+  background: white;
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.personCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.avatarCircle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: rgba(53, 120, 229, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: #3578e5;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.personName {
+  font-size: 1.35rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #1c1e21;
+}
+
+.personTitle {
+  color: #3578e5;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+}
+
+.personAffiliation {
+  color: #606770;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.viewProfileLink {
+  color: #3578e5;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.viewProfileLink:hover {
+  text-decoration: underline;
+}
+
+.joinSection {
+  background: white;
+  border-radius: 12px;
+  padding: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.joinTitle {
+  font-size: 1.8rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  color: #1c1e21;
+  font-family: 'Merriweather', serif;
+}
+
+.joinDescription {
+  max-width: 600px;
+  color: #606770;
+  line-height: 1.6;
+}
+
+.joinButtons {
+  display: flex;
+  gap: 1rem;
+}
+
+.joinButton {
+  padding: 0.8rem 1.8rem;
+  font-weight: 600;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.membersButton {
+  padding: 0.8rem 1.8rem;
+  font-weight: 600;
+  color: #3578e5;
+  border-color: #3578e5;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: transparent;
+  display: flex;
+  align-items: center;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 996px) {
+  .joinSection {
+    flex-direction: column;
+    text-align: center;
+    padding: 2.5rem;
+  }
+  
+  .joinButtons {
+    margin-top: 2rem;
+    justify-content: center;
+  }
+  
+  .peopleSection {
+    padding: 4rem 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .peopleCards {
+    gap: 1.5rem;
+  }
+  
+  .personCard {
+    width: calc(50% - 1.5rem);
+    padding: 2rem;
+  }
+  
+  .joinSection {
+    margin: 0 1.5rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .personCard {
+    width: 100%;
+    max-width: 320px;
+  }
+  
+  .joinButtons {
+    flex-direction: column;
+  }
+  
+  .peopleTitle {
+    font-size: 2rem;
+  }
+}
+
+.avatarImage {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.avatarImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.personCard:hover .avatarImage img {
+  transform: scale(1.05);
+} 

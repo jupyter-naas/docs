@@ -1,0 +1,468 @@
+/* Hero section styling */
+.joinHero {
+  background-color: #181a1c;
+  padding: 4rem 0;
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.joinHero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 30% 20%, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 20%),
+    radial-gradient(circle at 70% 60%, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 20%),
+    radial-gradient(circle at 50% 40%, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 30%);
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.heroTitle {
+  font-family: Arial, sans-serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.heroLine {
+  height: 4px;
+  width: 60px;
+  background-color: #4cdf88;
+  margin: 0 auto 2rem;
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  max-width: 800px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Benefits card styling */
+.benefitsCard {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 3rem;
+  overflow: hidden;
+  border-top: 4px solid #4cdf88;
+}
+
+.benefitsHeader {
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.benefitsIcon {
+  margin-right: 1rem;
+  color: #4cdf88;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefitsHeader h2 {
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.benefitItem {
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+.benefitItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.benefitIcon {
+  color: #ae8c27;
+  background-color: rgba(174, 140, 39, 0.1);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.benefitItem h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.benefitItem p {
+  margin: 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Form card styling */
+.formCard {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 3rem;
+  overflow: hidden;
+}
+
+.formHeader {
+  padding: 2rem;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #eaeaea;
+  text-align: center;
+}
+
+.formHeader h2 {
+  margin: 0 0 0.5rem;
+  color: #333;
+}
+
+.formHeader p {
+  margin: 0;
+  color: #666;
+}
+
+.formBody {
+  padding: 2rem;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.formField {
+  margin-bottom: 1.5rem;
+}
+
+.formField label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.required {
+  color: #e53935;
+}
+
+.formInput, .formTextarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.formInput:focus, .formTextarea:focus {
+  outline: none;
+  border-color: #4cdf88;
+  box-shadow: 0 0 0 2px rgba(76, 223, 136, 0.2);
+  background-color: white;
+}
+
+.radioGroup, .checkboxGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .radioGroup, .checkboxGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.radioOption, .checkboxOption {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.radioOption input, .checkboxOption input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.radioButton, .checkbox {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 2px solid #ae8c27;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.checkbox {
+  border-radius: 4px;
+}
+
+.radioOption input:checked ~ label .radioButton:after,
+.checkboxOption input:checked ~ label .checkbox:after {
+  content: '';
+  position: absolute;
+  display: block;
+}
+
+.radioOption input:checked ~ label .radioButton:after {
+  top: 3px;
+  left: 3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ae8c27;
+}
+
+.checkboxOption input:checked ~ label .checkbox:after {
+  top: 0;
+  left: 6px;
+  width: 5px;
+  height: 10px;
+  border: solid #ae8c27;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.formActions {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.submitButton {
+  background-color: #4cdf88;
+  color: #181a1c;
+  font-family: Arial, sans-serif;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  border: none;
+  transition: background-color 0.2s;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.submitButton:hover {
+  background-color: #35d976;
+}
+
+.submitButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 10px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Success card styling */
+.successCard {
+  background-color: #f0f7f0;
+  border-radius: 8px;
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.successIcon {
+  color: #4caf50;
+  margin-bottom: 1.5rem;
+}
+
+.successCard h2 {
+  margin-top: 0;
+  color: #2e7d32;
+}
+
+.successButtons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.primaryButton {
+  background-color: #ae8c27;
+  color: white;
+  font-weight: 600;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.primaryButton:hover {
+  background-color: #9e7418;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.secondaryButton {
+  background-color: white;
+  color: #333;
+  font-weight: 600;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.secondaryButton:hover {
+  background-color: #f5f5f5;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact section styling */
+.contactSection {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.contactSection h2 {
+  margin-top: 0;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.contactIcon {
+  color: #4cdf88;
+  margin-right: 1rem;
+  min-width: 40px;
+}
+
+.contactItem h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.contactItem a {
+  color: #0a66c2;
+  text-decoration: none;
+}
+
+.contactItem a:hover {
+  text-decoration: underline;
+}
+
+.contactItem address {
+  font-style: normal;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Error message styling */
+.errorMessage {
+  background-color: #fdecea;
+  color: #d32f2f;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.errorMessage svg {
+  margin-right: 0.75rem;
+}
+
+.formSelect {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: white;
+  font-size: 16px;
+  color: #333;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23333'%3E%3Cpath d='M4 6h8l-4 6-4-6z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+}
+
+.formSelect:focus {
+  outline: none;
+  border-color: #4cdf88;
+  box-shadow: 0 0 0 2px rgba(76, 223, 136, 0.2);
+}
+
+.formSelect option {
+  padding: 10px;
+}
+
+.checkboxInput:checked + .checkboxLabel::before {
+  background-color: #4cdf88;
+  border-color: #4cdf88;
+} 

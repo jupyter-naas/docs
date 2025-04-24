@@ -1,0 +1,36 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Nodes -->
+  <circle cx="400" cy="300" r="25" fill="#ffffff" opacity="0.7"/>
+  <circle cx="300" cy="200" r="20" fill="#ffffff" opacity="0.6"/>
+  <circle cx="500" cy="200" r="20" fill="#ffffff" opacity="0.6"/>
+  <circle cx="250" cy="350" r="20" fill="#ffffff" opacity="0.6"/>
+  <circle cx="550" cy="350" r="20" fill="#ffffff" opacity="0.6"/>
+  <circle cx="400" cy="450" r="20" fill="#ffffff" opacity="0.6"/>
+  
+  <circle cx="200" cy="150" r="15" fill="#ffffff" opacity="0.5"/>
+  <circle cx="600" cy="150" r="15" fill="#ffffff" opacity="0.5"/>
+  <circle cx="150" cy="400" r="15" fill="#ffffff" opacity="0.5"/>
+  <circle cx="650" cy="400" r="15" fill="#ffffff" opacity="0.5"/>
+  <circle cx="300" cy="500" r="15" fill="#ffffff" opacity="0.5"/>
+  <circle cx="500" cy="500" r="15" fill="#ffffff" opacity="0.5"/>
+  
+  <!-- Connections -->
+  <line x1="400" y1="300" x2="300" y2="200" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+  <line x1="400" y1="300" x2="500" y2="200" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+  <line x1="400" y1="300" x2="250" y2="350" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+  <line x1="400" y1="300" x2="550" y2="350" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+  <line x1="400" y1="300" x2="400" y2="450" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+  
+  <line x1="300" y1="200" x2="200" y2="150" stroke="#ffffff" stroke-width="1.5" opacity="0.4"/>
+  <line x1="500" y1="200" x2="600" y2="150" stroke="#ffffff" stroke-width="1.5" opacity="0.4"/>
+  <line x1="250" y1="350" x2="150" y2="400" stroke="#ffffff" stroke-width="1.5" opacity="0.4"/>
+  <line x1="550" y1="350" x2="650" y2="400" stroke="#ffffff" stroke-width="1.5" opacity="0.4"/>
+  <line x1="400" y1="450" x2="300" y2="500" stroke="#ffffff" stroke-width="1.5" opacity="0.4"/>
+  <line x1="400" y1="450" x2="500" y2="500" stroke="#ffffff" stroke-width="1.5" opacity="0.4"/>
+  
+  <line x1="300" y1="200" x2="500" y2="200" stroke="#ffffff" stroke-width="1" opacity="0.3"/>
+  <line x1="250" y1="350" x2="550" y2="350" stroke="#ffffff" stroke-width="1" opacity="0.3"/>
+  <line x1="300" y1="500" x2="500" y2="500" stroke="#ffffff" stroke-width="1" opacity="0.3"/>
+  <line x1="200" y1="150" x2="600" y2="150" stroke="#ffffff" stroke-width="0.5" opacity="0.2"/>
+  <line x1="150" y1="400" x2="650" y2="400" stroke="#ffffff" stroke-width="0.5" opacity="0.2"/>
+</svg> 

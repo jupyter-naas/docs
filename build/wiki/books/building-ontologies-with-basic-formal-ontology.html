@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-wiki docs-version-current docs-doc-page docs-doc-id-books/building-ontologies-with-basic-formal-ontology" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.7.0">
+<title data-rh="true">Building Ontologies with Basic Formal Ontology | The Ontology Research &amp; Development Network</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://ncor.us/img/ncor-network-logo.png"><meta data-rh="true" name="twitter:image" content="https://ncor.us/img/ncor-network-logo.png"><meta data-rh="true" property="og:url" content="https://ncor.us/wiki/books/building-ontologies-with-basic-formal-ontology"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-wiki-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-wiki-current"><meta data-rh="true" property="og:title" content="Building Ontologies with Basic Formal Ontology | The Ontology Research &amp; Development Network"><meta data-rh="true" name="description" content="by Robert Arp (Author), Barry Smith (Author), Andrew D. Spear (Author)"><meta data-rh="true" property="og:description" content="by Robert Arp (Author), Barry Smith (Author), Andrew D. Spear (Author)"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://ncor.us/wiki/books/building-ontologies-with-basic-formal-ontology"><link data-rh="true" rel="alternate" href="https://ncor.us/wiki/books/building-ontologies-with-basic-formal-ontology" hreflang="en"><link data-rh="true" rel="alternate" href="https://ncor.us/wiki/books/building-ontologies-with-basic-formal-ontology" hreflang="x-default"><script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>emailjs.init("YOUR_USER_ID")</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Merriweather:wght@300;400;700;900&amp;display=swap"><link rel="stylesheet" href="/assets/css/styles.db9d0201.css">
+<script src="/assets/js/runtime~main.ae082706.js" defer="defer"></script>
+<script src="/assets/js/main.cdf56a95.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const a=new URLSearchParams(window.location.search).entries();for(var[t,e]of a)if(t.startsWith("docusaurus-data-")){var n=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(n,e)}}catch(t){}}(),document.documentElement.setAttribute("data-announcement-bar-initially-dismissed",function(){try{return"true"===localStorage.getItem("docusaurus.announcement.dismiss")}catch(t){}return!1}())</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/ncor-network-logo.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><div class="announcementBar_mb4j" style="background-color:#FEF6E4;color:#9e7418" role="banner"><div class="content_knG7 announcementBarContent_xLdY">🚧 <strong>WORK IN PROGRESS:</strong> The NCOR Network website is currently under development. Some features and content may be incomplete. 🚧</div></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/ncor-network-logo.png" alt="NCOR Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/ncor-network-logo.png" alt="NCOR Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">NCOR</b></a></div><div class="navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/docs/get-started">Get Started</a><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">About</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/about/mission">Mission</a></li><li><a class="dropdown__link" href="/docs/about/what-is-ontology">What is Ontology</a></li><li><a class="dropdown__link" href="/docs/about/ontology-for-ai">Ontology for AI</a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">Research</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/research/areas">Areas</a></li><li><a class="dropdown__link" href="/docs/research/projects">Projects</a></li><li><a class="dropdown__link" href="/docs/research/publications">Publications</a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">Wiki</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/wiki/ontology-101">Ontology 101</a></li><li><a class="dropdown__link" href="/wiki/courses/barry-smith">Courses</a></li><li><a class="dropdown__link" href="/wiki/ontologies/basic-formal-ontology">Ontologies</a></li><li><a class="dropdown__link" href="/wiki/books/why-machines-will-never-rule-the-world">Books</a></li><li><a class="dropdown__link" href="/wiki/glossary">Glossary</a></li></ul></div><a class="navbar__item navbar__link" href="/docs/events/office-hours">Events</a><a class="navbar__item navbar__link" href="/docs/affiliates/individuals">Affiliates</a><a href="https://github.com/NCOR-Organization" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><a class="navbar__item navbar__link button button--primary navbar-join-button" href="/join">Get Started</a><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG menuWithAnnouncementBar_GW3s"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/wiki">Wiki Home</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/wiki/ontology-101">Ontology 101</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/wiki/courses/barry-smith">Courses</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/wiki/ontologies/basic-formal-ontology">Ontologies</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/wiki/books/why-machines-will-never-rule-the-world">Books</a></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/wiki/books/why-machines-will-never-rule-the-world">Why Machines Will Never Rule the World</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/wiki/books/building-ontologies-with-basic-formal-ontology">Building Ontologies with Basic Formal Ontology</a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/wiki/glossary">Glossary</a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Books</span><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Building Ontologies with Basic Formal Ontology</span><meta itemprop="position" content="2"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Building Ontologies with Basic Formal Ontology</h1></header><p>by <a href="https://www.amazon.com/stores/Robert-Arp/author/B001ILHJJA" target="_blank" rel="noopener noreferrer">Robert Arp</a> (Author), <a href="https://www.amazon.com/stores/Barry-Smith/author/B001HMU9XS" target="_blank" rel="noopener noreferrer">Barry Smith</a> (Author), Andrew D. Spear (Author)</p>
+<p><img decoding="async" loading="lazy" alt="Building Ontologies with Basic Formal Ontology" src="/assets/images/building-ontologies-with-basic-formal-ontologies-8e1e7fbb31dd3ccbddb5c8de14d9b526.png" width="1910" height="1000" class="img_ev3q"></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="about-the-book">About the book<a href="#about-the-book" class="hash-link" aria-label="Direct link to About the book" title="Direct link to About the book">​</a></h2>
+<p>An introduction to the field of applied ontology with examples derived particularly from biomedicine, covering theoretical components, design practices, and practical applications.
+In the era of “big data,” science is increasingly information driven, and the potential for computers to store, manage, and integrate massive amounts of data has given rise to such new disciplinary fields as biomedical informatics. Applied ontology offers a strategy for the organization of scientific information in computer-tractable form, drawing on concepts not only from computer and information science but also from linguistics, logic, and philosophy. This book provides an introduction to the field of applied ontology that is of particular relevance to biomedicine, covering theoretical components of ontologies, best practices for ontology design, and examples of biomedical ontologies in use.</p>
+<p>After defining an ontology as a representation of the types of entities in a given domain, the book distinguishes between different kinds of ontologies and taxonomies, and shows how applied ontology draws on more traditional ideas from metaphysics. It presents the core features of the Basic Formal Ontology (BFO), now used by over one hundred ontology projects around the world, and offers examples of domain ontologies that utilize BFO. The book also describes Web Ontology Language (OWL), a common framework for Semantic Web technologies. Throughout, the book provides concrete recommendations for the design and construction of domain ontologies.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="detailed-table-of-contents">Detailed Table of Contents<a href="#detailed-table-of-contents" class="hash-link" aria-label="Direct link to Detailed Table of Contents" title="Direct link to Detailed Table of Contents">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="introduction">Introduction<a href="#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction">​</a></h3>
+<ul>
+<li>Overwhelmed with Information</li>
+<li>Obstacles to Accessibility: Human and Technical Idiosyncrasy</li>
+<li>The Computer Limitations Problem</li>
+<li>Some Implications of Computer Limitations for Information Representation and Management</li>
+<li>The Problem of Imprecise Thinking</li>
+<li>An Example: The BRIDG Model</li>
+<li>Ontology as Part of the Solution</li>
+<li>A New Organon for the Information Age</li>
+<li>Suggested Further Reading</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="1-what-is-an-ontology">1 What Is an Ontology?<a href="#1-what-is-an-ontology" class="hash-link" aria-label="Direct link to 1 What Is an Ontology?" title="Direct link to 1 What Is an Ontology?">​</a></h3>
+<ul>
+<li>Introduction</li>
+<li>Ontologies Are Representational Artifacts</li>
+<li>Artifacts</li>
+<li>Representational Artifacts</li>
+<li>Representational Units and Composite Representations</li>
+<li>A Note on &quot;Term&quot;</li>
+<li>Ontology, Terminology, Conceptology</li>
+<li>Ontology and Terminology: The Case of ISO</li>
+<li>The Concept Orientation</li>
+<li>Philosophical and Historical Background to Conceptualism</li>
+<li>Realism and Ontology</li>
+<li>Accurately Representing Entities in Reality</li>
+<li>Respecting the Use-Mention Distinction</li>
+<li>Ontologies Represent Universals, Defined Classes, and the Relations Between Them</li>
+<li>The Goal of Science Is to Represent General Features of Reality</li>
+<li>Ontological Realism</li>
+<li>Metaphysical Nominalism</li>
+<li>Universals and Particulars</li>
+<li>Empty or Potentially Empty General Terms</li>
+<li>Universal vs. Class</li>
+<li>Relations in Ontologies</li>
+<li>Basic Relations</li>
+<li>Universal-Universal Relations</li>
+<li>Universal-Particular Relations</li>
+<li>Particular-Particular Relations</li>
+<li>Conclusion</li>
+<li>Further Reading on Issues of Epistemological and Ontological Realism</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="2-kinds-of-ontologies-and-the-role-of-taxonomies">2 Kinds of Ontologies and the Role of Taxonomies<a href="#2-kinds-of-ontologies-and-the-role-of-taxonomies" class="hash-link" aria-label="Direct link to 2 Kinds of Ontologies and the Role of Taxonomies" title="Direct link to 2 Kinds of Ontologies and the Role of Taxonomies">​</a></h3>
+<ul>
+<li>Philosophical Ontology</li>
+<li>Philosophical Ontology and Taxonomy</li>
+<li>Simple Taxonomies</li>
+<li>Formal vs. Material Ontologies</li>
+<li>Domain Ontology</li>
+<li>Domain Ontology and Taxonomy</li>
+<li>Definition, Taxonomy, Ontology</li>
+<li>Top-Level Ontology</li>
+<li>Semantic Interoperability</li>
+<li>Choice of Top-Level Ontology</li>
+<li>Application vs. Reference Ontology</li>
+<li>Conclusion</li>
+<li>Further Reading on Top-Level and Domain Ontology</li>
+<li>Further Reading on Taxonomy and Classification</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="3-principles-of-best-practice-i-domain-ontology-design">3 Principles of Best Practice I: Domain Ontology Design<a href="#3-principles-of-best-practice-i-domain-ontology-design" class="hash-link" aria-label="Direct link to 3 Principles of Best Practice I: Domain Ontology Design" title="Direct link to 3 Principles of Best Practice I: Domain Ontology Design">​</a></h3>
+<ul>
+<li>General Principles of Ontology Design<!-- -->
+<ul>
+<li>
+<ol>
+<li>Realism</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Perspectivalism</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>Fallibilism</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>Adequatism</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Additional Principles of Ontology Design<!-- -->
+<ul>
+<li>5. The Principle of Reuse</li>
+<li>
+<ol start="6">
+<li>The Ontology Design Process Should Balance Utility and Realism</li>
+</ol>
+</li>
+<li>
+<ol start="7">
+<li>The Ontology Design Process Is Open-Ended</li>
+</ol>
+</li>
+<li>
+<ol start="8">
+<li>The Principle of Low-Hanging Fruit</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Overview of the Domain Ontology Design Process</li>
+<li>Explicitly Determine the Subject Matter of the Domain Ontology</li>
+<li>Domain and Top-Level Ontologies</li>
+<li>Relevance</li>
+<li>Granularity</li>
+<li>The Problem of Nonexistents</li>
+<li>Conclusion</li>
+<li>Further Reading on Relevance, Perspectivalism, Granularity, and Adequatism</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="4-principles-of-best-practice-ii-terms-definitions-and-classification">4 Principles of Best Practice II: Terms, Definitions, and Classification<a href="#4-principles-of-best-practice-ii-terms-definitions-and-classification" class="hash-link" aria-label="Direct link to 4 Principles of Best Practice II: Terms, Definitions, and Classification" title="Direct link to 4 Principles of Best Practice II: Terms, Definitions, and Classification">​</a></h3>
+<ul>
+<li>Principles for Terminology</li>
+<li>Gather and Select Terminology<!-- -->
+<ul>
+<li>
+<ol>
+<li>Include in the terminology terms used by scientists</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Strive to ensure maximal consensus with the scientists&#x27; usage</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>Identify areas of disciplinary overlap where terminological usage is not consistent</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>In terminology construction and ontology design, make use of as many existing resources as possible</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Formatting Terminology<!-- -->
+<ul>
+<li>5. Use singular nouns</li>
+<li>
+<ol start="6">
+<li>Use lowercase for common nouns</li>
+</ol>
+</li>
+<li>
+<ol start="7">
+<li>Avoid acronyms</li>
+</ol>
+</li>
+<li>
+<ol start="8">
+<li>Associate each term in the ontology with a unique alphanumeric identifier</li>
+</ol>
+</li>
+<li>
+<ol start="9">
+<li>Ensure univocity of terms</li>
+</ol>
+</li>
+<li>
+<ol start="10">
+<li>Ensure univocity of relational expressions</li>
+</ol>
+</li>
+<li>
+<ol start="11">
+<li>Avoid mass terms</li>
+</ol>
+</li>
+<li>
+<ol start="12">
+<li>Distinguish the general from the particular</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Principles for Definitions<!-- -->
+<ul>
+<li>13. Provide all nonroot terms with definitions</li>
+<li>
+<ol start="14">
+<li>Use Aristotelian definitions</li>
+</ol>
+</li>
+<li>
+<ol start="15">
+<li>Use essential features in defining terms</li>
+</ol>
+</li>
+<li>
+<ol start="16">
+<li>Start with the most general terms in your domain</li>
+</ol>
+</li>
+<li>
+<ol start="17">
+<li>Avoid circularity in defining terms</li>
+</ol>
+</li>
+<li>
+<ol start="18">
+<li>To ensure the intelligibility of definitions, use simpler terms than the term you are defining</li>
+</ol>
+</li>
+<li>
+<ol start="19">
+<li>Do not create terms for universals through logical combination</li>
+</ol>
+</li>
+<li>
+<ol start="20">
+<li>Definitions should be unpackable (Term-definition intersubstitutability)</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Principles for Taxonomies<!-- -->
+<ul>
+<li>21. Structure every ontology around a backbone <em>is_a</em> hierarchy</li>
+<li>
+<ol start="22">
+<li>Ensure <em>is_a</em> completeness</li>
+</ol>
+</li>
+<li>
+<ol start="23">
+<li>Ensure asserted single inheritance</li>
+</ol>
+</li>
+<li>
+<ol start="24">
+<li>Both developers and users of an ontology should respect the open-world assumption</li>
+</ol>
+</li>
+<li>
+<ol start="25">
+<li>Adhere to the rule of objectivity: describe what exists in reality, not what is known about what exists</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Conclusion</li>
+<li>Further Readings on Definitions and Categorization</li>
+<li>Examples of Critical Reviews</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="5-introduction-to-basic-formal-ontology-i-continuants">5 Introduction to Basic Formal Ontology I: Continuants<a href="#5-introduction-to-basic-formal-ontology-i-continuants" class="hash-link" aria-label="Direct link to 5 Introduction to Basic Formal Ontology I: Continuants" title="Direct link to 5 Introduction to Basic Formal Ontology I: Continuants">​</a></h3>
+<ul>
+<li>Some Basic Features of BFO</li>
+<li>Basic Types of Entity: Continuant and Occurrent</li>
+<li>BFO: Continuant</li>
+<li>BFO: Independent Continuant</li>
+<li>BFO: Material Entity</li>
+<li>BFO: Object</li>
+<li>BFO: Object Aggregate</li>
+<li>BFO: Fiat Object Part</li>
+<li>Combination Object-Entities</li>
+<li>BFO: Specifically Dependent Continuant</li>
+<li>BFO: Quality</li>
+<li>BFO: Relational Quality</li>
+<li>Relations That Do and Relations That Do Not Have Instances</li>
+<li>BFO: Realizable Entity</li>
+<li>BFO: Role</li>
+<li>BFO: Disposition</li>
+<li>BFO: Function</li>
+<li>BFO: Specifically Dependent Continuant: Summary</li>
+<li>Reciprocal Dependence among Realizable Dependent Continuants</li>
+<li>BFO: Generically Dependent Continuant</li>
+<li>BFO: Immaterial Entity</li>
+<li>BFO: Continuant Fiat Boundary (including Zero-, One-, and Two-Dimensional Continuant Fiat Boundary)</li>
+<li>Boundaries and Granularity</li>
+<li>BFO: Site</li>
+<li>BFO: Spatial Region (including Zero-, One-, Two-, and Three-Dimensional Spatial Regions)</li>
+<li>Spatial Regions and Frames of Reference</li>
+<li>A BFO Continuant Classification</li>
+<li>Further Reading on Basic Formal Ontology</li>
+<li>Further Reading on Granularity</li>
+<li>Further Reading on Independent Continuants</li>
+<li>Further Reading on Dependent Continuants</li>
+<li>Further Reading on Boundaries, Spatial Regions, and Topology</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="6-introduction-to-basic-formal-ontology-ii-occurrents">6 Introduction to Basic Formal Ontology II: Occurrents<a href="#6-introduction-to-basic-formal-ontology-ii-occurrents" class="hash-link" aria-label="Direct link to 6 Introduction to Basic Formal Ontology II: Occurrents" title="Direct link to 6 Introduction to Basic Formal Ontology II: Occurrents">​</a></h3>
+<ul>
+<li>BFO: Process</li>
+<li>BFO: History</li>
+<li>BFO: Process Boundary</li>
+<li>BFO: Spatiotemporal Region</li>
+<li>BFO: Temporal Region</li>
+<li>BFO: Zero-Dimensional Temporal Region</li>
+<li>BFO: One-Dimensional Temporal Region</li>
+<li>An Example of Occurrent Classification</li>
+<li>Classifying Universals with BFO</li>
+<li>Exhaustiveness of BFO Categories</li>
+<li>BFO&#x27;s Perspectivalism</li>
+<li>BFO&#x27;s Perspectivalism in Practice</li>
+<li>Further Reading on Processes and Events</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="7-the-ontology-of-relations">7 The Ontology of Relations<a href="#7-the-ontology-of-relations" class="hash-link" aria-label="Direct link to 7 The Ontology of Relations" title="Direct link to 7 The Ontology of Relations">​</a></h3>
+<ul>
+<li>BFO Relations</li>
+<li>Relations: Formal Properties and Conventions</li>
+<li>Primitive Instance-level Relations</li>
+<li>Universal-Universal Relations in BFO</li>
+<li>Foundational Relation: <em>is_a</em></li>
+<li>Foundational Relations: <em>continuant_part_of</em> and <em>occurrent_part_of</em></li>
+<li>Spatial and Temporal Relations</li>
+<li>Spatial Relation: <em>adjacent_to</em></li>
+<li>Temporal Relation: <em>derives_from</em></li>
+<li>Temporal Relation: <em>preceded_by</em></li>
+<li>Participation Relation: <em>has_participant</em></li>
+<li>Some Further Top-Level Relations</li>
+<li><em>proper_continuant_part_of</em> and <em>proper_occurrent_part_of</em></li>
+<li><em>has_continuant_part</em> and <em>integral_continuant_part</em>; <em>has_occurrent_part</em> and <em>integral_occurrent_part</em></li>
+<li>Relations and Definitions of Categories</li>
+<li>The All-Some Rule</li>
+<li>Inversion and Reciprocity</li>
+<li>Some Examples of Axioms</li>
+<li>Reflexivity, Symmetry, and Transitivity</li>
+<li>Further Reading on Relations</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="8-basic-formal-ontology-at-work">8 Basic Formal Ontology at Work<a href="#8-basic-formal-ontology-at-work" class="hash-link" aria-label="Direct link to 8 Basic Formal Ontology at Work" title="Direct link to 8 Basic Formal Ontology at Work">​</a></h3>
+<ul>
+<li>The Protégé Ontology Editor and BFO</li>
+<li>The Web Ontology Language (OWL)</li>
+<li>Hypertext Markup Language (HTML) and Extensible Markup Language (XML)</li>
+<li>Resource Description Framework (RDF)</li>
+<li>RDF Schema (RDFS)</li>
+<li>Simple Protocol and RDF Query Language (SPARQL)</li>
+<li>Basic Features of OWL</li>
+<li>OWL vs. Standard Relational Databases</li>
+<li>OWL 2</li>
+<li>Building Ontologies with Basic Formal Ontology</li>
+<li>Example: The Ontology for General Medical Science (OGMS)</li>
+<li>Infectious Disease Ontology (IDO)</li>
+<li>Information Artifact Ontology (IAO)</li>
+<li>The Emotion Ontology (MFO-EM)</li>
+<li>Facilitation of Interoperability</li>
+<li>Further Reading in OWL, RDFS, and RDF</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="appendices-and-references">Appendices and References<a href="#appendices-and-references" class="hash-link" aria-label="Direct link to Appendices and References" title="Direct link to Appendices and References">​</a></h3>
+<ul>
+<li>Appendix on Implementation: Languages, Editors, Reasoners, Browsers, Tools for Reuse</li>
+<li>Glossary</li>
+<li>Web Links Mentioned in the Text</li>
+<li>Notes</li>
+<li>Bibliography</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="get-the-book">Get the Book<a href="#get-the-book" class="hash-link" aria-label="Direct link to Get the Book" title="Direct link to Get the Book">​</a></h2>
+<p>You can purchase this book from <a href="https://mitpress.mit.edu/9780262527811/building-ontologies-with-basic-formal-ontology/" target="_blank" rel="noopener noreferrer">MIT Press</a> or <a href="https://www.amazon.com/Building-Ontologies-Basic-Formal-Ontology/dp/0262527812/" target="_blank" rel="noopener noreferrer">Amazon</a>.</p>
+<p>For more information about BFO, visit the <a href="http://basic-formal-ontology.org/" target="_blank" rel="noopener noreferrer">BFO website</a>.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/NCOR-Organization/NCOR-Network/tree/main/wiki/books/building-ontologies-with-basic-formal-ontology.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/wiki/books/why-machines-will-never-rule-the-world"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Why Machines Will Never Rule the World</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/wiki/glossary"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Glossary</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#about-the-book" class="table-of-contents__link toc-highlight">About the book</a></li><li><a href="#detailed-table-of-contents" class="table-of-contents__link toc-highlight">Detailed Table of Contents</a><ul><li><a href="#introduction" class="table-of-contents__link toc-highlight">Introduction</a></li><li><a href="#1-what-is-an-ontology" class="table-of-contents__link toc-highlight">1 What Is an Ontology?</a></li><li><a href="#2-kinds-of-ontologies-and-the-role-of-taxonomies" class="table-of-contents__link toc-highlight">2 Kinds of Ontologies and the Role of Taxonomies</a></li><li><a href="#3-principles-of-best-practice-i-domain-ontology-design" class="table-of-contents__link toc-highlight">3 Principles of Best Practice I: Domain Ontology Design</a></li><li><a href="#4-principles-of-best-practice-ii-terms-definitions-and-classification" class="table-of-contents__link toc-highlight">4 Principles of Best Practice II: Terms, Definitions, and Classification</a></li><li><a href="#5-introduction-to-basic-formal-ontology-i-continuants" class="table-of-contents__link toc-highlight">5 Introduction to Basic Formal Ontology I: Continuants</a></li><li><a href="#6-introduction-to-basic-formal-ontology-ii-occurrents" class="table-of-contents__link toc-highlight">6 Introduction to Basic Formal Ontology II: Occurrents</a></li><li><a href="#7-the-ontology-of-relations" class="table-of-contents__link toc-highlight">7 The Ontology of Relations</a></li><li><a href="#8-basic-formal-ontology-at-work" class="table-of-contents__link toc-highlight">8 Basic Formal Ontology at Work</a></li><li><a href="#appendices-and-references" class="table-of-contents__link toc-highlight">Appendices and References</a></li></ul></li><li><a href="#get-the-book" class="table-of-contents__link toc-highlight">Get the Book</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">NCOR</div><ul class="footer__items clean-list"><li class="footer__item">
+                  <p style="text-align: left; max-width: 300px; margin-top: -5px;">
+                    National Center for Ontological Research (NCOR) is an international organization that promotes interdisciplinary research on the theory and application of ontologies.
+                  </p>
+                </li></ul></div><div class="col footer__col"><div class="footer__title">Quick Links</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/">Home</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/about/mission">About</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/research/publications">Research</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/events/office-hours">Events</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/affiliates/individuals">People</a></li></ul></div><div class="col footer__col"><div class="footer__title">Resources</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/research/publications">Publications</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/get-started">Ontologies</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/events/useful-links">Tools</a></li><li class="footer__item"><a href="https://github.com/NCOR-Organization" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">Contact</div><ul class="footer__items clean-list"><li class="footer__item">
+                  <div style="display: flex; align-items: flex-start; margin-bottom: 8px;">
+                    <svg style="min-width: 20px; margin-right: 8px; margin-top: 4px;" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="#adbac7"/>
+                    </svg>
+                    <span>
+                      500 Seneca Street<br>
+                      Buffalo, NY 14204<br>
+                      United States
+                    </span>
+                  </div>
+                  <div style="display: flex; align-items: center;">
+                    <svg style="min-width: 20px; margin-right: 8px;" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z" fill="#adbac7"/>
+                    </svg>
+                    <a href="mailto:info@ncor.us">info@ncor.us</a>
+                  </div>
+                </li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">© 2025 National Center for Ontological Research. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></div></div></div></footer></div>
+</body>
+</html>

@@ -1,0 +1,176 @@
+.researchAreasContainer {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 80px 0;
+  position: relative;
+  border-top: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+}
+
+/* Subtle texture overlay */
+.researchAreasContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  color: #9e7418;
+}
+
+.sectionDescription {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.researchCard {
+  background: #fff;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid rgba(158, 116, 24, 0.05);
+}
+
+.researchCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(158, 116, 24, 0.1);
+  border-color: rgba(158, 116, 24, 0.2);
+}
+
+.cardTitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #9e7418;
+  margin-bottom: 15px;
+}
+
+.cardDescription {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.learnMoreLink {
+  display: inline-flex;
+  align-items: center;
+  color: #9e7418;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.learnMoreLink:hover {
+  color: #b88b1d;
+  text-decoration: none;
+}
+
+.arrowIcon {
+  margin-left: 6px;
+  transition: transform 0.2s ease;
+}
+
+.learnMoreLink:hover .arrowIcon {
+  transform: translateX(3px);
+}
+
+.viewAllContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.viewAllButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #9e7418;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(158, 116, 24, 0.2);
+}
+
+.viewAllButton:hover {
+  background-color: #b88b1d;
+  box-shadow: 0 6px 10px rgba(158, 116, 24, 0.3);
+  text-decoration: none;
+  color: white;
+}
+
+.buttonArrow {
+  margin-left: 8px;
+}
+
+/* Responsive design */
+@media (max-width: 996px) {
+  .cardsContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .sectionDescription {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .researchAreasContainer {
+    padding: 60px 0;
+  }
+  
+  .cardsContainer {
+    grid-template-columns: 1fr;
+  }
+  
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+  
+  .sectionDescription {
+    font-size: 1rem;
+  }
+} 

@@ -1,0 +1,30 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Central circle representing substance -->
+  <circle cx="100" cy="100" r="30" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <text x="100" y="105" text-anchor="middle" fill="#ffffff" font-size="10">Substance</text>
+  
+  <!-- Categories radiate out from substance -->
+  <line x1="100" y1="70" x2="100" y2="40" stroke="#ffffff" stroke-width="1"/>
+  <text x="100" y="30" text-anchor="middle" fill="#ffffff" font-size="8">Quantity</text>
+  
+  <line x1="125" y1="80" x2="150" y2="60" stroke="#ffffff" stroke-width="1"/>
+  <text x="160" y="55" text-anchor="middle" fill="#ffffff" font-size="8">Quality</text>
+  
+  <line x1="130" y1="100" x2="170" y2="100" stroke="#ffffff" stroke-width="1"/>
+  <text x="180" y="103" text-anchor="middle" fill="#ffffff" font-size="8">Relation</text>
+  
+  <line x1="125" y1="120" x2="150" y2="140" stroke="#ffffff" stroke-width="1"/>
+  <text x="160" y="150" text-anchor="middle" fill="#ffffff" font-size="8">Place</text>
+  
+  <line x1="100" y1="130" x2="100" y2="160" stroke="#ffffff" stroke-width="1"/>
+  <text x="100" y="175" text-anchor="middle" fill="#ffffff" font-size="8">Time</text>
+  
+  <line x1="75" y1="120" x2="50" y2="140" stroke="#ffffff" stroke-width="1"/>
+  <text x="40" y="150" text-anchor="middle" fill="#ffffff" font-size="8">Position</text>
+  
+  <line x1="70" y1="100" x2="30" y2="100" stroke="#ffffff" stroke-width="1"/>
+  <text x="20" y="103" text-anchor="middle" fill="#ffffff" font-size="8">State</text>
+  
+  <line x1="75" y1="80" x2="50" y2="60" stroke="#ffffff" stroke-width="1"/>
+  <text x="40" y="55" text-anchor="middle" fill="#ffffff" font-size="8">Action</text>
+</svg> 

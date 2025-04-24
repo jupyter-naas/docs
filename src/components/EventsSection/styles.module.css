@@ -1,0 +1,261 @@
+.eventsContainer {
+  padding: 80px 0;
+  background-color: #ffffff;
+  position: relative;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.headerContent {
+  max-width: 70%;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  color: #9e7418;
+}
+
+.sectionDescription {
+  font-size: 1.2rem;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.allEventsLink {
+  display: flex;
+  align-items: center;
+}
+
+.viewAllLink {
+  display: inline-flex;
+  align-items: center;
+  color: #9e7418;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+.viewAllLink:hover {
+  color: #b88b1d;
+  text-decoration: none;
+}
+
+.arrowIcon {
+  margin-left: 6px;
+  transition: transform 0.2s ease;
+}
+
+.viewAllLink:hover .arrowIcon {
+  transform: translateX(3px);
+}
+
+.tabContainer {
+  display: flex;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  padding: 5px;
+  width: fit-content;
+}
+
+.tabButton {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: #555;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.tabButton:hover {
+  color: #9e7418;
+}
+
+.activeTab {
+  background-color: #ffffff;
+  color: #9e7418;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.eventsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.eventCard {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid #eaeaea;
+}
+
+.eventCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-color: rgba(158, 116, 24, 0.2);
+}
+
+.eventContent {
+  padding: 25px;
+  flex-grow: 1;
+}
+
+.eventHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.eventTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #9e7418;
+  margin: 0;
+  flex: 1;
+  padding-right: 15px;
+}
+
+.eventType {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #f0f0f0;
+  color: #666;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.eventDescription {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.eventMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.eventDate, .eventLocation {
+  display: flex;
+  align-items: center;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.metaIcon {
+  margin-right: 8px;
+  color: #9e7418;
+}
+
+.eventFooter {
+  padding: 15px 25px;
+  border-top: 1px solid #eaeaea;
+}
+
+.viewDetailsLink {
+  display: inline-flex;
+  align-items: center;
+  color: #9e7418;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.viewDetailsLink:hover {
+  color: #b88b1d;
+  text-decoration: none;
+}
+
+.detailsArrow {
+  margin-left: 6px;
+  transition: transform 0.2s ease;
+}
+
+.viewDetailsLink:hover .detailsArrow {
+  transform: translateX(3px);
+}
+
+/* Responsive styling */
+@media (max-width: 996px) {
+  .headerRow {
+    flex-direction: column;
+  }
+  
+  .headerContent {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .allEventsLink {
+    align-self: flex-start;
+  }
+  
+  .eventsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .sectionDescription {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .eventsContainer {
+    padding: 60px 0;
+  }
+  
+  .eventsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+  
+  .sectionDescription {
+    font-size: 1rem;
+  }
+  
+  .tabContainer {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .tabButton {
+    flex: 1;
+    text-align: center;
+  }
+} 
