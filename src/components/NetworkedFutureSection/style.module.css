@@ -1,0 +1,112 @@
+.sectionTitle {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ifm-color-primary-darkest);
+}
+
+.networkIntro {
+  margin-bottom: 2.5rem;
+}
+
+.leadText {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.capabilities {
+  margin-bottom: 2.5rem;
+}
+
+.capabilitiesIntro {
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.capabilitiesList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.capabilityItem {
+  background-color: rgba(76, 223, 136, 0.08);
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  position: relative;
+  padding-left: 2.5rem;
+}
+
+.capabilityItem:before {
+  content: '→';
+  position: absolute;
+  left: 1rem;
+  color: #4cdf88;
+  font-weight: bold;
+}
+
+.highlight {
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.highlightQuote {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  background: transparent;
+  border-left: none;
+  position: relative;
+  padding: 1rem 2rem;
+  margin: 0;
+  font-style: italic;
+}
+
+.highlightQuote:before,
+.highlightQuote:after {
+  content: '"';
+  font-size: 2.5rem;
+  line-height: 0;
+  position: absolute;
+  color: rgba(76, 223, 136, 0.3);
+}
+
+.highlightQuote:before {
+  top: 1.5rem;
+  left: 0;
+}
+
+.highlightQuote:after {
+  bottom: 0;
+  right: 0;
+}
+
+.sectionCta {
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .leadText {
+    font-size: 1.1rem;
+  }
+  
+  .highlightQuote {
+    font-size: 1.1rem;
+  }
+  
+  .capabilityItem {
+    font-size: 1rem;
+  }
+} 

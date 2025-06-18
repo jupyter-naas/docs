@@ -1,0 +1,242 @@
+.gradientBackground {
+  background: var(--apple-black);
+  padding: 7rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+[data-theme='light'] .gradientBackground {
+  background: var(--apple-grey-lightest);
+}
+
+.gridOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(var(--apple-grey-darker) 1px, transparent 1px),
+    linear-gradient(90deg, var(--apple-grey-darker) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.15;
+  z-index: -1;
+}
+
+[data-theme='light'] .gridOverlay {
+  background-image: 
+    linear-gradient(var(--apple-grey-light) 1px, transparent 1px),
+    linear-gradient(90deg, var(--apple-grey-light) 1px, transparent 1px);
+  opacity: 0.5;
+}
+
+.glowEffect {
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 40%;
+  height: 40%;
+  background: radial-gradient(circle, rgba(76, 223, 136, 0.15) 0%, rgba(76, 223, 136, 0) 70%);
+  z-index: -1;
+  opacity: 0.7;
+  filter: blur(50px);
+}
+
+.gradientBackground::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    rgba(76, 223, 136, 0), 
+    rgba(76, 223, 136, 0.3), 
+    rgba(76, 223, 136, 0));
+}
+
+.gradientBackground::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    rgba(76, 223, 136, 0), 
+    rgba(76, 223, 136, 0.1), 
+    rgba(76, 223, 136, 0));
+}
+
+.sectionTitle {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: white;
+  line-height: 1.2;
+}
+
+[data-theme='light'] .sectionTitle {
+  color: var(--apple-black);
+}
+
+.highlight {
+  background: linear-gradient(90deg, #4cdf88, #3ac775);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+[data-theme='light'] .highlight {
+  background: linear-gradient(90deg, #4cdf88, #3ac775);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.messageContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3.5rem;
+}
+
+.message {
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 80%;
+  margin: 0;
+}
+
+[data-theme='light'] .message {
+  color: var(--apple-black);
+}
+
+.ctaContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.primaryCta {
+  background-color: var(--ifm-color-primary);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 10px rgba(29, 176, 89, 0.2);
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.primaryCta:hover {
+  background-color: var(--ifm-color-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(29, 176, 89, 0.25);
+}
+
+.ctaText {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+[data-theme='light'] .ctaText {
+  color: var(--apple-black);
+}
+
+.ctaIconSvg {
+  margin-right: 0.75rem;
+  stroke: currentColor;
+}
+
+.ctaArrowSvg {
+  margin-left: 0.75rem;
+  stroke: currentColor;
+  transition: transform 0.3s ease;
+}
+
+.primaryCta:hover .ctaArrowSvg {
+  transform: translateX(3px);
+}
+
+.secondaryCta {
+  background-color: transparent;
+  color: white;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[data-theme='light'] .secondaryCta {
+  color: var(--apple-black);
+  border: 1px solid var(--apple-grey-light);
+}
+
+.secondaryCta:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+[data-theme='light'] .secondaryCta:hover {
+  border-color: var(--apple-grey-dark);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 996px) {
+  .sectionTitle {
+    font-size: 2.75rem;
+  }
+  
+  .message {
+    font-size: 1.35rem;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .gradientBackground {
+    padding: 5rem 1.5rem;
+  }
+  
+  .sectionTitle {
+    font-size: 2.25rem;
+  }
+  
+  .message {
+    font-size: 1.25rem;
+    max-width: 100%;
+  }
+  
+  .ctaContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+  
+  .primaryCta, .secondaryCta {
+    width: 100%;
+    max-width: 320px;
+  }
+} 

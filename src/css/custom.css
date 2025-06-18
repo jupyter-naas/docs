@@ -6,11 +6,19 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  /* Add modern system font stack */
-  --ifm-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-  --ifm-heading-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  /* Apple-inspired colors */
+  --apple-white: #ffffff;
+  --apple-black: #000000;
+  --apple-grey-lightest: #f5f5f7;
+  --apple-grey-lighter: #e5e5e7;
+  --apple-grey-light: #d1d1d6;
+  --apple-grey: #a1a1a6;
+  --apple-grey-dark: #6e6e73;
+  --apple-grey-darker: #3a3a3c;
+  --apple-grey-darkest: #1a1a1a;
   
-  --ifm-color-primary: #4cdf88; /* New green primary color */
+  /* Keep the primary green color */
+  --ifm-color-primary: #4cdf88;
   --ifm-color-primary-dark: #35d976;
   --ifm-color-primary-darker: #28d66d;
   --ifm-color-primary-darkest: #1db059;
@@ -18,17 +26,33 @@
   --ifm-color-primary-lighter: #70e6a3;
   --ifm-color-primary-lightest: #94edb9;
   
+  --ifm-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  --ifm-heading-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   
-  /* Custom variables */
-  --custom-background-color: #ffffff; /* Light mode background */
-  --custom-card-background: #ffffff;
-  --custom-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  /* Custom light theme variables */
+  --custom-background-color: var(--apple-white);
+  --custom-card-background: var(--apple-white);
+  --custom-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
   --custom-border-radius: 8px;
-  --custom-font-weight-bold: 600;
-  --custom-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-
+  --custom-border-color: var(--apple-grey-lighter);
+  --custom-border: 1px solid var(--custom-border-color);
+  --custom-transition: all 0.3s ease;
+  --custom-font-weight-normal: 400;
+  --custom-font-weight-medium: 500;
+  --custom-font-weight-semibold: 600;
+  --custom-font-weight-bold: 700;
+  
+  /* Enterprise-specific variables */
+  --enterprise-grid-line-color: rgba(0, 0, 0, 0.05);
+  --enterprise-header-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  --enterprise-nav-font-weight: 500;
+  
+  /* Section spacing */
+  --section-spacing-vertical: 6rem;
+  
   /* Footer styling with dark theme and green accents */
   --ifm-footer-background-color: #181a1c; /* Dark theme color */
   --ifm-footer-link-hover-color: #4cdf88; /* Green accent */
@@ -37,10 +61,9 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-background-color: #181a1c;
-  --ifm-background-surface-color: #242526;
+  --ifm-background-color: var(--apple-black);
+  --ifm-background-surface-color: var(--apple-grey-darkest);
   
-  /* Keep existing dark mode variables */
   --ifm-color-primary: #4cdf88;
   --ifm-color-primary-dark: #35d976;
   --ifm-color-primary-darker: #28d66d;
@@ -52,19 +75,30 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   
   /* Custom dark mode variables */
-  --custom-background-color: #181a1c; /* Dark theme background */
-  --custom-card-background: #242526;
-  --custom-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
+  --custom-background-color: var(--apple-black);
+  --custom-card-background: var(--apple-grey-darkest);
+  --custom-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+  --custom-border-color: var(--apple-grey-darker);
+  
+  /* Enterprise-specific dark mode variables */
+  --enterprise-grid-line-color: rgba(255, 255, 255, 0.03);
+  --enterprise-header-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Global styles */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: var(--custom-background-color);
+  background-image: 
+    linear-gradient(var(--enterprise-grid-line-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--enterprise-grid-line-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-attachment: fixed;
 }
 
 .container {
   padding: 0 24px;
+  max-width: 1280px;
 }
 
 /* Add smooth scrolling */
@@ -74,8 +108,25 @@ html {
 
 /* Typography enhancements */
 h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ifm-font-family-base);
   font-weight: var(--custom-font-weight-bold);
   letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+h1 {
+  font-size: 56px;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: 35px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+h3 {
+  font-size: 1.75rem;
 }
 
 /* Improve spacing for text content */
@@ -86,23 +137,38 @@ p, ul, ol {
 /* Modern button styling */
 .button {
   border-radius: 6px;
-  font-weight: var(--custom-font-weight-bold);
+  font-weight: var(--custom-font-weight-semibold);
   transition: var(--custom-transition);
   border: none;
   padding: 0.75rem 1.5rem;
   position: relative;
   z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button--secondary {
   background-color: rgba(255, 255, 255, 0.9);
-  color: var(--ifm-color-primary-dark);
+  color: var(--ifm-color-primary-darkest);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .button--secondary:hover {
   background-color: #ffffff;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.button--primary {
+  background: linear-gradient(90deg, var(--ifm-color-primary), var(--ifm-color-primary-dark));
+  color: #0c1219;
+}
+
+.button--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 223, 136, 0.3);
+  filter: brightness(1.05);
 }
 
 /* Card improvements */
@@ -117,39 +183,60 @@ p, ul, ol {
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
-
-/* Button improvements */
-.button--primary {
-  background-color: var(--ifm-color-primary);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  font-weight: 500;
-  transition: all 0.2s ease;
+/* Section spacing */
+.section {
+  padding: var(--section-spacing-vertical) 0;
+  position: relative;
 }
 
-.button--primary:hover {
-  background-color: var(--ifm-color-primary-darker);
-  transform: translateY(-1px);
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Navbar enhancements */
+/* Navbar and header improvements */
 .navbar {
-  box-shadow: var(--custom-shadow);
+  box-shadow: var(--enterprise-header-shadow);
   backdrop-filter: blur(10px);
+  background-color: rgba(12, 18, 25, 0.85);
 }
 
-[data-theme='dark'] .navbar {
-  background-color: rgba(36, 37, 38, 0.8);
+.navbar__link {
+  font-size: 16px;
+  font-weight: 500;
 }
 
-[data-theme='light'] .navbar {
-  background-color: rgba(255, 255, 255, 0.8);
+.navbar__link--active {
+  position: relative;
+}
+
+.navbar__link--active:after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--ifm-color-primary);
+}
+
+/* Homepage specific */
+.homepage section {
+  margin-bottom: var(--section-spacing-vertical);
+}
+
+/* SVG icons global styling */
+svg.icon {
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+/* Focus states for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
 }
 
 /* Footer improvements */
@@ -309,11 +396,11 @@ p, ul, ol {
 }
 
 /* Adding Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* Apply Merriweather to headings */
-h1, h2, h3.title, .heroTitle, .peopleTitle, .sectionTitle {
-  font-family: 'Merriweather', serif;
+/* Apply Inter to headings */
+h1, h2, h3, h4, h5, h6, .sectionTitle {
+  font-family: 'Inter', sans-serif;
 }
 
 /* Regular body text using Inter */
@@ -385,7 +472,7 @@ article h1:first-child {
 }
 
 .board-member-info h3 {
-  font-family: 'Merriweather', serif;
+  font-family: 'Inter', sans-serif;
   margin-bottom: 0.25rem;
   font-size: 1.25rem;
   color: #333;
@@ -638,11 +725,27 @@ html[data-theme='dark'] .navbar-join-button:hover {
   margin-bottom: 0.75rem;  /* Reduced from default */
 }
 
-/* Ensure announcement bar is visible */
-div[class^='announcementBar_'] {
-  display: block !important;
-  z-index: 1000 !important;
-  position: relative !important;
+/* Announcement Bar Customization */
+div[class*='announcementBar_'] {
+  padding: 12px 0 !important;
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+  font-weight: 500 !important;
+  height: auto !important;
+  min-height: 60px !important;
+}
+
+div[class*='announcementBar_'] a {
+  color: #000000 !important;
+  text-decoration: underline !important;
+  font-weight: 600 !important;
+  transition: all 0.2s ease !important;
+  margin-left: 8px !important;
+}
+
+div[class*='announcementBar_'] a:hover {
+  opacity: 0.8 !important;
+  text-decoration: none !important;
 }
 
 /* Fix z-index stacking for interactive elements */
@@ -699,4 +802,126 @@ main a {
   position: relative;
   z-index: 15 !important;
   pointer-events: auto !important;
+}
+
+/* Additional global styles for consistent card backgrounds */
+.card, 
+[class*='card'],
+[class*='Card'] {
+  background: var(--custom-card-background);
+  border: var(--custom-border);
+  box-shadow: var(--custom-shadow);
+}
+
+/* Ensure consistent section backgrounds */
+.section,
+[class*='section'],
+[class*='Section'] {
+  background: var(--custom-background-color);
+}
+
+/* Custom Blog Styles */
+.blog-list-item {
+  margin-bottom: 2rem;
+}
+
+.blog-list-item .card__title {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+.blog-list-title {
+  display: block;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+}
+
+/* Custom sidebar styles */
+.blog-sidebar-item {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+/* Make sure long titles wrap properly on mobile */
+@media (max-width: 996px) {
+  .blog-list-item .card__title {
+    font-size: 1.25rem;
+  }
+}
+
+/* Substack-inspired Blog Styling */
+.blog-wrapper {
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.blog-wrapper h1, 
+.blog-wrapper h2, 
+.blog-wrapper h3, 
+.blog-wrapper h4, 
+.blog-wrapper h5, 
+.blog-wrapper h6 {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: -0.025em;
+}
+
+.blog-post-page article {
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.blog-post-page h1 {
+  font-size: 36px;
+  margin-bottom: 24px;
+  font-weight: 700;
+}
+
+.blog-post-page img {
+  display: block;
+  margin: 30px auto;
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+.blog-post-page blockquote {
+  border-left: 4px solid var(--ifm-color-primary);
+  padding-left: 20px;
+  font-style: italic;
+  margin: 30px 0;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.blog-post-page code {
+  font-size: 85%;
+  border-radius: 3px;
+}
+
+/* Improve pagination styling */
+.pagination-nav {
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+.pagination-nav__link {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.pagination-nav__link:hover {
+  border-color: var(--ifm-color-primary);
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.pagination-nav__label {
+  font-weight: 600;
+}
+
+.pagination-nav__sublabel {
+  font-size: 14px;
 }

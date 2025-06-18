@@ -1,100 +1,94 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
+import Heading from '@theme/Heading';
+import NetworkGraph from './NetworkGraph';
 
 export default function AboutSection() {
   return (
     <div className="container padding-vert--xl">
+      <div className={styles.sectionHeader}>
+        <Heading as="h2" className={styles.sectionTitle}>
+          Your Knowledge <span className={styles.highlight}>Operating System</span> for AI
+        </Heading>
+        <p className={styles.sectionSubtitle}>
+          Naas is the universal Data & AI platform built on ontological infrastructure.
+        </p>
+      </div>
+      
       <div className="row">
-        <div className="col col--5">
-          <div style={{ paddingRight: '2rem' }}>
-            <h2 className={styles.sectionTitle}>
-              About NCOR
-            </h2>
-            <p className={styles.sectionText}>
-              NCOR is dedicated to promoting interdisciplinary research on ontologies and their applications, especially in the context of AI.
-            </p>
-            <p className={styles.sectionText}>
-              NCOR brings together researchers and practitioners from various
-              disciplines including philosophy, computer science, artificial
-              intelligence, information science, and domain experts from medicine,
-              biology, geography, and other fields.
-            </p>
-            <Link
-              className={clsx('button', styles.learnMoreButton)}
-              style={{ color: '#9e7418' }}
-              to="/docs/about/mission">
-              Learn More
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.arrowIcon}>
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </Link>
+        <div className="col col--6">
+          <div className={styles.visualizationContainer}>
+            <NetworkGraph />
           </div>
         </div>
-        <div className="col col--7">
-          <div className="row">
-            <div className="col col--12" style={{ marginBottom: '2rem' }}>
-              <div className={styles.featureCard}>
-                <div className={styles.featureIconContainer} style={{ backgroundColor: 'rgba(158, 116, 24, 0.1)' }}>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#9e7418" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+        <div className="col col--6">
+          <div className={styles.mainDescription}>
+            <p className={styles.sectionText}>
+              It transforms your organization's knowledge into a semantic graph — powering intelligent agents that act, adapt, and align with your world.
+            </p>
+            
+            <div className={styles.capabilityGrid}>
+              <div className={styles.capabilityItem}>
+                <div className={styles.capabilityIcon}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M2 12.5H5L7.5 10L9.5 14L12.5 8L14.5 14L16.5 11L19 14L22 12.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
-                <div className={styles.featureContent}>
-                  <h3 className={styles.featureTitle} style={{ color: '#9e7418' }}>
-                    Ontological Theory
-                  </h3>
-                  <p className={styles.featureText}>
-                    Advancing theoretical frameworks and formal
-                    methods for ontological research across disciplines.
-                  </p>
+                <div className={styles.capabilityContent}>
+                  <h3 className={styles.capabilityTitle}>Executable ontologies</h3>
+                  <p className={styles.capabilityText}>Transform static knowledge into dynamic, executable structures</p>
+                </div>
+              </div>
+              
+              <div className={styles.capabilityItem}>
+                <div className={styles.capabilityIcon}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.5 11L11 13.5L15.5 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M8 4H16C18.2091 4 20 5.79086 20 8V16C20 18.2091 18.2091 20 16 20H8C5.79086 20 4 18.2091 4 16V8C4 5.79086 5.79086 4 8 4Z" stroke="currentColor" strokeWidth="1.5"/>
+                  </svg>
+                </div>
+                <div className={styles.capabilityContent}>
+                  <h3 className={styles.capabilityTitle}>Workflow + analytics integration</h3>
+                  <p className={styles.capabilityText}>Seamlessly connect knowledge systems with operational flows</p>
+                </div>
+              </div>
+              
+              <div className={styles.capabilityItem}>
+                <div className={styles.capabilityIcon}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M6.7 9.3C8.8 7.2 12.1 7.2 14.2 9.3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M17.3 6.7C12.9 2.3 6.1 2.3 1.7 6.7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12 18.5C12.8284 18.5 13.5 17.8284 13.5 17C13.5 16.1716 12.8284 15.5 12 15.5C11.1716 15.5 10.5 16.1716 10.5 17C10.5 17.8284 11.1716 18.5 12 18.5Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div className={styles.capabilityContent}>
+                  <h3 className={styles.capabilityTitle}>AI model orchestration</h3>
+                  <p className={styles.capabilityText}>Coordinate and optimize multiple AI systems through unified control</p>
+                </div>
+              </div>
+              
+              <div className={styles.capabilityItem}>
+                <div className={styles.capabilityIcon}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M8.32 15.27L14.74 8.85" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M8.73 10.37C9.40274 10.37 9.95 9.82274 9.95 9.15C9.95 8.47726 9.40274 7.93 8.73 7.93C8.05726 7.93 7.51 8.47726 7.51 9.15C7.51 9.82274 8.05726 10.37 8.73 10.37Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M15.13 16.77C15.8027 16.77 16.35 16.2227 16.35 15.55C16.35 14.8773 15.8027 14.33 15.13 14.33C14.4573 14.33 13.91 14.8773 13.91 15.55C13.91 16.2227 14.4573 16.77 15.13 16.77Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div className={styles.capabilityContent}>
+                  <h3 className={styles.capabilityTitle}>Trust, transparency & traceability</h3>
+                  <p className={styles.capabilityText}>Enterprise-grade governance built into every layer</p>
                 </div>
               </div>
             </div>
-            <div className="col col--12" style={{ marginBottom: '2rem' }}>
-              <div className={styles.featureCard}>
-                <div className={styles.featureIconContainer} style={{ backgroundColor: 'rgba(158, 116, 24, 0.1)' }}>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#9e7418" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-                  </svg>
-                </div>
-                <div className={styles.featureContent}>
-                  <h3 className={styles.featureTitle} style={{ color: '#9e7418' }}>
-                    Applied Ontologies
-                  </h3>
-                  <p className={styles.featureText}>
-                    Developing and implementing ontologies for
-                    scientific research, healthcare, engineering, and
-                    more.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col col--12">
-              <div className={styles.featureCard}>
-                <div className={styles.featureIconContainer} style={{ backgroundColor: 'rgba(158, 116, 24, 0.1)' }}>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#9e7418" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="9" cy="7" r="4"></circle>
-                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                  </svg>
-                </div>
-                <div className={styles.featureContent}>
-                  <h3 className={styles.featureTitle} style={{ color: '#9e7418' }}>
-                    Community Building
-                  </h3>
-                  <p className={styles.featureText}>
-                    Fostering international collaboration among
-                    researchers, practitioners, and institutions.
-                  </p>
-                </div>
-              </div>
+            
+            <div className={styles.resultStatement}>
+              <p><strong>Result:</strong> You don't just plug in AI, you build the <strong>digital brain</strong> of your business.</p>
             </div>
           </div>
         </div>

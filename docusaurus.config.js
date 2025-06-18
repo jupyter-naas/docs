@@ -46,10 +46,6 @@ const config = {
           sidebarPath: './sidebars.js',
           editUrl: 'https://github.com/NaasAI/naas-website/tree/main/',
         },
-        blog: {
-          showReadingTime: true,
-          editUrl: 'https://github.com/NaasAI/naas-website/tree/main/',
-        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -57,19 +53,8 @@ const config = {
     ],
   ],
   
-  // Add the wiki as a separate plugin instead of in the preset
-  plugins: [
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'wiki',
-        path: 'wiki',
-        routeBasePath: 'wiki',
-        sidebarPath: require.resolve('./wikiSidebars.js'),
-        editUrl: 'https://github.com/NaasAI/naas-website/tree/main/',
-      },
-    ],
-  ],
+  // Remove the wiki as a separate plugin
+  plugins: [],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -96,104 +81,28 @@ const config = {
           src: 'img/logos/naas.png',
           srcDark: 'img/logos/naas.png',
         },
+        style: 'dark',
+        hideOnScroll: false,
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'docsSidebar',
-            position: 'right',
-            label: 'Get Started',
+            to: '/cloud',
+            label: 'CLOUD',
+            position: 'left',
           },
           {
-            type: 'dropdown',
-            label: 'About',
-            position: 'right',
-            items: [
-              {
-                label: 'Mission',
-                to: '/docs/about/mission',
-              },
-              {
-                label: 'What is Ontology',
-                to: '/docs/about/what-is-ontology',
-              },
-              {
-                label: 'Ontology for AI',
-                to: '/docs/about/ontology-for-ai',
-              },
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-            ],
+            to: '/local',
+            label: 'LOCAL',
+            position: 'left',
           },
           {
-            type: 'dropdown',
-            label: 'Research',
-            position: 'right',
-            items: [
-              {
-                label: 'Areas',
-                to: '/docs/research/areas',
-              },
-              {
-                label: 'Projects',
-                to: '/docs/research/projects',
-              },
-              {
-                label: 'Publications',
-                to: '/docs/research/publications',
-              },
-            ],
-          },
-          {
-            type: 'dropdown',
-            label: 'Wiki',
-            position: 'right',
-            items: [
-              {
-                label: 'Ontology 101',
-                to: '/wiki/ontology-101',
-              },
-              {
-                label: 'Courses',
-                to: '/wiki/courses/barry-smith',
-              },
-              {
-                label: 'Ontologies',
-                to: '/wiki/ontologies/basic-formal-ontology',
-              },
-              {
-                label: 'Books',
-                to: '/wiki/books/why-machines-will-never-rule-the-world',
-              },
-              {
-                label: 'Glossary',
-                to: '/wiki/glossary',
-              },
-            ],
-          },
-          {
-            to: '/docs/events/office-hours',
-            position: 'right',
-            label: 'Events',
-            activeBasePath: '/docs/events',
-          },
-          {
-            to: '/docs/affiliates/individuals',
-            position: 'right',
-            label: 'Affiliates',
-            activeBasePath: '/docs/affiliates',
-          },
-          {
-            href: 'https://github.com/NaasAI',
-            label: 'GitHub',
+            to: '/individuals',
+            label: 'INDIVIDUALS',
             position: 'right',
           },
           {
-            to: '/join',
-            label: 'Get Started',
+            to: '/organizations',
+            label: 'ORGANIZATIONS',
             position: 'right',
-            className: 'button button--primary navbar-join-button',
           },
         ],
       },
@@ -249,10 +158,6 @@ const config = {
                 to: '/docs/get-started',
               },
               {
-                label: 'Tools',
-                to: '/docs/events/useful-links',
-              },
-              {
                 label: 'GitHub',
                 href: 'https://github.com/NaasAI',
               },
@@ -292,16 +197,15 @@ const config = {
       },
       colorMode: {
         defaultMode: 'dark',
-        disableSwitch: false,
+        disableSwitch: true,
         respectPrefersColorScheme: false,
       },
       announcementBar: {
-        id: 'wip_announcement',
-        content: 
-          '🚧 <strong>WORK IN PROGRESS:</strong> The Naas website is currently under development. Some features and content may be incomplete. 🚧',
-        backgroundColor: '#181a1c', // Dark background
-        textColor: 'white',       // Green text to match Naas theme
-        isCloseable: false,         // Make it persistent
+        id: 'custom_solutions',
+        content: 'We can help design and implement AI systems tailored to your needs. <a href="/get-started">Get Started →</a>',
+        backgroundColor: '#ffffff',
+        textColor: '#000000',
+        isCloseable: false,
       },
     }),
   stylesheets: [
@@ -322,7 +226,7 @@ const config = {
       },
       innerHTML: `
         (function(){
-          emailjs.init("YOUR_USER_ID"); // Replace with your actual EmailJS user ID
+          emailjs.init("user_xxxxxxxxxxxxxxxxxx"); // Replace with actual EmailJS user ID
         })();
       `,
     },

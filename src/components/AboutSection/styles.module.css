@@ -96,4 +96,510 @@
   .featureTitle {
     font-size: 1.2rem;
   }
+}
+
+/* Section Header */
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  color: var(--ifm-font-color-base);
+}
+
+.highlight {
+  color: var(--ifm-color-primary);
+}
+
+.sectionSubtitle {
+  font-size: 1.25rem;
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* Main Content */
+.mainDescription {
+  padding-right: 2rem;
+}
+
+.sectionText {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: var(--ifm-color-emphasis-800);
+}
+
+/* Enterprise-grade Capability Grid */
+.capabilityGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.capabilityItem {
+  display: flex;
+  align-items: flex-start;
+  padding: 1.25rem;
+  border-radius: 8px;
+  background: var(--apple-grey-lightest);
+  border: 1px solid var(--apple-grey-lighter);
+  transition: all 0.3s ease;
+}
+
+[data-theme='dark'] .capabilityItem {
+  background: var(--apple-grey-darkest);
+  border: 1px solid var(--apple-grey-darker);
+}
+
+.capabilityItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='dark'] .capabilityItem:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.capabilityIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background: var(--apple-white);
+  color: var(--ifm-color-primary);
+  margin-right: 1rem;
+  border: 1px solid var(--apple-grey-lighter);
+  flex-shrink: 0;
+}
+
+[data-theme='dark'] .capabilityIcon {
+  background: var(--apple-grey-darkest);
+  border: 1px solid var(--apple-grey-darker);
+}
+
+.capabilityContent {
+  flex: 1;
+}
+
+.capabilityTitle {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-font-color-base);
+}
+
+.capabilityText {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ifm-color-emphasis-700);
+  margin: 0;
+}
+
+/* Result Statement */
+.resultStatement {
+  padding: 1.25rem;
+  border-radius: 8px;
+  background-color: rgba(76, 223, 136, 0.075);
+  margin-bottom: 2rem;
+  border: 1px solid rgba(76, 223, 136, 0.15);
+}
+
+[data-theme='dark'] .resultStatement {
+  background-color: rgba(76, 223, 136, 0.05);
+  border: 1px solid rgba(76, 223, 136, 0.1);
+}
+
+.resultStatement p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--ifm-color-emphasis-800);
+}
+
+/* CTA Button */
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.arrowIcon {
+  transition: transform 0.3s ease;
+}
+
+.ctaButton:hover .arrowIcon {
+  transform: translateX(4px);
+}
+
+/* Advanced Knowledge Graph Visualization */
+.visualizationContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.knowledgeGraph {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(76, 223, 136, 0.03) 0%, rgba(76, 223, 136, 0.07) 100%);
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(76, 223, 136, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='dark'] .knowledgeGraph {
+  background: linear-gradient(135deg, rgba(76, 223, 136, 0.02) 0%, rgba(76, 223, 136, 0.04) 100%);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.graphBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(76, 223, 136, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(76, 223, 136, 0.05) 0%, transparent 50%);
+}
+
+/* Grid overlay */
+.graphBackground::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(76, 223, 136, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(76, 223, 136, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Node styling */
+.graphNodes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.graphNodes > div {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(76, 223, 136, 0.2);
+  box-shadow: 0 0 0 1px rgba(76, 223, 136, 0.3), 0 0 20px rgba(76, 223, 136, 0.1);
+  transform: translate(-50%, -50%);
+}
+
+.nodeEntity {
+  left: 30%;
+  top: 30%;
+  width: 40px;
+  height: 40px;
+}
+
+.nodeAgent {
+  left: 70%;
+  top: 25%;
+  width: 35px;
+  height: 35px;
+}
+
+.nodeData {
+  left: 25%;
+  top: 60%;
+  width: 30px;
+  height: 30px;
+}
+
+.nodeProcess {
+  left: 60%;
+  top: 70%;
+  width: 38px;
+  height: 38px;
+}
+
+.nodeSystem {
+  left: 50%;
+  top: 45%;
+  width: 45px;
+  height: 45px;
+}
+
+.nodeObject {
+  left: 80%;
+  top: 60%;
+  width: 28px;
+  height: 28px;
+}
+
+/* Edge styling */
+.graphEdges > div {
+  position: absolute;
+  background: linear-gradient(90deg, rgba(76, 223, 136, 0.2), rgba(76, 223, 136, 0.3));
+  height: 1px;
+  transform-origin: 0 0;
+}
+
+.edge1 {
+  left: 30%;
+  top: 30%;
+  width: 40%;
+  transform: rotate(15deg);
+}
+
+.edge2 {
+  left: 30%;
+  top: 30%;
+  width: 30%;
+  transform: rotate(125deg);
+}
+
+.edge3 {
+  left: 50%;
+  top: 45%;
+  width: 25%;
+  transform: rotate(45deg);
+}
+
+.edge4 {
+  left: 25%;
+  top: 60%;
+  width: 35%;
+  transform: rotate(-15deg);
+}
+
+.edge5 {
+  left: 50%;
+  top: 45%;
+  width: 32%;
+  transform: rotate(-30deg);
+}
+
+/* Pulse effects */
+.pulseEffects > div {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(76, 223, 136, 0.3);
+  opacity: 0;
+  animation: pulse 4s infinite;
+}
+
+.pulse1 {
+  left: 50%;
+  top: 45%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+
+.pulse2 {
+  left: 25%;
+  top: 60%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 2s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Make it responsive */
+@media (max-width: 996px) {
+  .mainDescription {
+    padding-right: 0;
+    margin-bottom: 3rem;
+  }
+  
+  .sectionTitle {
+    font-size: 2.25rem;
+  }
+  
+  .sectionSubtitle {
+    font-size: 1.1rem;
+  }
+  
+  .knowledgeGraph {
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .capabilityItem {
+    padding: 1rem;
+  }
+  
+  .capabilityTitle {
+    font-size: 1rem;
+  }
+  
+  .capabilityText {
+    font-size: 0.9rem;
+  }
+}
+
+/* Network Graph Container - Make it bigger */
+.networkGraph {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  border-radius: 8px;
+  background-color: rgba(10, 10, 12, 0.97);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(76, 223, 136, 0.2);
+}
+
+[data-theme='light'] .networkGraph {
+  background-color: rgba(10, 10, 15, 0.95);
+}
+
+.graphBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at center, rgba(76, 223, 136, 0.03) 0%, rgba(15, 20, 25, 0) 70%),
+    linear-gradient(rgba(76, 223, 136, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(76, 223, 136, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 20px 20px, 20px 20px;
+  background-position: 0 0, 0 0, 0 0;
+}
+
+.graphSvg {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+
+/* Nodes and Edges */
+.node {
+  transition: transform 0.3s ease;
+}
+
+.nodeHovered {
+  filter: drop-shadow(0 0 8px rgba(76, 223, 136, 0.5));
+}
+
+.nodeLabel {
+  user-select: none;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.nodeHighlight {
+  animation: pulse 2s infinite;
+}
+
+.edge path {
+  transition: all 0.3s ease;
+}
+
+.animatedEdge {
+  animation: dash 15s linear infinite;
+}
+
+.dataPacket {
+  filter: drop-shadow(0 0 3px rgba(76, 223, 136, 0.8));
+}
+
+.pulseRing {
+  transform-origin: center;
+  animation: pulse 4s ease-out infinite;
+}
+
+/* Animations */
+@keyframes dash {
+  to {
+    stroke-dashoffset: 100;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* Make sure to keep your existing responsive styles */
+@media (max-width: 996px) {
+  .networkGraph {
+    height: 500px;
+    margin: -10px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .networkGraph {
+    height: 400px;
+    margin: 0;
+  }
+}
+
+/* Responsive adjustments */
+@media (min-width: 1200px) {
+  .networkGraph {
+    height: 650px;
+  }
+}
+
+/* Cursor styles for draggable elements */
+.node:hover {
+  cursor: grab;
+}
+
+.node:active {
+  cursor: grabbing;
+}
+
+.flowArrow {
+  animation: flowDash 15s linear infinite;
+}
+
+@keyframes flowDash {
+  to {
+    stroke-dashoffset: 1000;
+  }
 } 

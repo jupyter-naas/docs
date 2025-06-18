@@ -11,7 +11,7 @@
 
 .highlight {
   color: #3578e5; /* Match the blue in the reference design */
-  font-family: 'Merriweather', serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .peopleDescription {
@@ -115,7 +115,7 @@
   margin-bottom: 0.75rem;
   font-weight: 600;
   color: #1c1e21;
-  font-family: 'Merriweather', serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .joinDescription {

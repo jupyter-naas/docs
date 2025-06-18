@@ -1,0 +1,264 @@
+/* Full-width background container */
+.audienceSection {
+  background-color: #f5f4f6; /* Your specified light grey */
+  width: 100%;
+  position: relative;
+}
+
+[data-theme='dark'] .audienceSection {
+  background-color: var(--apple-black);
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--apple-black);
+  position: relative;
+}
+
+[data-theme='dark'] .sectionTitle {
+  color: var(--apple-white);
+}
+
+.highlight {
+  position: relative;
+  z-index: 1;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background-color: rgba(76, 223, 136, 0.15);
+  z-index: -1;
+  border-radius: 4px;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6rem;
+  height: 2px;
+  background: var(--ifm-color-primary);
+}
+
+.underline {
+  height: 2px;
+  width: 6rem;
+  background: var(--ifm-color-primary);
+  margin: -0.75rem auto 1.5rem;
+}
+
+.audienceList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 3.5rem;
+}
+
+.audienceItem {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: var(--ifm-card-background-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.25s ease;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.audienceItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #4cdf88, #3ac775);
+  border-radius: 4px 0 0 4px;
+  opacity: 0.8;
+}
+
+.audienceItem:hover {
+  transform: translateX(6px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.audienceIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  width: 4rem;
+  min-width: 4rem;
+  border-radius: 50%;
+  margin-right: 1.5rem;
+  background: linear-gradient(135deg, rgba(76, 223, 136, 0.1), rgba(55, 200, 110, 0.2));
+  color: var(--ifm-color-primary-dark);
+  position: relative;
+}
+
+.audienceIcon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--ifm-color-primary-dark);
+  stroke-width: 1.5;
+}
+
+.audienceContent {
+  flex: 1;
+}
+
+.audienceTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-color-emphasis-900);
+  letter-spacing: -0.01em;
+}
+
+.audienceDescription {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ifm-color-emphasis-700);
+  margin: 0;
+}
+
+.audienceLink {
+  margin-left: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  min-width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(76, 223, 136, 0.08);
+  color: #3ac775;
+  transition: all 0.25s ease;
+}
+
+.audienceLink:hover {
+  background-color: rgba(76, 223, 136, 0.2);
+  color: #2e9e5e;
+  text-decoration: none;
+}
+
+.audienceLinkArrow {
+  font-size: 1.25rem;
+  transition: transform 0.2s ease;
+}
+
+.audienceLink:hover .audienceLinkArrow {
+  transform: translateX(3px);
+}
+
+.audienceLinkIcon {
+  stroke: currentColor;
+}
+
+.sectionCta {
+  margin-top: 3rem;
+}
+
+.audienceTag {
+  display: inline-block;
+  padding: 0.35rem 0.8rem;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  background: var(--apple-white);
+  color: var(--apple-grey-dark);
+  border: 1px solid var(--apple-grey-lighter);
+}
+
+[data-theme='dark'] .audienceTag {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--apple-grey-light);
+  border: 1px solid var(--apple-grey-darker);
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  background: var(--ifm-color-primary);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(29, 176, 89, 0.2);
+}
+
+.ctaButton:hover {
+  transform: translateY(-1px);
+  background: var(--ifm-color-primary-dark);
+  box-shadow: 0 6px 16px rgba(29, 176, 89, 0.25);
+}
+
+.ctaIconSvg {
+  margin-right: 0.75rem;
+  stroke: currentColor;
+}
+
+@media (max-width: 996px) {
+  .sectionTitle {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .audienceItem {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+  
+  .audienceItem::before {
+    width: 100%;
+    height: 4px;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .audienceIcon {
+    margin-right: 0;
+    margin-bottom: 1.25rem;
+    height: 3.5rem;
+    width: 3.5rem;
+  }
+  
+  .audienceTitle {
+    font-size: 1.2rem;
+  }
+  
+  .audienceDescription {
+    margin-bottom: 1.25rem;
+  }
+  
+  .audienceLink {
+    margin-left: 0;
+  }
+  
+  .ctaButton {
+    width: 100%;
+    max-width: 320px;
+  }
+} 

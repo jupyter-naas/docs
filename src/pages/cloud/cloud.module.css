@@ -1,0 +1,231 @@
+.heroSection {
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  padding: 6rem 2rem;
+  text-align: center;
+  color: white;
+}
+
+.heroSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(76, 223, 136, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroContent h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(90deg, #00f2fe 0%, #4facfe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #e0e0e0;
+}
+
+.ctaContainer {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.primaryButton {
+  background: linear-gradient(90deg, #00f2fe 0%, #4facfe 100%);
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
+  text-decoration: none;
+  color: white;
+}
+
+.secondaryButton {
+  background: transparent;
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid #4facfe;
+  transition: all 0.2s;
+}
+
+.secondaryButton:hover {
+  background: rgba(79, 172, 254, 0.1);
+  text-decoration: none;
+  color: white;
+}
+
+.featuresSection {
+  padding: 6rem 2rem;
+  background: #000000;
+}
+
+.featuresSection h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  color: white;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featureCard {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid #333;
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  border-color: #4facfe;
+}
+
+.featureIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.featureCard h3 {
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.featureCard p {
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+.pricingSection {
+  padding: 6rem 2rem;
+  background: #000000;
+}
+
+.pricingSection h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  color: white;
+}
+
+.pricingGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pricingCard {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 15px;
+  transition: transform 0.3s;
+  border: 1px solid #333;
+}
+
+.pricingCard:hover {
+  transform: translateY(-5px);
+  border-color: #4facfe;
+}
+
+.pricingCard h3 {
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.pricingCard p {
+  color: #e0e0e0;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.pricingList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pricingList li {
+  color: #e0e0e0;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #333;
+}
+
+.pricingList li:last-child {
+  border-bottom: none;
+}
+
+.ctaSection {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  text-align: center;
+  color: white;
+}
+
+.ctaSection h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.ctaSection p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #e0e0e0;
+}
+
+@media (max-width: 768px) {
+  .heroContent h1 {
+    font-size: 2.5rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.1rem;
+  }
+
+  .ctaContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .featuresGrid,
+  .pricingGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .featuresSection,
+  .pricingSection {
+    padding: 4rem 1rem;
+  }
+} 

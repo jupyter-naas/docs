@@ -3,33 +3,60 @@
  * and scoped locally.
  */
 
-/* Hero section styles with dark theme */
+/* Completely reset the hero banner */
 .heroBanner {
   position: relative;
-  text-align: center;
-  overflow: hidden;
-  min-height: 100vh;
+  width: 100%; /* Simple 100% width */
+  height: 100vh; /* Full viewport height */
+  padding: 0;
+  margin: 0;
+  overflow: hidden; /* Prevent overflow */
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
-  background-color: transparent; /* Remove the red debug tint */
+  background-color: black; /* Fallback color */
 }
 
-/* Video background container */
+/* Make video container fill the entire hero area */
 .videoBackground {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
   z-index: 0;
-  background-color: #181a1c; /* Dark theme as fallback */
-  pointer-events: none; /* Critical fix: prevent video from blocking clicks */
 }
 
-/* Video element styling */
+/* Reset other potentially problematic CSS */
+.container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: var(--ifm-container-width);
+  margin: 0 auto;
+  padding: 0 var(--ifm-spacing-horizontal);
+}
+
+/* Add a body style to ensure no margin/padding issues */
+:global(body) {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Reset the main container width */
+:global(#__docusaurus) {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Subtle overlay instead of heavy black bar */
+.videoOverlay {
+  background-color: rgba(0, 0, 0, 0.2) !important; /* Much lighter overlay */
+  z-index: 1;
+}
+
+/* Video element - clean full coverage */
 .videoBackground video {
   min-width: 100%;
   min-height: 100%;
@@ -40,19 +67,97 @@
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   object-fit: cover;
-  pointer-events: none; /* Make sure the video doesn't block clicks */
+  z-index: 0;
 }
 
-/* Grey overlay for the video */
-.videoOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
+/* Hero content container - no unnecessary padding */
+.heroContainer {
+  position: relative;
+  z-index: 10;
   width: 100%;
-  height: 100%;
-  background-color: rgba(24, 26, 28, 0.7); /* Dark theme with opacity */
-  z-index: 1;
-  pointer-events: none; /* This is the critical fix - allow clicks to pass through */
+  max-width: none; /* Remove any max-width constraints */
+  padding: 0 1rem; /* Minimal padding only for content readability */
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: var(--ifm-container-width); /* Constrain only content width, not container */
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Make title stand out against video */
+.heroTitle {
+  font-size: 4.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: -0.03em;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Make subtitle cleaner */
+.heroSubtitle {
+  font-size: 1.5rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 800px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Clean button layout */
+.heroButtons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.contentSection {
+  padding: 5rem 0;
+  position: relative;
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--apple-white); /* Light theme default */
+}
+
+[data-theme='dark'] .contentSection {
+  background-color: var(--apple-black); /* Dark theme default */
+}
+
+.finalCtaSection {
+  padding: 5rem 0;
+  margin: 0;
+  background: linear-gradient(45deg, #181a1c, #2a2d33);
+  color: white;
+  text-align: center;
+}
+
+/* Mobile adjustments - maintain clean look */
+@media screen and (max-width: 996px) {
+  .heroTitle {
+    font-size: 3.5rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .heroTitle {
+    font-size: 2.8rem;
+  }
+  
+  .heroButtons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+  }
 }
 
 /* Primary network layer - keep your existing effect but with reduced opacity */
@@ -109,29 +214,6 @@
   }
 }
 
-.container {
-  position: relative;
-  z-index: 3; /* Increase z-index to appear above video and overlay */
-  max-width: 1000px;
-  padding: 2rem;
-  margin: 0 auto;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 100vh;
-  pointer-events: auto; /* Ensure content is clickable */
-}
-
-.heroContent {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem 0;
-  position: relative;
-  z-index: 3; /* Ensure content appears above video */
-  color: white; /* Force all text to be white */
-}
-
 .heroContent * {
   color: white; /* Force ALL child elements to have white text */
 }
@@ -147,143 +229,59 @@
   margin-bottom: 1.5rem;
 }
 
-.heroTitle {
-  font-family: 'Merriweather', serif;
-  font-weight: 700;
-  font-size: 4rem;
-  line-height: 1.15;
-  margin-bottom: 1.5rem;
-  color: white !important; /* Force white with !important */
-}
-
 .heroTitleHighlight {
-  font-family: 'Merriweather', serif;
+  font-family: 'Inter', sans-serif;
   color: var(--ifm-color-primary);
   display: block;
 }
 
-.heroSubtitle {
-  font-size: 1.25rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9) !important; /* Slightly more opaque white */
-  margin-bottom: 2.5rem;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.heroButtons {
+/* Standardize button styling across site */
+.heroButtonPrimary, 
+.heroButtonSecondary {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.heroButton {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-  min-width: 180px;
-  display: inline-flex;
-  justify-content: center;
   align-items: center;
+  font-weight: 500;
+  padding: 0.85rem 1.75rem;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  text-decoration: none;
 }
 
+/* Primary button - match access whitepaper button */
 .heroButtonPrimary {
-  background: #0a66c2;
+  background: var(--ifm-color-primary);
+  color: var(--apple-black) !important;
   border: none;
-  color: white;
 }
 
 .heroButtonPrimary:hover {
-  background: #0958a7;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(10, 102, 194, 0.25);
+  background: var(--ifm-color-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(76, 223, 136, 0.2);
 }
 
+/* Secondary button - white variant */
 .heroButtonSecondary {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.9); 
+  color: var(--apple-black) !important;
+  border: 1px solid rgba(255, 255, 255, 0.95);
 }
 
 .heroButtonSecondary:hover {
-  background: rgba(255, 255, 255, 0.15);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
 }
 
-/* Light mode overrides */
+/* Icon styling for both buttons */
+.buttonIcon {
+  margin-right: 0.75rem;
+  stroke: currentColor;
+}
+
+/* Light mode overrides - transparent background */
 [data-theme='light'] .heroBanner {
-  background: #2c2d31;
-}
-
-/* Media Queries */
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 3rem 0;
-  }
-  
-  
-  .heroSubtitle {
-    font-size: 1.1rem;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .heroTitle, .heroTitleHighlight {
-    font-size: 3rem;
-  }
-}
-
-/* Content section (after hero) styles */
-.contentSection {
-  padding: 5rem 0;
-  background-color: var(--custom-background-color);
-}
-
-.contentTitle {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  text-align: center;
-  position: relative;
-  padding-bottom: 1rem;
-}
-
-.contentTitle::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: var(--ifm-color-primary);
-  border-radius: 2px;
-}
-
-.contentText {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  margin-bottom: 2rem;
-}
-
-/* Add these to your media query */
-@media screen and (max-width: 996px) {
-  .contentTitle {
-    font-size: 2rem;
-  }
-  
-  .contentText {
-    font-size: 1rem;
-  }
-  
-  .heroButtons {
-    flex-direction: column;
-    align-items: center;
-  }
+  background: transparent;
 }
 
 /* Add missing drift animation */
@@ -342,4 +340,29 @@
 .heroBanner a.button--secondary,
 .heroContent a.button--secondary {
   color: white !important;
+}
+
+/* New section styles */
+.altBackground {
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+/* Ensure responsive design */
+@media screen and (max-width: 768px) {
+  .contentSection {
+    padding: 3rem 0; /* Keep vertical padding only */
+  }
+  
+  /* Keep your existing button styles */
+  .heroButtons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .heroButtonPrimary, .heroButtonSecondary {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
 }

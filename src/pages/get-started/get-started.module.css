@@ -1,0 +1,309 @@
+.heroSection {
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  padding: 6rem 2rem;
+  text-align: center;
+  color: white;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroContent h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(90deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-darker) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #e0e0e0;
+}
+
+.pathsSection {
+  padding: 6rem 2rem;
+  background: #000000;
+}
+
+.pathsSection h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  color: white;
+}
+
+.pathsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pathCard {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid #333;
+  text-align: center;
+}
+
+.pathCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  border-color: var(--ifm-color-primary);
+}
+
+.pathIcon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: var(--ifm-color-primary);
+}
+
+.pathCard h3 {
+  margin-bottom: 1rem;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.pathCard p {
+  color: #e0e0e0;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.pathList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  text-align: left;
+}
+
+.pathList li {
+  color: #e0e0e0;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #333;
+  display: flex;
+  align-items: center;
+}
+
+.pathList li:last-child {
+  border-bottom: none;
+}
+
+.pathList li::before {
+  content: "✓";
+  color: var(--ifm-color-primary);
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+
+.stepsSection {
+  padding: 6rem 2rem;
+  background: #000000;
+}
+
+.stepsSection h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  color: white;
+}
+
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stepCard {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 15px;
+  position: relative;
+  transition: transform 0.3s;
+  border: 1px solid #333;
+}
+
+.stepCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--ifm-color-primary);
+}
+
+.stepNumber {
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  background: linear-gradient(90deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-darker) 100%);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.stepCard h3 {
+  margin: 1rem 0;
+  color: white;
+}
+
+.stepCard p {
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+.resourcesSection {
+  padding: 6rem 2rem;
+  background: #000000;
+}
+
+.resourcesSection h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  color: white;
+}
+
+.resourcesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.resourceCard {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+  border: 1px solid #333;
+}
+
+.resourceCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--ifm-color-primary);
+}
+
+.resourceCard h3 {
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.resourceCard p {
+  color: #e0e0e0;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.resourceLink {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.resourceLink:hover {
+  color: var(--ifm-color-primary-darker);
+  text-decoration: none;
+}
+
+.ctaSection {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  text-align: center;
+  color: white;
+}
+
+.ctaSection h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.ctaSection p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #e0e0e0;
+}
+
+.ctaContainer {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.primaryButton {
+  background: linear-gradient(90deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-darker) 100%);
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(var(--ifm-color-primary-rgb), 0.4);
+  text-decoration: none;
+  color: white;
+}
+
+.secondaryButton {
+  background: transparent;
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid var(--ifm-color-primary);
+  transition: all 0.2s;
+}
+
+.secondaryButton:hover {
+  background: rgba(var(--ifm-color-primary-rgb), 0.1);
+  text-decoration: none;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .heroContent h1 {
+    font-size: 2.5rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.1rem;
+  }
+
+  .ctaContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pathsGrid,
+  .stepsGrid,
+  .resourcesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .pathsSection,
+  .stepsSection,
+  .resourcesSection {
+    padding: 4rem 1rem;
+  }
+} 

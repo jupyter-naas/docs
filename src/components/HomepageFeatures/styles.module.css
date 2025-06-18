@@ -1,0 +1,63 @@
+.features {
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+    width: 100%;
+    background-color: var(--custom-background-color);
+  }
+  
+  .featuresTitle {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  /* Add these styles to match the FeaturedVideosSection styling */
+  .sectionHeader {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .sectionTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  .highlight {
+    color: #9e7418;
+  }
+  
+  .sectionDescription {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    color: #444;
+    line-height: 1.6;
+  }
+  
+  /* Keep your existing styles below */
+  .features {
+    padding: 80px 0;
+    position: relative;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+  }
+  
+  /* Add subtle texture overlay like in the videos section */
+  .features::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.6;
+    pointer-events: none;
+  } 
