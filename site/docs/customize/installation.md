@@ -338,7 +338,7 @@ curl -H "Authorization: Bearer $OPENAI_API_KEY" \
 
 **Community Support**:
 - [GitHub Discussions](https://github.com/jupyter-naas/abi/discussions) - Community Q&A
-- [Discord](https://discord.gg/naas) - Real-time community chat
+- [Slack](https://naas-club.slack.com) - Real-time community chat
 
 **Direct Support**:
 - Email: [support@naas.ai](mailto:support@naas.ai)

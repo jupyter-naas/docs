@@ -198,7 +198,7 @@ curl -H "Authorization: Bearer YOUR_TOKEN" \
 - Check the knowledge base
 
 **Community**:
-- [Discord server](https://discord.gg/naas) for community help
+- [Slack community](https://naas-club.slack.com) for community help
 - [GitHub discussions](https://github.com/jupyter-naas/abi/discussions) for technical questions
 
 **Direct Support**:
@@ -215,9 +215,9 @@ Now that you're up and running:
 - [Build workflows](/customize/workflows) to automate tasks
 
 🔧 **Integrate Deeper**:
-- [API Documentation](/development/api-integration/api-gateway) for system integration
+- [API Documentation](/scale/api-integration/api-gateway) for system integration
 - [Platform Architecture](/get-started/system-architecture) to understand the full system
-- [Scale Guides](/development/overview) for advanced usage
+- [Scale Guides](/scale/overview) for advanced usage
 
 🚀 **Scale Up**:
 - Explore enterprise deployment options

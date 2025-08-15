@@ -157,3 +157,16 @@
 .dropdown__menu {
   min-width: 180px;
 }
+
+/* Navbar dark theme styling - match exact body background */
+[data-theme='dark'] .navbar {
+  --ifm-navbar-background-color: var(--ifm-background-color);
+  background-color: var(--ifm-background-color) !important;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+/* Ensure navbar matches body background in dark mode */
+[data-theme='dark'] .navbar--dark {
+  --ifm-navbar-background-color: var(--ifm-background-color);
+  background-color: var(--ifm-background-color) !important;
+}

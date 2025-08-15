@@ -137,10 +137,10 @@ Ready to get started? Choose your path:
 
 ### Learn the Architecture
 - [System Architecture](/get-started/system-architecture) - Understand how everything connects
-- [Platform Services](/development/platform-services) - Deep dive into each component
-- [Integration Patterns](/development/integration-patterns) - Connect your systems
+- [Platform Services](/scale/platform-services) - Deep dive into each component
+- [Integration Patterns](/scale/integration-patterns) - Connect your systems
 
 ### Get Support
 - **Help & Support**: [support@naas.ai](mailto:support@naas.ai)
-- **Community**: [Discord](https://discord.gg/naas)
+- **Community**: [Slack](https://naas-club.slack.com)
 - **Platform Access**: [naas.ai](https://naas.ai)

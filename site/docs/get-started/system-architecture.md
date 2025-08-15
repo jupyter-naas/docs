@@ -320,5 +320,5 @@ This architecture provides the foundation for understanding how to customize, in
 ## Next Steps
 
 - **Start Customizing**: [Install ABI CLI](/customize/installation) for local development
-- **Integrate Systems**: [Development guides](/development/platform-services) for API integration
+- **Integrate Systems**: [Development guides](/scale/platform-services) for API integration
 - **Scale Up**: Contact us for enterprise deployment planning
