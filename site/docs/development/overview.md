@@ -53,6 +53,7 @@ graph TB
 
 ### For Developers
 - **[API Gateway](/development/api-integration/api-gateway)**: REST endpoints for any language
+- **[ABI API](/development/api-integration/abi-api)**: Direct AI engine integration
 - **[Python SDK](/development/client-sdks/python)**: Full-featured Python library
 - **Rate limits**: 1,000 requests/month (free), unlimited (pro)
 
