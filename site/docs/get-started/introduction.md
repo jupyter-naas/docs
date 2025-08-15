@@ -76,7 +76,7 @@ When you need more control, use ABI for custom development:
 - **Open source** - Full control over your AI
 - **Extensible framework** - Connect any service
 
-### 🚀 **Scale with Development**
+### 🚀 **Scale your AI System**
 Integrate deeply with platform APIs and services:
 - **API integration** - Connect your systems
 - **Custom deployments** - Enterprise scaling
