@@ -215,9 +215,9 @@ Now that you're up and running:
 - [Build workflows](/customize/workflows) to automate tasks
 
 🔧 **Integrate Deeper**:
-- [API Documentation](/development/api-reference) for system integration
+- [API Documentation](/development/api-integration/api-gateway) for system integration
 - [Platform Architecture](/get-started/system-architecture) to understand the full system
-- [Development Guides](/development/platform-services) for advanced usage
+- [Scale Guides](/development/overview) for advanced usage
 
 🚀 **Scale Up**:
 - Explore enterprise deployment options

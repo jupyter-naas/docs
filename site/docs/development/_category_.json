@@ -1,8 +1,8 @@
 {
-  "label": "Development",
+  "label": "Scale",
   "position": 3,
   "link": {
     "type": "generated-index",
-    "description": "Build applications and integrations with the Naas platform."
+    "description": "Scale your Naas deployment with infrastructure tools and services."
   }
 }

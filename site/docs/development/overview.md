@@ -3,97 +3,100 @@ sidebar_position: 1
 slug: /development
 ---
 
-# Development Overview
+# Scale Overview
 
-Build applications and integrations with the Naas Universal Data & AI Platform.
+Scale your Naas deployment with infrastructure tools, SDKs, and platform services.
 
-## Quick Start
+## Scaling Tools
 
-The fastest way to start building with Naas:
+Based on the actual Naas repositories:
 
-1. **Get API Access**: [Sign up](https://naas.ai) for a free account
-2. **Generate API Key**: Dashboard → Settings → API Keys  
-3. **Choose Integration Method**:
-   - [API Gateway](/development/api-integration/api-gateway) - Direct REST API
-   - [Python SDK](/development/client-sdks/python) - `pip install naas`
-   - [Chrome Extension](/development/client-sdks/chrome-extension) - Browser integration
+1. **[naas-python SDK](/development/client-sdks/python)**: Infrastructure management (`pip install naas-python`)
+2. **[naas-models](/development/client-sdks/models)**: Protocol definitions for service communication
+3. **[Infrastructure APIs](/development/api-integration/api-gateway)**: Platform services and gateways
+4. **[ABI API](/development/api-integration/abi-api)**: Local AI agent orchestration
 
-## Platform Architecture
+## Infrastructure Architecture
 
 ```mermaid
 graph TB
-    A[Your Application] --> B[API Gateway]
-    B --> C[AI Agents]
-    B --> D[Data Storage]
-    B --> E[Workflow Engine]
+    A[Local ABI] --> B[AI Agents]
+    A --> C[Ontology Store]
     
-    F[Python SDK] --> B
-    G[Chrome Extension] --> B
-    H[Direct API] --> B
+    D[naas-python SDK] --> E[Spaces]
+    D --> F[Storage]
+    D --> G[Assets]
+    
+    H[naas-models] --> I[gRPC Services]
+    H --> J[Protocol Buffers]
+    
+    K[API Gateway] --> L[Platform Services]
 ```
 
-## Core Capabilities
+## Scaling Capabilities
 
-### AI Agent Development
-- **Create custom agents** with specialized knowledge
-- **Chain multiple agents** for complex workflows
-- **Integrate external tools** and data sources
+### Infrastructure Management
+- **Space Operations**: Manage cloud environments with naas-python
+- **Storage Systems**: Handle data lakes and asset storage  
+- **Asset Management**: Deploy and version application resources
 
-### Data Integration
-- **Upload datasets** via API or SDK
-- **Query data** with natural language
-- **Real-time processing** with webhooks
+### Service Communication
+- **Protocol Buffers**: Type-safe service definitions via naas-models
+- **gRPC Integration**: Multi-language service communication
+- **API Gateways**: Centralized service routing and management
 
-### Workflow Automation
-- **Schedule tasks** with cron expressions
-- **Trigger workflows** from external events
-- **Chain AI operations** with data processing
+### AI Orchestration
+- **Local ABI**: Multi-agent AI workflows with ontology integration
+- **Model Management**: Support for ChatGPT, Claude, Gemini, Grok, Llama, Mistral
+- **Workflow Automation**: Complex business process orchestration
 
-## Integration Paths
+## Scaling Paths
 
-### For Developers
-- **[API Gateway](/development/api-integration/api-gateway)**: REST endpoints for any language
-- **[ABI API](/development/api-integration/abi-api)**: Direct AI engine integration
-- **[Python SDK](/development/client-sdks/python)**: Full-featured Python library
-- **Rate limits**: 1,000 requests/month (free), unlimited (pro)
+### Infrastructure Teams
+- **[naas-python SDK](/development/client-sdks/python)**: Manage spaces, storage, and assets
+- **[naas-models](/development/client-sdks/models)**: Protocol definitions for service integration
+- **[Infrastructure APIs](/development/api-integration/api-gateway)**: Platform service gateways
 
-### For End Users
-- **[Chrome Extension](/development/client-sdks/chrome-extension)**: AI assistance on any website
-- **Web Platform**: [naas.ai](https://naas.ai) - No coding required
+### AI Teams  
+- **[ABI API](/development/api-integration/abi-api)**: Local multi-agent AI orchestration
+- **Multi-model support**: ChatGPT, Claude, Gemini, Grok, Llama, Mistral, DeepSeek
+- **Ontology management**: BFO-compliant semantic data handling
 
-### For Enterprises
-- **Custom deployment** options available
-- **SLA guarantees** and dedicated support
-- **Volume pricing** for high-traffic applications
+### Platform Teams
+- **Protocol Buffer integration**: Type-safe service communication
+- **gRPC services**: Multi-language platform integration
+- **Hexagonal architecture**: Clean infrastructure patterns
 
-## Example: Build a Data Analysis Agent
+## Example: Scale Infrastructure
 
 ```python
-import naas
+import naas_python as naas
 
-# 1. Initialize client
-client = naas.Client(api_key="your_key")
+# 1. Manage cloud spaces
+naas.space.add(space_name="production")
 
-# 2. Create specialized agent
-analyst = client.agents.create(
-    name="Sales Analyst",
-    prompt="Analyze sales data and provide actionable insights"
+# 2. Create storage systems
+naas.storage.create(
+    workspace_id="prod-123",
+    storage_name="data-lake"
 )
 
-# 3. Upload data
-dataset = client.data.upload("sales_q4.csv")
-
-# 4. Get AI insights
-insights = analyst.analyze(dataset, 
-    "What are the top 3 growth opportunities?")
-
-print(insights.content)
+# 3. Deploy application assets
+naas.asset.create(
+    workspace_id="prod-123", 
+    asset_creation=deployment_config
+)
 ```
+
+## Repository Links
+
+- **[jupyter-naas/naas-python](https://github.com/jupyter-naas/naas-python)**: Infrastructure SDK
+- **[jupyter-naas/naas-models](https://github.com/jupyter-naas/naas-models)**: Protocol definitions  
+- **[jupyter-naas/abi](https://github.com/jupyter-naas/abi)**: AI orchestration system
 
 ## Getting Help
 
-- **[Community Discord](https://discord.gg/naas)**: Connect with other developers
 - **[GitHub Discussions](https://github.com/jupyter-naas/abi/discussions)**: Technical questions
-- **[Support Email](mailto:support@naas.ai)**: Direct assistance
+- **[Support Email](mailto:support@naas.ai)**: Infrastructure assistance
 
-Start building with the [API Gateway](/development/api-integration/api-gateway) or install the [Python SDK](/development/client-sdks/python) to get started immediately.
+Start scaling with the [naas-python SDK](/development/client-sdks/python) or [ABI API](/development/api-integration/abi-api) for AI orchestration.

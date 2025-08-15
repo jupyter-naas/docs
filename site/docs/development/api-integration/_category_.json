@@ -1,8 +1,8 @@
 {
-  "label": "API Integration",
+  "label": "Infrastructure APIs",
   "position": 1,
   "link": {
     "type": "generated-index",
-    "description": "Integrate with Naas platform APIs and services."
+    "description": "Platform APIs for scaling and infrastructure management."
   }
 }

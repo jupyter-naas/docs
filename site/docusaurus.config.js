@@ -93,7 +93,7 @@ const config = {
           {
             to: "development",
             position: "left",
-            label: "Develop",
+            label: "Scale",
           },
           // Right side: External actions & resources
           {
