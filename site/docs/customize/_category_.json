@@ -1,0 +1,8 @@
+{
+  "label": "Customize",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Customize your AI experience with ABI - the local CLI and development framework for building custom agents and workflows."
+  }
+}

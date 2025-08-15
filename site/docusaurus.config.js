@@ -42,18 +42,19 @@ const config = {
           routeBasePath: '/', // Add this line to serve docs from the base URL
           // Remove this to remove the "sedit this page" links.
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/jupyter-naas/site",
-        },
+        blog: false,
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
       }),
     ],
   ],
+
+  themes: ['@docusaurus/theme-mermaid'],
+
+  markdown: {
+    mermaid: true,
+  },
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -78,36 +79,47 @@ const config = {
           src: "/img/naas.png",
         },
         items: [
+          // Left side: Core user journey
           {
-            to: "getting-started/building-trust-in-ai",
+            to: "get-started/quickstart",
             position: "left",
-            label: `Docs`,
+            label: "Get Started",
           },
           {
-            to: "blog",
+            to: "customize",
+            position: "left", 
+            label: "Customize",
+          },
+          {
+            to: "development",
             position: "left",
-            label: `Blog`,
+            label: "Develop",
           },
-          {
-            to: "https://join.slack.com/t/naas-club/shared_invite/zt-1970s5rie-dXXkigAdEJYc~LPdQIEaLA",
-            label: "Community",
-            position: "left",
-          },
-          {
-            to: "https://api.naas.ai/redoc",
-            position: "right",
-            label: `API Reference`,
-          },
-          {
-            to: "https://github.com/jupyter-naas",
-            label: "GitHub",
-            position: "right",
-          },
-
+          // Right side: External actions & resources
           {
             to: "https://naas.ai/",
-            label: "Platform Access",
+            label: "Try Platform",
             position: "right",
+            className: "navbar__item--cta",
+          },
+          {
+            type: "dropdown",
+            label: "Resources",
+            position: "right",
+            items: [
+              {
+                to: "https://api.naas.ai/redoc",
+                label: "API Reference",
+              },
+              {
+                to: "https://github.com/jupyter-naas",
+                label: "GitHub",
+              },
+              {
+                to: "https://join.slack.com/t/naas-club/shared_invite/zt-1970s5rie-dXXkigAdEJYc~LPdQIEaLA",
+                label: "Community (Slack)",
+              },
+            ],
           },
         ],
       },

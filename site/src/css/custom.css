@@ -74,3 +74,86 @@
     --ifm-footer-link-color: var(--ifm-color-secondary);
     --ifm-footer-title-color: var(--ifm-color-white);
   }
+
+.markdown h1:first-child {
+  --ifm-h1-font-size: 2.5rem;
+  margin-bottom: calc(var(--ifm-h1-vertical-rhythm-bottom) * var(--ifm-leading));
+}
+
+.markdown h1 {
+  --ifm-h1-font-size: 2.5rem;
+}
+
+.markdown h2 {
+  --ifm-h2-font-size: 2rem;
+}
+
+.markdown h3 {
+  --ifm-h3-font-size: 1.5rem;
+}
+
+.markdown h4 {
+  --ifm-h4-font-size: 1.25rem;
+}
+
+.markdown h5 {
+  --ifm-h5-font-size: 1.125rem;
+}
+
+.markdown h6 {
+  --ifm-h6-font-size: 1rem;
+}
+
+/* Body text and paragraph sizing */
+.markdown p,
+.markdown li,
+.markdown td,
+.markdown th {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Large text for lead paragraphs */
+.markdown .lead,
+.markdown > p:first-of-type {
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+/* Small text for captions, footnotes */
+.markdown small,
+.markdown .small {
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+/* Code text sizing */
+.markdown code {
+  font-size: 0.9rem;
+}
+
+.markdown pre code {
+  font-size: 0.875rem;
+}
+
+/* Navbar CTA styling */
+.navbar__item--cta a {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white !important;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.navbar__item--cta a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  text-decoration: none;
+}
+
+/* Dropdown menu styling */
+.dropdown__menu {
+  min-width: 180px;
+}

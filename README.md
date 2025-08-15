@@ -37,3 +37,32 @@ Your feedback is instrumental in shaping the future of Naas.ai. As we improve an
 Contact us at support@naas.ai if you are interested, and let us know why in the email.
 
 You can now dive into the Naas Docs Beta and discover how to harness the full potential of our platform. We're eager to support you every step of the way. Let's shape the future of data and AI together.
+
+## Documentation Development
+
+This documentation is synchronized with the actual Naas codebase to ensure accuracy and completeness.
+
+### Updating Codebase References
+
+To sync with the latest changes from all Naas repositories:
+
+```bash
+cd codebases && ./update_codebases.sh
+```
+
+Or use the make target:
+
+```bash
+make update-codebases
+```
+
+This script updates the following repositories:
+- **abi** - Agentic Brain Infrastructure (AI Operating System)
+- **workspace** - React-based Web Application  
+- **naas-python** - Python SDK & CLI Tools
+- **chrome-extension** - Browser Integration
+- **naas-models** - Protocol Definitions & Model Management
+- **naas-api-ce** - Community Edition API Gateway
+- **credits-api** - Billing & Usage Management System
+
+The codebases are stored in `codebases/` and excluded from version control via `.gitignore`.

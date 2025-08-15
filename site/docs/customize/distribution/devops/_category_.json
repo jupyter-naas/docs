@@ -1,0 +1,8 @@
+{
+  "label": "DevOps",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "DevOps workflows for production deployment and infrastructure management."
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "label": "Distribution",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Deploy and distribute ABI modules through marketplace and DevOps workflows."
+  }
+}

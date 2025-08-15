@@ -32,4 +32,7 @@ serve: $(project_name) $(project_name)/build
 $(project_name):
 	$(dc) docusaurus npx create-docusaurus@latest $(project_name) classic
 
-.PHONY: start build setup up
+update-codebases:
+	cd codebases && ./update_codebases.sh
+
+.PHONY: start build setup up update-codebases
