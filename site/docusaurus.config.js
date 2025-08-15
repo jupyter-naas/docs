@@ -39,7 +39,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          routeBasePath: '/', // Add this line to serve docs from the base URL
+          routeBasePath: '/', // Serve docs from root URL
           // Remove this to remove the "sedit this page" links.
         },
         blog: false,
