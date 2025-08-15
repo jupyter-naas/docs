@@ -4,157 +4,171 @@ sidebar_position: 1
 
 # Python SDK
 
-The official Python SDK for building applications with the Naas platform.
+The official Python SDK for managing cloud-native applications and infrastructure through Naas services, from the [naas-python repository](https://github.com/jupyter-naas/naas-python).
+
+## Overview
+
+**naas-python** is built using hexagonal (ports and adapters) architecture and provides:
+- **Space Operations**: Manage cloud environments
+- **Storage Operations**: Handle data storage and assets
+- **Asset Management**: Create and manage application assets
 
 ## Installation
 
 ```bash
-pip install naas
+# Install from PyPI
+pip install naas-python
+
+# Or with Poetry
+poetry add naas-python
 ```
 
 ## Quick Start
 
-```python
-import naas
-
-# Initialize client
-client = naas.Client(api_key="your_api_key")
-
-# Create an AI agent
-agent = client.agents.create(
-    name="Data Analyst",
-    prompt="You are an expert data analyst. Help analyze datasets and provide insights."
-)
-
-# Use the agent
-result = agent.complete("Analyze this sales data and find trends")
-print(result.content)
-```
-
-## Authentication
+### As a Library
 
 ```python
-# Method 1: Environment variable
-import os
-os.environ['NAAS_API_KEY'] = 'your_api_key'
-client = naas.Client()
+import naas_python as naas
 
-# Method 2: Direct initialization
-client = naas.Client(api_key="your_api_key")
+# Space operations
+naas.space.add(space_name="my-space")
 
-# Method 3: Config file
-client = naas.Client.from_config('~/.naas/config.yaml')
+# Storage operations  
+naas.storage.create(workspace_id="123", storage_name="my-storage")
+
+# Asset operations
+naas.asset.create(workspace_id="123", asset_creation=asset_data)
 ```
 
-## Core Features
-
-### Agent Management
-```python
-# List all agents
-agents = client.agents.list()
-
-# Get specific agent
-agent = client.agents.get("agent_id")
-
-# Update agent
-agent.update(prompt="Updated system prompt")
-
-# Delete agent
-agent.delete()
-```
-
-### Data Operations
-```python
-# Upload data
-dataset = client.data.upload("sales_data.csv")
-
-# Query data
-results = client.data.query("SELECT * FROM sales WHERE amount > 1000")
-
-# Process with AI
-insights = client.agents.analyze(dataset, prompt="Find key trends")
-```
-
-### Workflow Automation
-```python
-# Create workflow
-workflow = client.workflows.create({
-    "name": "Daily Report",
-    "schedule": "0 9 * * *",  # Every day at 9 AM
-    "steps": [
-        {"type": "data_fetch", "source": "database"},
-        {"type": "ai_analysis", "agent": "analyst"},
-        {"type": "email_send", "to": "team@company.com"}
-    ]
-})
-
-# Execute workflow
-result = workflow.execute()
-```
-
-## CLI Tools
-
-The SDK includes a command-line interface:
+### Command Line Interface
 
 ```bash
-# Login
-naas login
+# Space operations
+naas-python space add --name my-space
 
-# List agents
-naas agents list
+# Storage operations
+naas-python storage create --workspace-id 123 --name my-storage
 
-# Create agent
-naas agents create --name "Assistant" --prompt "You are helpful"
-
-# Run agent
-naas agents run "agent_id" --input "Hello world"
-
-# Upload data
-naas data upload sales.csv
-
-# Start workflow
-naas workflows start daily-report
+# Asset operations
+naas-python asset create --workspace-id 123 --data asset_data.json
 ```
+
+## Development
+
+### Dependencies
+
+Based on the actual [pyproject.toml](https://github.com/jupyter-naas/naas-python):
+
+```toml
+[tool.poetry.dependencies]
+python = "^3.9"
+typer = { extras = ["all"], version = "^0.9.0" }
+requests = "^2.31.0"
+cachetools = "^5.3.1"
+jinja2 = "^3.0.1"
+naas-models = "^1.11.2"
+grpcio = "^1.60.0"
+pydash = "^7.0.7"
+boto3 = "^1.34.128"
+pydantic = "<2.9"
+```
+
+### Local Development
+
+```bash
+# Clone repository
+git clone https://github.com/jupyter-naas/naas-python.git
+cd naas-python
+
+# Install with Poetry
+poetry install
+
+# Run tests
+make test
+```
+
+## Architecture
+
+The SDK uses **hexagonal (ports and adapters) architecture** for clean separation of concerns:
+
+- **Domain Layer**: Core business logic
+- **Application Layer**: Use cases and workflows  
+- **Infrastructure Layer**: External integrations (API, storage, etc.)
+- **Ports**: Interfaces for external communication
+- **Adapters**: Concrete implementations of ports
 
 ## Error Handling
 
+The SDK implements custom exceptions for different scenarios:
+
 ```python
-from naas.exceptions import NaasAPIError, RateLimitError
+from naas_python.exceptions import (
+    AssetNotFound,
+    AssetConflictError, 
+    AssetRequestError,
+    NaasException
+)
 
 try:
-    result = client.agents.complete("prompt")
-except RateLimitError as e:
-    print(f"Rate limit exceeded. Reset at: {e.reset_time}")
-except NaasAPIError as e:
-    print(f"API error: {e.message}")
+    naas.asset.create(workspace_id="123", asset_creation=data)
+except AssetNotFound:
+    print("Asset not found")
+except AssetConflictError:
+    print("Asset already exists")
+except AssetRequestError as e:
+    print(f"Request error: {e}")
 ```
 
-## Advanced Usage
+## Testing
 
-### Custom Integrations
+The SDK includes comprehensive tests using pytest:
+
 ```python
-# Extend agent with custom tools
-@naas.tool
-def get_weather(location: str) -> str:
-    """Get current weather for a location"""
-    # Your weather API integration
-    return f"Weather in {location}: Sunny, 75°F"
+import pytest
 
-agent = client.agents.create(
-    name="Weather Assistant",
-    tools=[get_weather]
-)
+def test_lib_add_import():
+    import naas_python as naas
+    
+    # Test if naas.space.add is callable
+    assert callable(naas.space.add)
+
+def test_missing_keys_call():
+    import naas_python as naas
+    
+    # Test error handling for missing parameters
+    with pytest.raises(TypeError):
+        naas.space.add()
 ```
 
-### Streaming Responses
-```python
-# Stream agent responses
-for chunk in client.agents.stream("Tell me a story"):
-    print(chunk.content, end="")
+### Git Hooks
+
+Pre-commit hooks ensure code quality:
+
+```bash
+#!/bin/sh
+# Execute the make target
+make test
+
+# Capture the exit status
+STATUS=$?
+
+# If tests fail, prevent commit
+if [ $STATUS -ne 0 ]; then
+    echo "Pre-commit hook failed: make test failed with status $STATUS"
+    exit $STATUS
+fi
+
+exit 0
 ```
 
-## Repository
+## Repository & License
 
-**Development**: [naas-python](https://github.com/jupyter-naas/naas-python)
+**Repository**: [jupyter-naas/naas-python](https://github.com/jupyter-naas/naas-python)
+- **License**: AGPL-3.0
+- **Status**: 4⭐ on GitHub
+- **Language**: Python 99.4%
+- **Latest Release**: v1.4.2
 
-Contribute to the SDK or report issues on GitHub.
+**Semantic Release**: Automated versioning with conventional commits
+
+Contribute by forking the repository and submitting pull requests.

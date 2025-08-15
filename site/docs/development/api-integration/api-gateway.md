@@ -4,110 +4,99 @@ sidebar_position: 1
 
 # API Gateway Integration
 
-The Naas API Gateway is your primary interface for building applications and integrations with the platform.
+**Note**: This section covers the theoretical API Gateway integration. For actual working APIs, see:
+- **[ABI API](/development/api-integration/abi-api)**: Local AI agent system (working)
+- **[Python SDK](/development/client-sdks/python)**: naas-python for infrastructure management (working)
 
-## Quick Start
+## Overview
 
-### Authentication
+The Naas platform includes multiple API endpoints across different services:
 
-```bash
-# Get your API token from Settings → API Keys
-curl -H "Authorization: Bearer YOUR_TOKEN" \
-     -H "Content-Type: application/json" \
-     https://api.naas.ai/v1/health
-```
+### Available APIs
 
-### Base URL
-```
-Production: https://api.naas.ai
-Development: https://dev-api.naas.ai
-```
+1. **ABI API**: Local AI agent orchestration ([working](/development/api-integration/abi-api))
+2. **naas-python SDK**: Infrastructure and asset management ([working](/development/client-sdks/python))
+3. **naas-models**: Protocol buffer definitions for gRPC services
+4. **Platform API Gateway**: Central API (status unclear)
 
-## Core Endpoints
+## Platform Integration Patterns
 
-### AI Completions
-```bash
-curl -H "Authorization: Bearer YOUR_TOKEN" \
-     -H "Content-Type: application/json" \
-     -d '{"prompt": "Hello world", "agent": "universal"}' \
-     https://api.naas.ai/v1/completion
-```
+Based on the actual repository structure:
 
-### Agent Management
-```bash
-# List available agents
-curl -H "Authorization: Bearer YOUR_TOKEN" \
-     https://api.naas.ai/v1/agents
+### Protocol Models Integration
 
-# Create custom agent
-curl -X POST \
-     -H "Authorization: Bearer YOUR_TOKEN" \
-     -H "Content-Type: application/json" \
-     -d '{"name": "My Agent", "prompt": "You are a helpful assistant"}' \
-     https://api.naas.ai/v1/agents
-```
+The [naas-models repository](https://github.com/jupyter-naas/naas-models) provides:
+- **Protocol Buffer definitions** for gRPC services
+- **Multi-language support**: Python, Go, and other language bindings
+- **Version management**: Latest release v1.27.1 with 54 releases
+- **License**: AGPL-3.0
 
-### Data Integration
-```bash
-# Upload data
-curl -X POST \
-     -H "Authorization: Bearer YOUR_TOKEN" \
-     -F "file=@data.csv" \
-     https://api.naas.ai/v1/data/upload
+### Infrastructure Management
 
-# Query data
-curl -H "Authorization: Bearer YOUR_TOKEN" \
-     "https://api.naas.ai/v1/data/query?q=SELECT * FROM my_table"
-```
+The [naas-python SDK](https://github.com/jupyter-naas/naas-python) handles:
+- **Space Operations**: Cloud environment management
+- **Storage Operations**: Data and asset storage
+- **Asset Management**: Application resource handling
 
-## Integration Patterns
+## Working Integrations
 
-### Webhook Integration
+### 1. ABI API (Local AI Agents)
+
+For actual AI agent integration:
+
 ```python
 import requests
 
-def process_naas_webhook(data):
-    """Handle incoming webhook from Naas platform"""
-    if data['event'] == 'agent.completed':
-        result = data['result']
-        # Process the AI agent result
-        return {"status": "processed"}
+# Chat with ABI agents
+response = requests.post(
+    "http://localhost:9879/agents/abi/chat",
+    headers={"Authorization": "Bearer your_key"},
+    json={"message": "Analyze this data"}
+)
 ```
 
-### Real-time Updates
-```javascript
-const ws = new WebSocket('wss://api.naas.ai/v1/stream');
+See [ABI API documentation](/development/api-integration/abi-api) for complete examples.
 
-ws.onmessage = function(event) {
-    const data = JSON.parse(event.data);
-    // Handle real-time updates from agents
-};
+### 2. Infrastructure Management
+
+For cloud infrastructure and asset management:
+
+```python
+import naas_python as naas
+
+# Manage spaces and storage
+naas.space.add(space_name="production")
+naas.storage.create(workspace_id="123", storage_name="data-lake")
 ```
 
-## Rate Limits
+See [Python SDK documentation](/development/client-sdks/python) for complete examples.
 
-- **Free Tier**: 1,000 requests/month
-- **Pro Plan**: 100,000 requests/month  
-- **Enterprise**: Custom limits
+### 3. Protocol Buffer Integration
 
-## Error Handling
+For service communication using [naas-models](https://github.com/jupyter-naas/naas-models):
 
-```json
-{
-  "error": {
-    "code": "RATE_LIMIT_EXCEEDED",
-    "message": "Monthly quota exceeded",
-    "details": {
-      "limit": 1000,
-      "used": 1000,
-      "reset_date": "2024-09-01T00:00:00Z"
-    }
-  }
-}
+```python
+# gRPC service integration
+from naas_models import service_pb2
+from naas_models import service_pb2_grpc
+
+# Use generated protocol buffer classes
+request = service_pb2.ServiceRequest()
+response = client.ServiceMethod(request)
 ```
 
-## SDK Support
+## Multi-Language Support
 
-For easier integration, use our official SDKs:
-- [Python SDK](/development/client-sdks/python)
-- [JavaScript SDK](/development/client-sdks/chrome-extension)
+The naas-models repository provides bindings for:
+- **Python**: `pip install naas-models`  
+- **Go**: Generated Go packages
+- **gRPC**: Service definitions for any gRPC-compatible language
+
+## Development Status
+
+- ✅ **ABI API**: Fully functional local development
+- ✅ **naas-python SDK**: Working infrastructure management  
+- ✅ **naas-models**: Protocol definitions (v1.27.1)
+- ❓ **Central API Gateway**: Status unclear, verify before integration
+
+For production integrations, start with the working ABI API and naas-python SDK.
