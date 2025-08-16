@@ -5,16 +5,16 @@ slug: /
 
 # Introduction
 
-**Universal Data & AI Platform**
+**AI Networks as a Service: The Universal Data & AI Platform**
 
-Welcome to Naas - the complete platform for building, deploying, and scaling AI-powered business solutions. Whether you're a business user looking to leverage AI or a developer building custom solutions, Naas provides the tools and infrastructure you need.
+Welcome to Naas - the platform for building, deploying, and scaling your own AI Networks. Whether you're a business user working with AI assistants or a developer building intelligent systems, Naas provides the AI Operating System and interface you need.
 
 ## What is Naas?
 
-Naas is a comprehensive AI platform that combines:
+Naas is an AI Networks as a Service platform that combines:
 
-🌐 **Cloud Platform** - Ready-to-use AI workspace and collaboration tools  
-🤖 **ABI (Local CLI)** - Customizable AI development framework  
+🌐 **AI Workspace** - Browser interface for working with your AI Networks  
+🤖 **ABI (AI Operating System)** - Build your own AI using ontologies as the unifying field  
 🔗 **Integration Ecosystem** - Connect with your existing tools and data  
 📈 **Marketplace** - Share and monetize AI solutions  
 
@@ -24,9 +24,9 @@ Naas is a comprehensive AI platform that combines:
 %%{init: {'theme':'base', 'themeVariables': {'primaryColor': '#f8fafc', 'primaryTextColor': '#1e293b', 'primaryBorderColor': '#e2e8f0', 'lineColor': '#64748b'}}}%%
 graph TB
     subgraph "User Experience"
-        WEB["🌐 Naas Workspace<br/>(Browser-based)"]
+        WEB["🌐 AI Workspace<br/>(Browser-based)"]
         EXT["🔧 Chrome Extension<br/>(Any website)"]
-        CLI["💻 ABI CLI<br/>(Local development)"]
+        CLI["💻 ABI (Local CLI)<br/>(Local development)"]
     end
     
     subgraph "Platform Services"
@@ -36,7 +36,7 @@ graph TB
     end
     
     subgraph "AI Engine"
-        AGENTS["🤖 180+ AI Agents<br/>(ABI Core)"]
+        AGENTS["🤖 AI Agents<br/>(ABI Core)"]
         ONTOLOGY["🧠 Knowledge Graph<br/>(Ontology Engine)"]
         MODELS["🎯 Multi-Model Support<br/>(OpenAI, Claude, etc.)"]
     end
@@ -64,11 +64,11 @@ graph TB
 
 ## Your Journey
 
-### 🌟 **Start with the Platform**
-Most users begin with our cloud platform for immediate productivity:
-- **No setup required** - Start in your browser
-- **Collaborative workspace** - Work with your team
-- **180+ AI agents** - Ready for business tasks
+### 🌟 **Start with your AI Assistant**
+Experience the power of AI + ontologies with your personalized assistant:
+- **Create your AIA** - Personal AI Assistant from your LinkedIn profile
+- **Ontology-powered intelligence** - Your professional data becomes structured knowledge
+- **@AIA in chat** - Natural conversation with your personalized assistant
 
 ### 🛠️ **Customize with ABI**
 When you need more control, use ABI for custom development:
@@ -85,10 +85,10 @@ Integrate deeply with platform APIs and services:
 ## Key Capabilities
 
 ### For Business Users
-- **Ready-to-use AI agents** for common business tasks
+- **Personal AI Assistant (AIA)** created from your LinkedIn profile
+- **Custom AI Assistants** using ontology manager and visual editor
 - **Browser-based workspace** for collaboration
 - **Chrome extension** for AI assistance anywhere
-- **Template marketplace** for quick starts
 
 ### For Developers  
 - **ABI CLI** for local development and customization
@@ -108,26 +108,26 @@ Ready to get started? Choose your path:
 
 <div className="row">
   <div className="col col--6">
-    <div className="card">
+    <div className="card" style={{height: '100%', display: 'flex', flexDirection: 'column'}}>
       <div className="card__header">
         <h3>🌐 Try the Platform</h3>
       </div>
-      <div className="card__body">
-        <p>Start immediately with our cloud platform - no setup required.</p>
-        <a className="button button--primary" href="/get-started/quickstart">
+      <div className="card__body" style={{flex: 1, display: 'flex', flexDirection: 'column'}}>
+        <p style={{margin: 0}}>Start immediately with our cloud platform</p>
+        <a className="button button--primary" href="https://naas.ai" target="_blank" style={{margin: 0, textAlign: 'center'}}>
           Platform Quickstart
         </a>
       </div>
     </div>
   </div>
   <div className="col col--6">
-    <div className="card">
+    <div className="card" style={{height: '100%', display: 'flex', flexDirection: 'column'}}>
       <div className="card__header">
         <h3>💻 Customize with ABI</h3>
       </div>
-      <div className="card__body">
-        <p>Install ABI locally for development and customization.</p>
-        <a className="button button--secondary" href="/customize/installation">
+      <div className="card__body" style={{flex: 1, display: 'flex', flexDirection: 'column'}}>
+        <p style={{margin: 0}}>Install ABI locally for development and customization.</p>
+        <a className="button button--secondary" href="https://github.com/jupyter-naas/abi" target="_blank" style={{margin: 0, textAlign: 'center'}}>
           Install ABI CLI
         </a>
       </div>
@@ -137,8 +137,8 @@ Ready to get started? Choose your path:
 
 ### Learn the Architecture
 - [System Architecture](/get-started/system-architecture) - Understand how everything connects
-- [Platform Services](/scale/platform-services) - Deep dive into each component
-- [Integration Patterns](/scale/integration-patterns) - Connect your systems
+- [Scale Overview](/scale/overview) - Platform scaling and architecture
+- [API Integration](/scale/api-integration/api-gateway) - Connect your systems
 
 ### Get Support
 - **Help & Support**: [support@naas.ai](mailto:support@naas.ai)

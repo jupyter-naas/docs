@@ -20,25 +20,44 @@ Visit [naas.ai](https://naas.ai) and create your free account:
 
 ### 2. Your First AI Interaction
 
-Once in your workspace:
+Once in your workspace, experience how AI + ontologies create intelligent, personalized systems:
 
-**Experience AIA - Your Personal AI Assistant**:
-If you've added your LinkedIn profile during onboarding, you can interact with AIA, your personalized AI assistant created from your professional background.
+#### Experience AIA - Your Personal AI Assistant
+
+If you've added your LinkedIn profile during onboarding, you'll interact with AIA, your personalized AI assistant:
+
+![AIA Conversation](/aia/1-first-conversation-with-aia.png)
+*AIA knows your professional background from LinkedIn and provides personalized insights based on your ontology*
+
+**Try it yourself**:
 ```
 Ask: "Based on my background, what should I focus on this quarter?"
 ```
 
-**Try Specialized Business Agents**:
-```
-Ask: "Analyze my sales data and create a weekly report"
-```
+#### See AI + Ontology Integration
 
-**Explore Our Agent Library**:
-- **📊 Analytics Agent** - Data analysis and visualization
-- **💰 Finance Agent** - Financial modeling and reporting  
-- **📈 Growth Agent** - Marketing and growth strategies
-- **🏢 Operations Agent** - Process optimization
-- **📖 Content Agent** - Writing and content creation
+![Ontology Integration](/aia/2-discover-ai-ontology-linking.png)
+*Watch how your data becomes structured knowledge that powers intelligent conversations*
+
+#### Explore Your Knowledge Networks
+
+![Ontology Manager](/aia/3-discover-ontology-manager.png)
+*Explore your personal ontology as an interactive knowledge graph with entities and relationships*
+
+#### Advanced: Developer Control
+
+![YAML Editor](/aia/4-discover-ontology-yaml-editor.png)
+*Full technical control with YAML-based ontology editing for custom AI assistant creation*
+
+#### Ready for More?
+
+**Create Your Own AI Assistants**:
+Beyond AIA, you can build custom AI assistants tailored to your specific needs:
+- **Choose your AI model** - Connect to OpenAI, Claude, LLama, Mistra, or others
+- **Design custom ontologies** - Structure your domain knowledge using the visual ontology manager
+- **Chat with @YourAssistant** - Call your custom assistants directly in conversations
+
+<!-- TODO: Add comprehensive guide for creating custom AI assistants with ontology editor and model selection -->
 
 ### 3. Chrome Extension Setup
 
@@ -46,130 +65,81 @@ Bring AI assistance to any website:
 
 1. **Install Extension** from [Chrome Web Store](https://chrome.google.com/webstore)
 2. **Login** with your Naas account
-3. **Try it anywhere** - highlight text and ask questions
+3. **Convenient sidebar access** - Your AI assistants available as you browse
 
-**Example Usage**:
-- On LinkedIn: "Summarize this person's background"
-- On news sites: "What are the key points of this article?"
-- On competitor sites: "Analyze their pricing strategy"
+<!-- TODO: Add text highlighting and page analysis features for Chrome extension -->
+<!-- TODO: Add browser control capabilities for advanced automation -->
 
-### 4. Collaborative Features
+The extension provides sidebar access to your AI assistants while browsing. Future updates will add text highlighting, page analysis, and browser automation features.
 
-**Create a Team Workspace**:
-```
-1. Go to Settings → Workspace
-2. Invite team members via email
-3. Set permissions and roles
-4. Share AI conversations and insights
-```
+### 4. Team Collaboration (Pro Plan)
 
-**Share AI Outputs**:
-- **Export conversations** as PDF or markdown
-- **Create templates** from successful prompts
-- **Build team libraries** of proven approaches
+**Team Workspace Access**:
+With a Pro plan, you can invite team members to collaborate in your workspace. This enables your team to work with a shared suite of AI assistants and access premium AI models together - similar to ChatGPT Pro and its GPTs, but with your custom ontology-powered assistants.
 
-## Platform Features Tour
+**Team Benefits**:
+- Shared access to all custom AI assistants
+- Collaborative ontology development
+- Premium model access for the entire team
 
-### Workspace Interface
+## Your Cloud Workspace
 
-Your cloud workspace includes:
+### Main Interface
 
-- **🤖 AIA Dashboard** - Your personalized AI assistant (if LinkedIn profile added)
-- **💬 Chat Interface** - Conversational AI interaction with specialized agents
-- **📊 Analytics Dashboard** - Usage and insights
-- **🔍 Search** - Find past conversations and outputs
-- **📁 File Management** - Upload and process documents
-- **🔧 Settings** - Customize your experience and manage integrations
+Your browser-based workspace provides everything you need to work with AI Networks:
 
-### AI Agent Marketplace
+- **💬 Chat Interface** - Conversational interaction with your AI assistants using @mentions
+- **🔍 Search & Discovery** - Find and explore assets (agents, ontologies, workflows, conversations) across your workspace
+- **📊 Analytics Dashboard** - Monitor usage, performance, and insights from your AI interactions
+- **📁 Asset Management** - Upload documents, manage files, and organize your knowledge base
+- **🔧 Account Settings** - Manage workspace preferences, integrations, and team access
 
-Discover and use specialized agents:
+### Collaboration Features
 
-**Business Functions**:
-- Sales forecasting and pipeline analysis
-- Financial planning and budgeting
-- Content creation and marketing
-- Operations and process optimization
+- **Team Workspaces** - Invite colleagues to collaborate on AI projects (Pro plan)
+- **Shared Assets** - Access common ontologies, agents, and workflows across your organization
+- **Change Tracking** - Your modifications are automatically saved and preserved in the database
 
-**Industry Specific**:
-- Healthcare data analysis
-- Legal document review
-- Real estate market analysis
-- Manufacturing optimization
+### Template Resources
 
-**Technical**:
-- Code review and generation
-- Data pipeline creation
-- API documentation
-- System architecture planning
+**Legacy Notebook Templates**:
+Explore our extensive collection of data and AI notebook templates in the [awesome-notebooks repository](https://github.com/jupyter-naas/awesome-notebooks). These proven templates will be gradually integrated into the marketplace for easier discovery and usage.
 
-### Template Library
+## For Developers
 
-Start with proven templates:
+**Integrations**: Connect external tools using ABI (requires technical setup)
 
-**Business Templates**:
-- Weekly KPI reports
-- Competitor analysis frameworks
-- Customer persona development
-- Product roadmap planning
+**API Access**: Get your API key for programmatic access:
 
-**Personal Productivity**:
-- Meeting summaries
-- Email response generation
-- Research synthesis
-- Learning note organization
-
-## Integration Options
-
-### Quick Integrations
-
-Connect your existing tools:
-
-**Data Sources**:
-- Google Sheets / Excel
-- Salesforce CRM
-- HubSpot
-- Slack/Teams
-
-**Workflow Tools**:
-- Zapier automation
-- Notion databases
-- Airtable
-- Monday.com
-
-### API Access
-
-For developers - get your API key:
-
-```bash
-# Get your API token from Settings → API Keys
-curl -H "Authorization: Bearer YOUR_TOKEN" \
-     -H "Content-Type: application/json" \
-     -d '{"prompt": "Hello world", "agent": "universal"}' \
-     https://api.naas.ai/v1/completion
-```
+![Get API Key](/account/get-naas-api-key-from-workspace.png)
+*Navigate to Account → API Key to access your secure gateway for programmatic workspace interaction*
 
 ## Usage and Billing
 
-### Free Tier
-- **1,000 AI interactions** per month
-- **Basic agents** access
-- **Community support**
-- **Chrome extension** included
+**ABI (Open Source)**: Free local development using your own AI model keys - no credits required
 
-### Pro Plan ($29/month)
-- **Unlimited interactions**
-- **All specialized agents**
-- **Priority support**
-- **Advanced integrations**
-- **Team collaboration**
+**Cloud Platform**: Simple credit-based pricing at **$0.03 per credit** across all services.
 
-### Enterprise
-- **Custom deployment** options
-- **SLA guarantees**
-- **Dedicated support**
-- **Custom agent development**
-- **Volume pricing**
+![Billing Interface](/account/billing-page.png)
+*Manage your subscription and credits directly in the workspace - current plan and upgrade options*
+
+### Free - $0/month
+- **100 credits included**
+- Perfect for trying AI assistants and exploring ontologies
+
+### Plus - $10/month
+- **350 credits** (~5% discount)
+- For regular users who want consistent AI assistance
+
+### Pro - $50/month  
+- **1,800 credits** (~10% discount)
+- For professionals building custom AI workflows and team collaboration
+
+### Enterprise - Custom/month
+- **Custom credits packages**
+- For organizations needing dedicated AI systems and support
+
+**Need more information?** [Contact Support](mailto:support@naas.ai) for personalized guidance on pricing and features.
 
 ## Troubleshooting
 
@@ -210,9 +180,9 @@ curl -H "Authorization: Bearer YOUR_TOKEN" \
 Now that you're up and running:
 
 🎯 **Customize Your Experience**:
-- [Install ABI CLI](/customize/installation) for local development
-- [Create custom agents](/customize/agents) for your specific needs
-- [Build workflows](/customize/workflows) to automate tasks
+- [Install ABI CLI](/customize/) for local development
+- [Create custom agents](/customize/capabilities/agents) for your specific needs
+- [Build workflows](/customize/capabilities/workflows) to automate tasks
 
 🔧 **Integrate Deeper**:
 - [API Documentation](/scale/api-integration/api-gateway) for system integration
@@ -220,7 +190,7 @@ Now that you're up and running:
 - [Scale Guides](/scale/overview) for advanced usage
 
 🚀 **Scale Up**:
-- Explore enterprise deployment options
+- [Explore enterprise deployment options](https://share.hsforms.com/11Ie8odLzQdO6ggAtrXFcTg1h10o) for production scaling
 - Join our partner program
 - Consider custom development services
 

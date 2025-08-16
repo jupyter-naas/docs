@@ -91,7 +91,7 @@ const config = {
             label: "Customize",
           },
           {
-            to: "scale/approach",
+            to: "scale/overview",
             position: "left",
             label: "Scale",
           },
