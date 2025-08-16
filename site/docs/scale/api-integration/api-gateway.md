@@ -181,10 +181,7 @@ completion = requests.post(
 
 ## Pricing Overview
 
-- **Free**: Lab API, Template API, Credit API access
-- **Usage-based**: AI Model API, Vector Database ($20.93/1000⚡/month)
-- **Fixed**: Graph Database ($100/month per database)
-- **Contact**: Memory, Notification, Pipeline, Scheduler APIs
+For current pricing information, see [Usage and Billing](/get-started/quickstart#usage-and-billing).
 
 ## Documentation
 

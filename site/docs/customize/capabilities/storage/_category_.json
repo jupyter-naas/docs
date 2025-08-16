@@ -1,6 +1,6 @@
 {
   "label": "Storage",
-  "position": 1,
+  "position": 9,
   "link": {
     "type": "generated-index",
     "description": "Storage systems including triple store, object storage, and data management."
