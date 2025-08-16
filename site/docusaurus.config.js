@@ -5,9 +5,8 @@
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "️️Universal Data & AI Platform",
-  tagline:
-    "Naas is Universal Data & AI Platform helping any organization create a powerful ecosystem of AI assistants. It leverages ontologies as a unifying field integrating data, AI models, workflows, analytics, and external systems to focus on outcomes over outputs.",
+  title: "Naas - Universal Data & AI Platform",
+  tagline: "Build AI Networks as a Service with ontology-powered intelligence. Create, deploy, and scale AI assistants that understand relationships across your data, models, and workflows.",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
@@ -19,7 +18,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "jupypter-naas", // Usually your GitHub org/user name.
-  projectName: "site", // Usually your repo name.
+  projectName: "docs", // Usually your repo name.
 
   onBrokenLinks: "ignore",
   onBrokenMarkdownLinks: "ignore",
@@ -59,11 +58,19 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      // Social sharing configuration
+      image: "img/landing-screensaver.gif",
+      metadata: [
+        {name: 'twitter:card', content: 'summary_large_image'},
+        {name: 'twitter:image', content: 'https://docs.naas.ai/img/landing-screensaver.gif'},
+        {property: 'og:image', content: 'https://docs.naas.ai/img/landing-screensaver.gif'},
+        {property: 'og:image:width', content: '1200'},
+        {property: 'og:image:height', content: '630'},
+        {property: 'og:type', content: 'website'},
+      ],
       fontFamily: {
         sans: ["San Francisco", "Arial", "sans-serif"],
       },
-      // Replace with your project's social card
-      image: "img/landing-screensaver.gif",
       colorMode: {
         defaultMode: 'dark',
         disableSwitch: false,
