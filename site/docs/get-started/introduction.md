@@ -64,11 +64,12 @@ graph TB
 
 ## Your Journey
 
-### 🌟 **Start with your AI Assistant**
-Experience the power of AI + ontologies with your personalized assistant:
+### 🌟 **Start with the Platform**
+Experience the power of AI + ontologies in naas.ai with your personalized assistant:
 - **Create your AIA** - Personal AI Assistant from your LinkedIn profile
 - **Ontology-powered intelligence** - Your professional data becomes structured knowledge
 - **@AIA in chat** - Natural conversation with your personalized assistant
+- **Custom AI Assistants** - Combine the best AI models with your custom ontologies
 
 ### 🛠️ **Customize with ABI**
 When you need more control, use ABI for custom development:
