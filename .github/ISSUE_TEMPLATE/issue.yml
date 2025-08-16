@@ -1,0 +1,21 @@
+name: Issue
+description: Report any issue, bug, feature request, or improvement
+labels: ["triage"]
+body:
+  - type: textarea
+    id: current-state
+    attributes:
+      label: Current State
+      description: What is happening now? What's broken, missing, or suboptimal?
+      placeholder: Describe the current situation clearly and concisely.
+    validations:
+      required: true
+
+  - type: textarea
+    id: target-state
+    attributes:
+      label: Target State
+      description: What should happen instead? What's the desired outcome?
+      placeholder: Describe exactly what you want to achieve.
+    validations:
+      required: true
