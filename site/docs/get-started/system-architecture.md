@@ -74,11 +74,11 @@ graph TB
 - **Purpose**: Main user interface for AI interactions
 - **Technology**: React, TypeScript, modern web standards
 - **Features**:
-  - Conversational AI interface
+  - Chat interface
+  - Search 
   - Team collaboration tools
   - File upload and processing
   - Analytics dashboard
-  - Template marketplace
 
 #### 🔧 Chrome Extension
 - **Repository**: [jupyter-naas/chrome-extension](https://github.com/jupyter-naas/chrome-extension)
@@ -139,28 +139,57 @@ graph TB
 ### AI Engine (ABI Core)
 
 #### 🤖 Multi-Agent System
-The heart of the platform - 180+ specialized AI agents:
+Built on LangGraph framework with stateful, multi-step workflows:
+
+**Core Architecture**:
+- **LangGraph StateGraph**: Manages workflow between model and tools
+- **Agent Nodes**: Process messages using language models  
+- **Tool Nodes**: Execute integration actions when requested
+- **Checkpointing**: Conversation history persistence via MemorySaver
 
 **Agent Categories**:
+- **Core Agents**: ABI, ChatGPT, Claude, Gemini, Grok, Llama, Mistral, DeepSeek
 - **Business Functions**: Sales, Marketing, Finance, Operations
 - **Technical**: Development, DevOps, Data Analysis
-- **Domain-Specific**: Healthcare, Legal, Education
-- **Universal**: General-purpose conversational AI
+- **Custom**: User-created agents with specific capabilities
 
 **Agent Architecture**:
+ABI agents are built on LangGraph with a standardized creation pattern:
+
 ```python
-# Example agent structure
-class BusinessAgent(Agent):
-    def __init__(self):
-        self.tools = [
-            SalesforceIntegration(),
-            GoogleSheetsConnector(),
-            EmailSender()
-        ]
-        self.ontology_queries = [
-            "get_customer_data",
-            "analyze_sales_pipeline"
-        ]
+# Real ABI agent implementation
+from langchain_openai import ChatOpenAI
+from abi.services.agent.Agent import Agent, AgentConfiguration, AgentSharedState, MemorySaver
+from src.core.modules.naas.integrations import NaasIntegration
+
+def create_agent(agent_shared_state=None, agent_configuration=None) -> Agent:
+    # Configure LLM model
+    model = ChatOpenAI(model="gpt-4o", temperature=0, api_key=secret.get('OPENAI_API_KEY'))
+    
+    # Initialize tools and agents
+    tools = []
+    agents = []
+    
+    # Add integration tools conditionally
+    if secret.get('NAAS_API_KEY'):    
+        naas_config = NaasIntegrationConfiguration(api_key=secret.get('NAAS_API_KEY'))
+        tools += NaasIntegration.as_tools(naas_config)
+    
+    # Set configuration and state
+    if agent_configuration is None:
+        agent_configuration = AgentConfiguration(system_prompt=SYSTEM_PROMPT)
+    if agent_shared_state is None:
+        agent_shared_state = AgentSharedState(thread_id=0)
+    
+    return BusinessAgent(
+        name="Business Agent",
+        chat_model=model,
+        tools=tools,
+        agents=agents,
+        state=agent_shared_state,
+        configuration=agent_configuration,
+        memory=MemorySaver()
+    )
 ```
 
 #### 🧠 Ontology Engine
@@ -264,15 +293,16 @@ sequenceDiagram
 
 ### 4. Development Setup
 ```bash
-# Local development environment
+# Open source ABI development
 git clone https://github.com/jupyter-naas/abi.git
-git clone https://github.com/jupyter-naas/naas-api-ce.git
-git clone https://github.com/jupyter-naas/workspace.git
+cd abi
 
-# Start core services
-cd abi && make chat-abi-agent
-cd naas-api-ce && docker-compose up
-cd workspace && npm start
+# Setup environment
+cp .env.example .env
+# Add your AI model API keys (OPENAI_API_KEY, ANTHROPIC_API_KEY, etc.)
+
+# Start ABI agent
+make chat-abi-agent
 ```
 
 ## Security Architecture
@@ -319,6 +349,6 @@ This architecture provides the foundation for understanding how to customize, in
 
 ## Next Steps
 
-- **Start Customizing**: [Install ABI CLI](/customize/installation) for local development
+- **Start Customizing**: [Install ABI CLI](/customize/) for local development
 - **Integrate Systems**: [API Integration](/scale/api-integration/api-gateway) for system integration
 - **Scale Up**: Contact us for enterprise deployment planning
