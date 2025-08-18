@@ -62,11 +62,15 @@ quadrantChart
 
 ## Integration Patterns
 
-### Foundation Layer Strategy
-**Palantir + Databricks**: Foundry uses Databricks for ML infrastructure  
-**Naas + Nebari**: Naas can use Nebari for data science foundation
+### Layered Platform Approaches
+**Proprietary Stack**: Palantir Foundry builds on top of Databricks infrastructure  
+**Open-Source Stack**: Naas and Nebari work as complementary sister platforms
 
-**Benefits**: Open-source alternative with semantic AI capabilities
+**Key Difference**: 
+- Palantir → Databricks: Dependency relationship (Foundry needs Databricks)
+- Naas ↔ Nebari: Partnership relationship (both platforms enhance each other)
+
+**Benefits**: Complete open-source alternative with semantic AI capabilities
 
 ## Platform Strategies
 
