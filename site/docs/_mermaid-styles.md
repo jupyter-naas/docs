@@ -119,7 +119,7 @@ stateDiagram-v2
 ```
 
 #### Sequence Diagrams
-Use subtle background colors and clear participant styling:
+Sequence diagrams don't have subgraphs, so no theme configuration needed:
 
 ```mermaid
 sequenceDiagram
@@ -135,6 +135,8 @@ sequenceDiagram
     Agent-->>API: Result
     API-->>User: Response
 ```
+
+**Note**: Only apply the theme configuration to diagrams with subgraphs (graph TD, graph LR, stateDiagram-v2). Sequence diagrams use default styling.
 
 ## Implementation
 

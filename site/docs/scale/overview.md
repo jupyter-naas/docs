@@ -149,7 +149,7 @@ This phased approach ensures you're always building on solid foundations while p
 
 ### Enterprise Deployment
 - **[Enterprise Deployment](/scale/enterprise-deployment/)**: Security, compliance, and production deployment guides
-- **[vs. Competitors](/scale/vs-competitors/palantir-foundry)**: Detailed comparison with Palantir Foundry and migration strategies
+- **[Platform Comparisons](/scale/platform-comparisons/)**: Understanding how Naas compares to other enterprise platforms
 
 ### Development Resources
 - **[jupyter-naas/abi](https://github.com/jupyter-naas/abi)**: Local AI agent orchestration system

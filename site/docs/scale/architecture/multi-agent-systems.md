@@ -199,7 +199,6 @@ class ConsensusAgent(Agent):
 Structured communication ensures reliable agent coordination:
 
 ```mermaid
-%%{init: {'theme':'base', 'themeVariables': {'primaryColor': '#f8fafc', 'primaryTextColor': '#1e293b', 'primaryBorderColor': '#e2e8f0', 'lineColor': '#64748b'}}}%%
 sequenceDiagram
     participant Coordinator
     participant AgentA
