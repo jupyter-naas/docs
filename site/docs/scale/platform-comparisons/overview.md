@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Platform Comparisons
+# Evaluation Framework
 
 Organizations evaluating AI platforms need to understand both competitive positioning and integration opportunities. Naas can serve as either a standalone AI-native platform or as an intelligent layer that enhances existing data infrastructure.
 
