@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Building Your Data & AI Platform Stack
+# Building your Data & AI Platform
 
 When building a comprehensive Data & AI Platform Stack, organizations need to understand how different platforms compare and integrate. Naas can serve as either a standalone AI-native platform OR as an intelligent layer that enhances existing data infrastructure.
 
