@@ -53,6 +53,8 @@ graph TB
     classDef dataLayer fill:#f3e5f5,stroke:#9c27b0,stroke-width:1px,color:#4a148c
     classDef infrastructure fill:#fce4ec,stroke:#e91e63,stroke-width:1px,color:#880e4f
     
+    %% Note: Subgraphs use default styling (white background) for consistency
+    
     class UI,EXT,CLI userExp
     class API,PIPELINE platform
     class AGENTS,ONTOLOGY,MEMORY,TOOLS aiEngine
@@ -145,6 +147,8 @@ graph LR
     classDef aiEngine fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#e65100
     classDef dataLayer fill:#f3e5f5,stroke:#9c27b0,stroke-width:1px,color:#4a148c
     classDef infrastructure fill:#fce4ec,stroke:#e91e63,stroke-width:1px,color:#880e4f
+    
+    %% Note: Subgraphs use default styling (white background) for consistency
     
     class CRM,ERP,DB,EXTAPI,FILES infrastructure
     class DRIVERS,TRANSFORM platform

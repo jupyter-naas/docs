@@ -152,11 +152,17 @@ graph TD
     classDef dataLayer fill:#f3e5f5,stroke:#9c27b0,stroke-width:1px,color:#4a148c
     classDef infrastructure fill:#fce4ec,stroke:#e91e63,stroke-width:1px,color:#880e4f
     
+    %% Note: Subgraphs use default styling (white background) for consistency
+    
     %% Apply classes to your nodes
     class NODE1,NODE2 userExp
     class NODE3,NODE4 platform
     %% etc.
 ```
+
+### Subgraph Styling
+
+**Important**: Subgraphs should maintain white/transparent backgrounds for consistency with the platform overview. Do NOT apply custom styling to subgraphs themselves - only to the nodes within them.
 
 ### Validation Checklist
 - [ ] Color scheme matches Naas brand guidelines
