@@ -149,7 +149,7 @@ This phased approach ensures you're always building on solid foundations while p
 
 ### Enterprise Deployment
 - **[Enterprise Deployment](/scale/enterprise-deployment/)**: Security, compliance, and production deployment guides
-- **[Platforms Evaluation](/scale/platform-comparisons/)**: Comprehensive evaluation of AI platforms to help choose the right architecture
+- **[Platforms Evaluation](/scale/platforms-evaluation/)**: Comprehensive evaluation of AI platforms to help choose the right architecture
 
 ### Development Resources
 - **[jupyter-naas/abi](https://github.com/jupyter-naas/abi)**: Local AI agent orchestration system
@@ -165,7 +165,7 @@ This phased approach ensures you're always building on solid foundations while p
 
 ### For Enterprise Teams
 1. **Enterprise Assessment**: Review [deployment options](/scale/enterprise-deployment/) and security requirements
-2. **Competitive Analysis**: Compare with [existing platforms](/scale/vs-competitors/palantir-foundry) for migration planning
+2. **Competitive Analysis**: Compare with [existing platforms](/scale/platforms-evaluation/palantir-foundry) for migration planning
 3. **Architecture Planning**: Study [multi-agent systems](/scale/architecture/multi-agent-systems) for technical implementation
 
 Start your scaling journey with the [naas-python SDK](/scale/client-sdks/python) or [ABI API](/scale/api-integration/abi-api) for AI orchestration.
