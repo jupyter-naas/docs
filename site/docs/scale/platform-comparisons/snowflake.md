@@ -2,9 +2,9 @@
 sidebar_position: 3
 ---
 
-# Naas + Snowflake Integration
+# Naas vs. Snowflake
 
-Rather than replacing Snowflake, Naas acts as an intelligent AI layer that enhances your existing data warehouse investment. This comparison shows how Naas complements Snowflake by adding conversational interfaces, AI orchestration, and intelligent automation to your data infrastructure.
+A comprehensive comparison between Naas and Snowflake covering both competitive positioning and integration strategies. Whether you're evaluating a complete platform replacement or looking to enhance your existing data warehouse with AI capabilities, this analysis helps you understand the trade-offs and opportunities.
 
 ## Executive Summary
 
@@ -20,15 +20,25 @@ Rather than replacing Snowflake, Naas acts as an intelligent AI layer that enhan
 | **Licensing** | Open-source (MIT) | Consumption-based commercial |
 | **Target Users** | AI-first teams, conversational analytics | Data analysts, BI developers, SQL experts |
 
-## 🔗 Integration Strategy: Best of Both Worlds
+## 🔗 Platform Stack Strategy: Compete or Integrate?
 
-### Why Integrate Instead of Replace?
+### Scenario 1: Direct Competition (Platform Replacement)
+**When to consider**: Starting fresh, AI-first strategy, dissatisfaction with SQL-centric workflows
 
-**Preserve Your Investment**: Keep Snowflake for what it does best - scalable data warehousing, SQL processing, and enterprise data management.
+**Naas Replaces Snowflake**:
+- Complete migration to AI-native conversational analytics
+- Semantic data modeling replaces relational schemas  
+- Multi-agent workflows replace SQL-based ETL processes
+- Natural language interfaces replace BI dashboards
 
-**Add AI Intelligence**: Layer Naas on top to provide conversational interfaces, intelligent automation, and multi-agent workflows.
+### Scenario 2: Strategic Integration (Best of Both Worlds)
+**When to consider**: Existing Snowflake investment, gradual AI adoption, hybrid approach
 
-**Gradual Adoption**: Start with specific use cases and expand AI capabilities without disrupting existing workflows.
+**Naas Enhances Snowflake**:
+- Keep Snowflake for scalable data warehousing and SQL processing
+- Add Naas for conversational interfaces and AI orchestration
+- Bridge business users and technical data teams
+- Gradual adoption without disrupting existing workflows
 
 ### Common Integration Architecture
 

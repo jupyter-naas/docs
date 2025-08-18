@@ -2,51 +2,55 @@
 sidebar_position: 1
 ---
 
-# Platform Integration & Enhancement Strategy
+# Building Your Data & AI Platform Stack
 
-Modern organizations don't need to choose a single platform for all their data and AI needs. Naas is designed as a complementary AI layer that enhances existing data infrastructure, providing conversational interfaces and intelligent automation on top of your current investments.
+When building a comprehensive Data & AI Platform Stack, organizations need to understand how different platforms compare and integrate. Naas can serve as either a standalone AI-native platform OR as an intelligent layer that enhances existing data infrastructure.
 
-This approach allows you to:
-- **Preserve existing investments** in data warehouses, analytics platforms, and ML infrastructure
-- **Add AI capabilities** without disrupting current workflows
-- **Provide business-friendly interfaces** to technical systems
-- **Scale AI adoption** gradually across your organization
+This guide helps you evaluate:
+- **Head-to-head comparisons** between platforms for specific capabilities
+- **Integration opportunities** to build a best-of-breed stack
+- **Migration strategies** from existing platforms to AI-native approaches
+- **Hybrid architectures** that combine multiple platforms strategically
 
-## Integration-First Approach
+## Platform Stack Strategies
 
-### Naas as an AI Enhancement Layer
-Rather than replacing your existing data infrastructure, Naas acts as an intelligent interface layer that:
+### Option 1: Standalone AI-Native Platform
+**When to choose**: Starting fresh, AI-first strategy, full control over architecture
 
-- **Connects to existing systems**: Direct integration with Snowflake, Databricks, Palantir, and other platforms
-- **Provides conversational access**: Natural language interfaces to complex technical systems
-- **Adds AI orchestration**: Multi-agent workflows that coordinate across multiple platforms
-- **Enables gradual adoption**: Start with specific use cases and expand over time
+**Naas as Primary Platform**:
+- Complete AI-native data and analytics platform
+- Conversational interfaces for all data interactions
+- Semantic data modeling with formal ontologies
+- Multi-agent orchestration across all workflows
 
-### Common Integration Patterns
+### Option 2: Hybrid Stack Integration
+**When to choose**: Existing platform investments, gradual AI adoption, best-of-breed approach
 
-#### **Data Warehouse + AI Interface**
+**Common Integration Patterns**:
+
+#### **Data Warehouse + AI Layer**
 ```
 Business Users ↔ Naas AI Agents ↔ Snowflake/BigQuery/Redshift
 ```
-- Keep your data warehouse for storage and processing
-- Add conversational analytics through Naas agents
-- Business users get natural language access to data
+- **Compete**: Naas semantic modeling vs. relational schemas
+- **Integrate**: Naas conversational interface to existing data warehouse
+- **Best for**: Adding AI to established BI workflows
 
 #### **ML Platform + AI Deployment**
 ```
 Data Scientists ↔ Databricks/SageMaker ↔ Naas Agents ↔ Business Users
 ```
-- Continue ML development in your preferred platform
-- Deploy models through conversational AI agents
-- Bridge the gap between technical and business teams
+- **Compete**: Naas multi-agent workflows vs. notebook-based development
+- **Integrate**: Naas agents deploy Databricks models conversationally
+- **Best for**: Democratizing access to ML capabilities
 
 #### **Enterprise Platform + AI Enhancement**
 ```
-Analysts ↔ Palantir/Tableau ↔ Naas Agents ↔ Automated Workflows
+Analysts ↔ Palantir/Foundry ↔ Naas Agents ↔ Automated Workflows
 ```
-- Maintain existing analytical workflows
-- Add intelligent automation and natural language interfaces
-- Enhance productivity without disrupting established processes
+- **Compete**: Naas open standards vs. proprietary integration platforms
+- **Integrate**: Naas AI layer on top of Foundry data integration
+- **Best for**: Adding AI flexibility to enterprise platforms
 
 ## Platform Categories
 
@@ -169,9 +173,11 @@ Analysts ↔ Palantir/Tableau ↔ Naas Agents ↔ Automated Workflows
 ## Next Steps
 
 ### Detailed Platform Comparisons
-- **[Naas vs. Palantir Foundry](./palantir-foundry)**: AI-native platform vs. enterprise integration approach
-- **[Naas vs. Snowflake](./snowflake)**: Conversational AI vs. cloud data warehouse architecture  
-- **[Naas vs. Databricks](./databricks)**: Multi-agent orchestration vs. unified analytics platform
+Each comparison covers both competitive positioning and integration strategies:
+
+- **[Naas vs. Palantir Foundry](./palantir-foundry)**: AI-native platform vs. enterprise integration - compete or integrate?
+- **[Naas vs. Snowflake](./snowflake)**: Conversational AI vs. cloud data warehouse - replacement or enhancement?
+- **[Naas vs. Databricks](./databricks)**: Multi-agent orchestration vs. unified analytics - standalone or complementary?
 
 ### Decision Support
 - **[Requirements Assessment](./requirements-assessment)**: Framework for evaluating your specific needs

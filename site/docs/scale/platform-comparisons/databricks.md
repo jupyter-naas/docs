@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Naas + Databricks Integration
+# Naas vs. Databricks
 
 Naas complements Databricks by adding conversational AI interfaces and intelligent automation to your existing ML and analytics infrastructure. Rather than replacing your data science platform, Naas provides business-friendly access to Databricks capabilities and bridges the gap between technical teams and business users.
 
