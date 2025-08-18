@@ -149,7 +149,7 @@ This phased approach ensures you're always building on solid foundations while p
 
 ### Enterprise Deployment
 - **[Enterprise Deployment](/scale/enterprise-deployment/)**: Security, compliance, and production deployment guides
-- **[Platform Evaluation Guide](/scale/platform-comparisons/)**: Comprehensive guide for evaluating and selecting AI platforms
+- **[Platform Selection Guide](/scale/platform-comparisons/)**: Comprehensive guide for selecting the right AI platform for your organization
 
 ### Development Resources
 - **[jupyter-naas/abi](https://github.com/jupyter-naas/abi)**: Local AI agent orchestration system
