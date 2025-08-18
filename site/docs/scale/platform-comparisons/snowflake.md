@@ -20,7 +20,7 @@ A comprehensive comparison between Naas and Snowflake covering both competitive 
 | **Licensing** | Open-source (MIT) | Consumption-based commercial |
 | **Target Users** | AI-first teams, conversational analytics | Data analysts, BI developers, SQL experts |
 
-## 🔗 Platform Stack Strategy: Compete or Integrate?
+## 🔗 Platform Strategy: Compete or Integrate?
 
 ### Scenario 1: Direct Competition (Platform Replacement)
 **When to consider**: Starting fresh, AI-first strategy, dissatisfaction with SQL-centric workflows

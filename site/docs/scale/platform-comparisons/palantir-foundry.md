@@ -2,9 +2,9 @@
 sidebar_position: 2
 ---
 
-# Naas + Palantir Foundry Integration
+# Naas vs. Palantir Foundry
 
-Naas can complement Palantir Foundry by adding conversational AI interfaces and multi-LLM capabilities to your existing enterprise data platform. This comparison explores how Naas enhances Foundry deployments and when integration versus replacement makes sense.
+A comprehensive comparison between Naas and Palantir Foundry covering both competitive positioning and integration strategies. Whether you're evaluating an alternative to enterprise integration platforms or looking to enhance Foundry with AI capabilities, this analysis helps you understand the trade-offs and opportunities.
 
 ## Executive Summary
 
@@ -19,15 +19,25 @@ Naas can complement Palantir Foundry by adding conversational AI interfaces and 
 | **Licensing** | Open-source (MIT) | Proprietary commercial |
 | **Target Users** | Technical teams, AI-first organizations | Enterprise analysts, government agencies |
 
-## 🔗 Integration Strategy: Enhancing Enterprise Platforms
+## 🔗 Platform Strategy: Compete or Integrate?
 
-### Why Integrate with Foundry?
+### Scenario 1: Direct Competition (Platform Replacement)
+**When to consider**: Seeking open-source alternatives, AI-first strategy, dissatisfaction with proprietary lock-in
 
-**Preserve Enterprise Investment**: Keep Foundry for enterprise data integration, governance, and compliance where it excels.
+**Naas Replaces Foundry**:
+- Open-source transparency replaces proprietary black-box systems
+- Multi-LLM flexibility replaces single-vendor AI modules
+- Standards-based ontologies replace proprietary data modeling
+- Flexible deployment replaces managed-service constraints
 
-**Add AI Flexibility**: Layer Naas on top to provide multi-LLM capabilities and conversational interfaces.
+### Scenario 2: Strategic Integration (Enhancement Approach)
+**When to consider**: Existing Foundry investment, established enterprise workflows, gradual AI enhancement
 
-**Enhance User Experience**: Provide natural language access to Foundry's powerful data integration capabilities.
+**Naas Enhances Foundry**:
+- Keep Foundry for enterprise data integration and governance
+- Add Naas for multi-LLM capabilities and conversational interfaces
+- Provide natural language access to Foundry's data integration
+- Maintain compliance while adding AI flexibility
 
 ### Common Integration Architecture
 

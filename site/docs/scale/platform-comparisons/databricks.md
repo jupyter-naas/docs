@@ -20,15 +20,25 @@ Naas complements Databricks by adding conversational AI interfaces and intellige
 | **Licensing** | Open-source (MIT) | Commercial with usage-based pricing |
 | **Target Users** | AI-first teams, business users | Data scientists, ML engineers, analysts |
 
-## 🔗 Integration Strategy: Bridging Technical and Business Teams
+## 🔗 Platform Strategy: Compete or Integrate?
 
-### Why Integrate Instead of Replace?
+### Scenario 1: Direct Competition (Platform Replacement)
+**When to consider**: Starting fresh, AI-first strategy, preference for conversational over code-based development
 
-**Preserve ML Expertise**: Keep Databricks for advanced data science, ML development, and large-scale analytics where your teams excel.
+**Naas Replaces Databricks**:
+- Multi-agent workflows replace notebook-based development
+- Conversational AI interfaces replace code-first environments
+- Semantic data modeling replaces Delta Lake schemas
+- Natural language ML deployment replaces MLOps pipelines
 
-**Add Business Access**: Layer Naas on top to provide conversational interfaces to Databricks models and insights.
+### Scenario 2: Strategic Integration (Complementary Approach)
+**When to consider**: Existing Databricks investment, strong data science teams, gradual AI democratization
 
-**Bridge the Gap**: Connect technical ML capabilities with business user needs through natural language interfaces.
+**Naas Enhances Databricks**:
+- Keep Databricks for advanced data science and ML development
+- Add Naas for conversational interfaces to models and insights
+- Bridge technical ML capabilities with business user needs
+- Preserve existing MLOps workflows while adding AI accessibility
 
 ### Common Integration Architecture
 
