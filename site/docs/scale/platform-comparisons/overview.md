@@ -37,6 +37,7 @@ quadrantChart
     Apache Spark: [0.8, 0.3]
     Elasticsearch: [0.7, 0.4]
     Apache Superset: [0.9, 0.2]
+    Nebari: [0.85, 0.45]
 ```
 
 ### Strategic Quadrant Analysis
@@ -57,6 +58,15 @@ quadrantChart
 - **Apache Spark**: Distributed computing framework for large-scale data processing and analytics
 - **Elasticsearch**: Search and analytics engine for structured and unstructured data
 - **Apache Superset**: Business intelligence web application for data visualization and exploration
+- **Nebari**: Open-source data science platform with GitOps approach and Dask-powered scaling
+
+## Integration Patterns
+
+### Foundation Layer Strategy
+**Palantir + Databricks**: Foundry uses Databricks for ML infrastructure  
+**Naas + Nebari**: Naas can use Nebari for data science foundation
+
+**Benefits**: Open-source alternative with semantic AI capabilities
 
 ## Platform Strategies
 
@@ -226,6 +236,7 @@ Each comparison follows a consistent framework covering competitive positioning 
 - **[Naas vs. Databricks](./databricks)**: Multi-agent orchestration vs. unified analytics - standalone or complementary?
 - **[Naas vs. CrewAI](./crewai)**: Semantic reasoning vs. workflow automation - framework choice or integration?
 - **[Naas vs. Glean](./glean)**: Multi-agent intelligence vs. enterprise search - advanced AI or knowledge management?
+- **[Naas vs. Nebari](./nebari)**: Conversational AI vs. data science platform - business interface or technical foundation?
 
 #### Comparison Framework
 Each platform comparison includes:
