@@ -83,6 +83,11 @@ function readMarkdownFiles(docsDir, baseUrl = '') {
           url: urlPath,
           hierarchy,
           type: 'content',
+          // Docusaurus-specific fields for faceting
+          docusaurus_tag: 'default',
+          language: 'en',
+          lang: 'en',
+          version: 'current',
           // Add additional metadata
           lastModified: stat.mtime.toISOString(),
           wordCount: cleanContent.split(/\s+/).length
@@ -174,6 +179,14 @@ module.exports = function algoliaIndexPlugin(context, options) {
             ],
             attributesToSnippet: [
               'content:20'
+            ],
+            // Critical: Add faceting attributes for Docusaurus
+            attributesForFaceting: [
+              'docusaurus_tag',
+              'language',
+              'lang',
+              'version',
+              'type'
             ],
             ranking: [
               'typo',
