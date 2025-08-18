@@ -47,9 +47,16 @@ graph TB
     TOOLS --> STORAGE
     API --> PIPELINE
     
-    style AGENTS fill:#e1f5fe
-    style ONTOLOGY fill:#f3e5f5
-    style API fill:#e8f5e8
+    classDef userExp fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#2e7d32
+    classDef platform fill:#e3f2fd,stroke:#2196f3,stroke-width:1px,color:#1565c0
+    classDef aiEngine fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#e65100
+    classDef dataLayer fill:#f3e5f5,stroke:#9c27b0,stroke-width:1px,color:#4a148c
+    classDef infrastructure fill:#fce4ec,stroke:#e91e63,stroke-width:1px,color:#880e4f
+    
+    class UI,EXT,CLI userExp
+    class API,PIPELINE platform
+    class AGENTS,ONTOLOGY,MEMORY,TOOLS aiEngine
+    class DB,VECTOR,STORAGE dataLayer
 ```
 
 **The three-layer architecture enables:**
@@ -104,7 +111,7 @@ graph LR
         CRM[CRM Systems]
         ERP[ERP Systems]  
         DB[Databases]
-        API[External APIs]
+        EXTAPI[External APIs]
         FILES[File Systems]
     end
     
@@ -123,7 +130,7 @@ graph LR
     CRM --> DRIVERS
     ERP --> DRIVERS
     DB --> DRIVERS
-    API --> DRIVERS
+    EXTAPI --> DRIVERS
     FILES --> DRIVERS
     
     DRIVERS --> TRANSFORM
@@ -133,9 +140,16 @@ graph LR
     AGENTS --> ANALYSIS
     AGENTS --> AUTOMATION
     
-    style DRIVERS fill:#e1f5fe
-    style ONTOLOGY fill:#f3e5f5
-    style AGENTS fill:#fff3e0
+    classDef userExp fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#2e7d32
+    classDef platform fill:#e3f2fd,stroke:#2196f3,stroke-width:1px,color:#1565c0
+    classDef aiEngine fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#e65100
+    classDef dataLayer fill:#f3e5f5,stroke:#9c27b0,stroke-width:1px,color:#4a148c
+    classDef infrastructure fill:#fce4ec,stroke:#e91e63,stroke-width:1px,color:#880e4f
+    
+    class CRM,ERP,DB,EXTAPI,FILES infrastructure
+    class DRIVERS,TRANSFORM platform
+    class ONTOLOGY dataLayer
+    class AGENTS,ANALYSIS,AUTOMATION aiEngine
 ```
 
 **Integration capabilities include:**

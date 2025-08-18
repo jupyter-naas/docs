@@ -32,6 +32,16 @@ stateDiagram-v2
         ExecuteTool --> FormatOutput
         FormatOutput --> [*]
     }
+    
+    classDef agentState fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#e65100
+    classDef toolState fill:#e3f2fd,stroke:#2196f3,stroke-width:1px,color:#1565c0
+    classDef memoryState fill:#f3e5f5,stroke:#9c27b0,stroke-width:1px,color:#4a148c
+    classDef terminalState fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#2e7d32
+    
+    class AgentNode agentState
+    class ToolNode toolState
+    class MemoryCheckpoint memoryState
+    class End terminalState
 ```
 
 **The state machine ensures:**
@@ -127,10 +137,17 @@ graph TD
     
     VALIDATE -->|Invalid| ROUTE
     
-    style ROUTE fill:#e1f5fe
-    style EXECUTE fill:#f3e5f5
-    style SUBAGENT fill:#fff3e0
-    style MEMORY fill:#e8f5e8
+    classDef userExp fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#2e7d32
+    classDef platform fill:#e3f2fd,stroke:#2196f3,stroke-width:1px,color:#1565c0
+    classDef aiEngine fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#e65100
+    classDef dataLayer fill:#f3e5f5,stroke:#9c27b0,stroke-width:1px,color:#4a148c
+    classDef decision fill:#fce4ec,stroke:#e91e63,stroke-width:2px,color:#880e4f
+    
+    class START,END,RESPONSE userExp
+    class INPUT,PARSE,PLAN,INTEGRATE,VALIDATE platform
+    class ROUTE decision
+    class GENERATE,DELEGATE,SUBAGENT,COLLECT aiEngine
+    class EXECUTE,MEMORY dataLayer
 ```
 
 **Key workflow capabilities:**
@@ -238,10 +255,19 @@ graph TD
     PARTIAL --> MEMORY
     ESCALATE --> LOG[Log for Review]
     
-    style ERROR fill:#ffebee
-    style RETRY fill:#fff3e0
-    style FALLBACK fill:#e8f5e8
-    style ESCALATE fill:#fce4ec
+    classDef userExp fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#2e7d32
+    classDef platform fill:#e3f2fd,stroke:#2196f3,stroke-width:1px,color:#1565c0
+    classDef aiEngine fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#e65100
+    classDef dataLayer fill:#f3e5f5,stroke:#9c27b0,stroke-width:1px,color:#4a148c
+    classDef errorState fill:#ffebee,stroke:#f44336,stroke-width:2px,color:#c62828
+    classDef decision fill:#fce4ec,stroke:#e91e63,stroke-width:2px,color:#880e4f
+    
+    class SUCCESS,PARTIAL userExp
+    class EXEC,ALTERNATE,DEGRADE platform
+    class CHECK,TYPE,COUNT,AVAILABLE decision
+    class RETRY,FALLBACK aiEngine
+    class MEMORY,LOG dataLayer
+    class ERROR,ESCALATE errorState
 ```
 
 ```python

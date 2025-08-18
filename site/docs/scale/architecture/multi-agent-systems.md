@@ -36,8 +36,16 @@ graph TD
     A <--> B
     B <--> C
     
-    style COORD fill:#e1f5fe
-    style STATE fill:#f3e5f5
+    classDef userExp fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#2e7d32
+    classDef platform fill:#e3f2fd,stroke:#2196f3,stroke-width:1px,color:#1565c0
+    classDef aiEngine fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#e65100
+    classDef dataLayer fill:#f3e5f5,stroke:#9c27b0,stroke-width:1px,color:#4a148c
+    classDef infrastructure fill:#fce4ec,stroke:#e91e63,stroke-width:1px,color:#880e4f
+    
+    class COORD aiEngine
+    class WORK1,WORK2,WORK3 platform
+    class A,B,C aiEngine
+    class STATE dataLayer
 ```
 
 **Three core collaboration patterns:**
@@ -196,13 +204,28 @@ sequenceDiagram
     participant AgentB
     participant SharedState
     
+    Note over Coordinator,SharedState: Multi-Agent Communication Flow
+    
     Coordinator->>AgentA: Task Assignment
+    Note right of AgentA: Process Task Requirements
+    
     AgentA->>SharedState: Update Context
+    Note over SharedState: Store Task Context
+    
     AgentA->>AgentB: Request Collaboration
+    Note right of AgentB: Evaluate Collaboration Request
+    
     AgentB->>SharedState: Read Context
+    Note over SharedState: Retrieve Shared Context
+    
     AgentB->>AgentA: Provide Input
+    Note right of AgentA: Integrate Collaborative Input
+    
     AgentA->>SharedState: Update Results
+    Note over SharedState: Store Final Results
+    
     AgentA->>Coordinator: Report Completion
+    Note right of Coordinator: Workflow Complete
 ```
 
 **Communication methods:**

@@ -60,9 +60,16 @@ graph TD
     COMPUTE --> CLOUD
     NOTIFICATION --> MESSAGING
     
-    style REGISTRY fill:#e1f5fe
-    style VALIDATOR fill:#f3e5f5
-    style MONITOR fill:#e8f5e8
+    classDef userExp fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#2e7d32
+    classDef platform fill:#e3f2fd,stroke:#2196f3,stroke-width:1px,color:#1565c0
+    classDef aiEngine fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#e65100
+    classDef dataLayer fill:#f3e5f5,stroke:#9c27b0,stroke-width:1px,color:#4a148c
+    classDef infrastructure fill:#fce4ec,stroke:#e91e63,stroke-width:1px,color:#880e4f
+    
+    class AGENT,PLANNER,EXECUTOR aiEngine
+    class REGISTRY,VALIDATOR,ROUTER,MONITOR platform
+    class DATABASE,API,FILE,COMPUTE,NOTIFICATION dataLayer
+    class DB,REST,STORAGE,CLOUD,MESSAGING infrastructure
 ```
 
 **The layered approach provides:**
@@ -321,9 +328,15 @@ graph LR
     VIZ --> PDF
     REPORT --> PDF
     
-    style STATS fill:#e1f5fe
-    style ML fill:#f3e5f5
-    style VIZ fill:#fff3e0
+    classDef userExp fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#2e7d32
+    classDef platform fill:#e3f2fd,stroke:#2196f3,stroke-width:1px,color:#1565c0
+    classDef aiEngine fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#e65100
+    classDef dataLayer fill:#f3e5f5,stroke:#9c27b0,stroke-width:1px,color:#4a148c
+    classDef infrastructure fill:#fce4ec,stroke:#e91e63,stroke-width:1px,color:#880e4f
+    
+    class RAW,CLEAN,VALIDATE platform
+    class STATS,ML,VIZ,REPORT aiEngine
+    class TABLE,CHART,PDF,JSON userExp
 ```
 
 ```python
@@ -549,10 +562,17 @@ graph TD
     NOTIFICATION --> ESCALATION[Auto-scaling/Remediation]
     DASHBOARD --> OPTIMIZATION[Performance Optimization]
     
-    style METRICS fill:#e1f5fe
-    style ALERT fill:#fff3e0
-    style NOTIFICATION fill:#ffebee
-    style OPTIMIZATION fill:#e8f5e8
+    classDef userExp fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#2e7d32
+    classDef platform fill:#e3f2fd,stroke:#2196f3,stroke-width:1px,color:#1565c0
+    classDef aiEngine fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#e65100
+    classDef dataLayer fill:#f3e5f5,stroke:#9c27b0,stroke-width:1px,color:#4a148c
+    classDef alertState fill:#ffebee,stroke:#f44336,stroke-width:2px,color:#c62828
+    classDef decision fill:#fce4ec,stroke:#e91e63,stroke-width:2px,color:#880e4f
+    
+    class EXEC,ESCALATION,OPTIMIZATION aiEngine
+    class METRICS,LATENCY,ERROR,THROUGHPUT,RESOURCE platform
+    class ALERT decision
+    class DASHBOARD,NOTIFICATION userExp
 ```
 
 ```python
