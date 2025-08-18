@@ -21,7 +21,7 @@ function extractContent(markdown) {
 }
 
 // Function to recursively read markdown files
-function readMarkdownFiles(docsDir, baseUrl = '') {
+function readMarkdownFiles(docsDir, baseUrl = '', context = null) {
   const records = [];
   
   if (!fs.existsSync(docsDir)) {
@@ -36,7 +36,7 @@ function readMarkdownFiles(docsDir, baseUrl = '') {
 
     if (stat.isDirectory() && !file.startsWith('.') && !file.startsWith('_')) {
       // Recursively read subdirectories
-      const subRecords = readMarkdownFiles(filePath, `${baseUrl}/${file}`);
+      const subRecords = readMarkdownFiles(filePath, `${baseUrl}/${file}`, context);
       records.push(...subRecords);
     } else if (file.endsWith('.md') && file !== 'README.md') {
       try {
@@ -63,6 +63,10 @@ function readMarkdownFiles(docsDir, baseUrl = '') {
         
         // Clean up URL path
         urlPath = urlPath.replace(/\/+/g, '/').replace(/\/$/, '') || '/';
+        
+        // Make URL absolute for Docusaurus search (use site config URL or fallback)
+        const siteUrl = context.siteConfig?.url || 'http://localhost:3003';
+        const absoluteUrl = `${siteUrl}${urlPath}`;
 
         // Extract hierarchy from path
         const pathParts = baseUrl.split('/').filter(Boolean);
@@ -80,7 +84,7 @@ function readMarkdownFiles(docsDir, baseUrl = '') {
           objectID: urlPath.replace(/^\//, '') || 'home',
           title,
           content: contentPreview,
-          url: urlPath,
+          url: absoluteUrl,
           hierarchy,
           type: 'content',
           // Docusaurus-specific fields for faceting
@@ -131,7 +135,7 @@ module.exports = function algoliaIndexPlugin(context, options) {
 
         // Read all markdown files from the docs directory
         const docsDir = path.join(context.siteDir, 'docs');
-        const records = readMarkdownFiles(docsDir);
+        const records = readMarkdownFiles(docsDir, '', context);
 
         console.log(`📄 Found ${records.length} documents to index`);
 
