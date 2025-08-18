@@ -1,4 +1,4 @@
-const { algoliasearch } = require('algoliasearch');
+const algoliasearch = require('algoliasearch');
 const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
@@ -120,8 +120,9 @@ module.exports = function algoliaIndexPlugin(context, options) {
       try {
         console.log('🔍 Starting Algolia indexing...');
         
-        // Initialize Algolia client (v5 API)
+        // Initialize Algolia client (v4 API)
         const client = algoliasearch(options.appId, adminApiKey);
+        const index = client.initIndex(options.indexName);
 
         // Read all markdown files from the docs directory
         const docsDir = path.join(context.siteDir, 'docs');
@@ -134,11 +135,11 @@ module.exports = function algoliaIndexPlugin(context, options) {
           return;
         }
 
-        // Clear existing index (v5 API)
-        await client.clearObjects({ indexName: options.indexName });
+        // Clear existing index (v4 API)
+        await index.clearObjects();
         console.log('🗑️  Cleared existing index');
 
-        // Add records to Algolia in batches (v5 API)
+        // Add records to Algolia in batches (v4 API)
         const batchSize = 100;
         const batches = [];
         
@@ -148,10 +149,7 @@ module.exports = function algoliaIndexPlugin(context, options) {
 
         let totalIndexed = 0;
         for (const batch of batches) {
-          const response = await client.saveObjects({ 
-            indexName: options.indexName, 
-            objects: batch 
-          });
+          const { objectIDs } = await index.saveObjects(batch);
           const batchSize = batch.length;
           totalIndexed += batchSize;
           console.log(`📝 Indexed batch: ${batchSize} documents`);
@@ -159,10 +157,8 @@ module.exports = function algoliaIndexPlugin(context, options) {
 
         console.log(`✅ Successfully indexed ${totalIndexed} documents to Algolia`);
         
-        // Configure index settings for better search (v5 API)
-        await client.setSettings({
-          indexName: options.indexName,
-          indexSettings: {
+        // Configure index settings for better search (v4 API)
+        await index.setSettings({
             searchableAttributes: [
               'title',
               'hierarchy.lvl0',
@@ -192,7 +188,6 @@ module.exports = function algoliaIndexPlugin(context, options) {
             customRanking: [
               'desc(wordCount)'
             ]
-          }
         });
         
         console.log('⚙️  Updated index settings');

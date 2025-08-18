@@ -49,7 +49,7 @@ const config = {
     ],
   ],
 
-  themes: ['@docusaurus/theme-mermaid', '@docusaurus/theme-search-algolia'],
+  themes: ['@docusaurus/theme-mermaid'],
 
   plugins: [
     [
