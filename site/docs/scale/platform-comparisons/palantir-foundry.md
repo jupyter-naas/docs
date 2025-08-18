@@ -2,20 +2,52 @@
 sidebar_position: 2
 ---
 
-# Enterprise Integration Platforms
+# Naas + Palantir Foundry Integration
 
-Understanding the differences between AI-native platforms like Naas and established enterprise integration platforms helps organizations make informed architectural decisions. This analysis focuses on platform philosophy, implementation approaches, and organizational fit.
+Naas can complement Palantir Foundry by adding conversational AI interfaces and multi-LLM capabilities to your existing enterprise data platform. This comparison explores how Naas enhances Foundry deployments and when integration versus replacement makes sense.
 
-## Platform Philosophy Comparison
+## Executive Summary
 
-| Dimension | AI-Native Approach (Naas) | Enterprise Integration Approach (Foundry) |
-|-----------|---------------------------|-------------------------------------------|
+| Dimension | Naas | Palantir Foundry |
+|-----------|------|------------------|
 | **Core Philosophy** | AI agents as primary interface | Data integration with AI enhancements |
 | **Architecture** | Modular, standards-based | Integrated, proprietary ecosystem |
 | **AI Integration** | Native multi-LLM orchestration | Specialized AI modules (AIP) |
 | **Data Modeling** | Semantic ontologies (W3C standards) | Proprietary object modeling |
 | **User Experience** | Conversational AI interactions | Visual workshops and applications |
 | **Deployment Model** | Flexible (cloud, on-prem, hybrid) | Primarily managed service |
+| **Licensing** | Open-source (MIT) | Proprietary commercial |
+| **Target Users** | Technical teams, AI-first organizations | Enterprise analysts, government agencies |
+
+## 🔗 Integration Strategy: Enhancing Enterprise Platforms
+
+### Why Integrate with Foundry?
+
+**Preserve Enterprise Investment**: Keep Foundry for enterprise data integration, governance, and compliance where it excels.
+
+**Add AI Flexibility**: Layer Naas on top to provide multi-LLM capabilities and conversational interfaces.
+
+**Enhance User Experience**: Provide natural language access to Foundry's powerful data integration capabilities.
+
+### Common Integration Architecture
+
+```
+┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
+│   Business      │    │   Naas AI        │    │   Palantir      │
+│   Analysts      │◄──►│   Agents         │◄──►│   Foundry       │
+│                 │    │                  │    │                 │
+│ "Analyze supply │    │ • Multi-LLM      │    │ • Data Pipeline │
+│  chain risks"   │    │ • Conversation   │    │ • Integration   │
+│                 │    │ • Automation     │    │ • Governance    │
+└─────────────────┘    └──────────────────┘    └─────────────────┘
+```
+
+### Integration Benefits
+
+- **Enterprise Teams**: Keep established Foundry workflows while adding modern AI capabilities
+- **Business Users**: Get conversational access to complex enterprise data integrations
+- **IT Organizations**: Leverage existing Foundry investment while adding AI flexibility
+- **Compliance**: Maintain Foundry's enterprise governance while adding AI transparency
 
 ## Detailed Comparison
 
@@ -52,10 +84,10 @@ org:hasEmployees rdfs:domain org:Organization .
 
 **Best for**: Organizations prioritizing rapid business user adoption, visual learners, or teams without formal ontology expertise.
 
-#### **Choosing Your Approach**
-- **Technical rigor vs. User accessibility**: Standards-based approaches require more technical expertise but provide formal guarantees
-- **Interoperability vs. Integration**: Open standards enable broader ecosystem integration; proprietary models offer tighter platform integration
-- **Long-term flexibility vs. Short-term productivity**: Formal approaches require more upfront investment but provide greater long-term adaptability
+#### **Evaluation Criteria**
+- **Technical Requirements**: Standards-based approaches require more technical expertise but provide formal guarantees and interoperability
+- **Integration Strategy**: Open standards enable broader ecosystem integration; proprietary models offer tighter platform-specific integration
+- **Implementation Timeline**: Formal approaches require more upfront investment but provide greater long-term adaptability and flexibility
 
 ### 2. AI Integration Strategies
 
@@ -110,7 +142,7 @@ agent = Agent(
 - **Collaboration features**: Real-time collaboration on analyses and datasets
 - **Enterprise tooling**: Built-in version control, testing, and deployment
 
-**Winner**: Naas for developer productivity; Foundry for business user accessibility
+**Evaluation**: Naas provides developer productivity and technical flexibility; Foundry offers business user accessibility and rapid deployment
 
 ### 4. Data Integration and Flexibility
 
@@ -136,7 +168,7 @@ db_data = database.connect(url).query("SELECT * FROM customers")
 - **Schema management**: Automatic schema detection and evolution
 - **Spark processing**: Built-in distributed computing for large datasets
 
-**Winner**: Naas for flexibility and extensibility; Foundry for enterprise data management
+**Evaluation**: Naas offers flexibility and extensibility for custom integrations; Foundry provides comprehensive enterprise data management capabilities
 
 ### 5. Security and Compliance
 
@@ -152,7 +184,7 @@ db_data = database.connect(url).query("SELECT * FROM customers")
 - **Audit capabilities**: Comprehensive audit trails and compliance reporting
 - **Data governance**: Built-in data classification and access controls
 
-**Winner**: Foundry for out-of-the-box compliance; Naas for transparency and control
+**Evaluation**: Foundry provides comprehensive out-of-the-box compliance features; Naas offers transparency and granular security control
 
 ### 6. Total Cost of Ownership
 
@@ -168,7 +200,7 @@ db_data = database.connect(url).query("SELECT * FROM customers")
 - **Managed service**: Infrastructure and maintenance included
 - **Professional services**: Additional costs for implementation and training
 
-**Winner**: Naas for long-term cost efficiency; Foundry for predictable enterprise budgeting
+**Evaluation**: Naas offers long-term cost efficiency through open-source licensing; Foundry provides predictable enterprise budgeting with comprehensive managed services
 
 ## Migration Strategies
 
