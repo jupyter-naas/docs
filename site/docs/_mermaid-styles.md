@@ -142,9 +142,9 @@ sequenceDiagram
 
 ```markdown
 ```mermaid
+%%{init: {'theme':'base', 'themeVariables': {'primaryColor': '#f8fafc', 'primaryTextColor': '#1e293b', 'primaryBorderColor': '#e2e8f0', 'lineColor': '#64748b'}}}%%
 graph TD
-    %% Use ID-based subgraphs for styling control
-    subgraph SUB1 ["Subgraph Title"]
+    subgraph "Subgraph Title"
         NODE1[Node 1]
         NODE2[Node 2]
     end
@@ -155,23 +155,26 @@ graph TD
     classDef aiEngine fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#e65100
     classDef dataLayer fill:#f3e5f5,stroke:#9c27b0,stroke-width:1px,color:#4a148c
     classDef infrastructure fill:#fce4ec,stroke:#e91e63,stroke-width:1px,color:#880e4f
-    classDef subgraphClear fill:none,stroke:#333,stroke-width:1px,color:#333
     
     %% Apply classes to your nodes
     class NODE1,NODE2 userExp
-    %% Apply transparent background to subgraphs
-    class SUB1 subgraphClear
 ```
 
 ### Subgraph Styling
 
-**Critical for consistency**: To ensure transparent subgraph backgrounds like the platform overview:
+**Critical for consistency**: Use the exact same Mermaid theme configuration as the platform overview:
 
-1. **Use ID-based subgraphs**: `subgraph SUB_ID ["Display Name"]`
-2. **Create subgraphClear class**: `classDef subgraphClear fill:none,stroke:#333,stroke-width:1px,color:#333`
-3. **Apply to all subgraphs**: `class SUB1,SUB2,SUB3 subgraphClear`
+```
+%%{init: {'theme':'base', 'themeVariables': {'primaryColor': '#f8fafc', 'primaryTextColor': '#1e293b', 'primaryBorderColor': '#e2e8f0', 'lineColor': '#64748b'}}}%%
+```
 
-This ensures white/transparent backgrounds in both light and dark modes.
+This theme configuration:
+- **Ensures white subgraph backgrounds** in both light and dark modes
+- **Matches the platform overview** exactly
+- **Uses standard subgraph syntax**: `subgraph "Title"` (no ID needed)
+- **Controls colors globally** through theme variables
+
+Always add this as the **first line** of every mermaid diagram for consistency.
 
 ### Validation Checklist
 - [ ] Color scheme matches Naas brand guidelines
