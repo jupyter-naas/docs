@@ -1,4 +1,4 @@
-codebases/
+resources/
 .docusaurus/
 .vscode/
 .DS_Store
@@ -17,6 +17,3 @@ site/node_modules/
 **/node_modules/
 **/build/
 **/.docusaurus/
-
-# Auto-generated ontology files (too many for git)
-site/docs/ontology/
