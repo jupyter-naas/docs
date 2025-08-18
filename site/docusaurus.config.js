@@ -49,7 +49,7 @@ const config = {
     ],
   ],
 
-  themes: ['@docusaurus/theme-mermaid'],
+  themes: ['@docusaurus/theme-mermaid', '@docusaurus/theme-search-algolia'],
 
   plugins: [
     [
@@ -85,8 +85,6 @@ const config = {
         apiKey: 'f6ee1784b03f118828d7de35b9f7c178',
         indexName: 'docs.naas.ai',
         contextualSearch: true,
-        searchParameters: {},
-        searchPagePath: 'search',
       },
       fontFamily: {
         sans: ["San Francisco", "Arial", "sans-serif"],

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Algolia Search Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/algoliasearch@5/dist/algoliasearch-lite.umd.js"></script>
+</head>
+<body>
+    <h1>Direct Algolia Search Test</h1>
+    <input type="text" id="search-input" placeholder="Type to search..." />
+    <div id="search-results"></div>
+
+    <script>
+        const { algoliasearch } = window.algoliasearch;
+        const client = algoliasearch('NGBDVK8FYQ', 'f6ee1784b03f118828d7de35b9f7c178');
+
+        document.getElementById('search-input').addEventListener('input', async (e) => {
+            const query = e.target.value;
+            if (query.length < 2) {
+                document.getElementById('search-results').innerHTML = '';
+                return;
+            }
+
+            try {
+                const { hits } = await client.searchSingleIndex({
+                    indexName: 'docs.naas.ai',
+                    searchParams: {
+                        query: query,
+                        hitsPerPage: 5
+                    }
+                });
+
+                const resultsHtml = hits.map(hit => `
+                    <div style="border: 1px solid #ccc; margin: 10px 0; padding: 10px;">
+                        <h3>${hit.title}</h3>
+                        <p>${hit.content.substring(0, 200)}...</p>
+                        <a href="${hit.url}" target="_blank">View Page</a>
+                    </div>
+                `).join('');
+
+                document.getElementById('search-results').innerHTML = resultsHtml || '<p>No results found</p>';
+            } catch (error) {
+                console.error('Search error:', error);
+                document.getElementById('search-results').innerHTML = '<p>Search error: ' + error.message + '</p>';
+            }
+        });
+    </script>
+</body>
+</html>
