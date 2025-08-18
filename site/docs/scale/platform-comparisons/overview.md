@@ -2,15 +2,15 @@
 sidebar_position: 1
 ---
 
-# Building Your Data & AI Platform Stack
+# Platform Comparisons
 
-When building your Data & AI Platform, organizations need to understand how different platforms compare and integrate. Naas can serve as either a standalone AI-native platform OR as an intelligent layer that enhances existing data infrastructure.
+Organizations evaluating AI platforms need to understand both competitive positioning and integration opportunities. Naas can serve as either a standalone AI-native platform or as an intelligent layer that enhances existing data infrastructure.
 
-This guide helps you evaluate:
+This guide provides:
 - **Head-to-head comparisons** between platforms for specific capabilities
-- **Integration opportunities** to build a best-of-breed platform
-- **Migration strategies** from existing platforms to AI-native approaches
-- **Hybrid architectures** that combine multiple platforms strategically
+- **Integration strategies** for building best-of-breed solutions
+- **Migration guidance** from existing platforms to AI-native approaches
+- **Decision frameworks** for choosing the right platform strategy
 
 ## Platform Strategies
 
