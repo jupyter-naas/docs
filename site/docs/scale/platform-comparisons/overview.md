@@ -12,6 +12,46 @@ This guide provides:
 - **Migration guidance** from existing platforms to AI-native approaches
 - **Decision frameworks** for choosing the right platform strategy
 
+## Platform Positioning Overview
+
+The following quadrant chart positions major AI and data platforms based on their primary focus and user accessibility:
+
+```mermaid
+%%{init: {'theme':'base', 'themeVariables': {'primaryColor': '#f8fafc', 'primaryTextColor': '#1e293b', 'primaryBorderColor': '#e2e8f0', 'lineColor': '#64748b'}}}%%
+quadrantChart
+    title AI Platform Positioning
+    x-axis Low Technical Complexity --> High Technical Complexity
+    y-axis Data Processing Focus --> AI-Native Focus
+    
+    quadrant-1 AI-Native & Complex
+    quadrant-2 AI-Native & Accessible
+    quadrant-3 Data Processing & Accessible
+    quadrant-4 Data Processing & Complex
+    
+    Naas: [0.2, 0.9]
+    CrewAI: [0.7, 0.8]
+    Glean: [0.3, 0.7]
+    Palantir Foundry: [0.8, 0.4]
+    Databricks: [0.9, 0.6]
+    Snowflake: [0.7, 0.2]
+```
+
+### Quadrant Analysis
+
+#### **Quadrant 1: AI-Native & Complex** 
+- **CrewAI**: Developer-focused multi-agent framework requiring coding expertise
+- **Databricks**: ML platform with notebook-based development for data scientists
+
+#### **Quadrant 2: AI-Native & Accessible**
+- **Naas**: Conversational AI platform with business-user friendly interfaces
+- **Glean**: Enterprise AI assistant with workplace tool integration
+
+#### **Quadrant 3: Data Processing & Accessible**
+- **Snowflake**: Cloud data warehouse with SQL-based analytics (moving toward AI)
+
+#### **Quadrant 4: Data Processing & Complex**
+- **Palantir Foundry**: Enterprise integration platform with complex data modeling
+
 ## Platform Strategies
 
 ### Option 1: Standalone AI-Native Platform
