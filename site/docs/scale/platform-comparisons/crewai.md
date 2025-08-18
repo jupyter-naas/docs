@@ -20,7 +20,7 @@ A comprehensive comparison between Naas and CrewAI covering both competitive pos
 | **Licensing** | Open-source (MIT) | Open-source framework with cloud platform |
 | **Target Users** | Business users, AI-first organizations | Developers, automation engineers, technical teams |
 
-## 🔗 Platform Strategy: Compete or Integrate?
+## Platform Strategy Options
 
 ### Scenario 1: Direct Competition (Framework Replacement)
 **When to consider**: Choosing between multi-agent frameworks, semantic reasoning requirements, business-user focus
@@ -56,7 +56,7 @@ A comprehensive comparison between Naas and CrewAI covering both competitive pos
 ### Integration Benefits
 
 - **Developers**: Continue using CrewAI for complex automation workflows
-- **Business Users**: Get natural language access to CrewAI automations
+- **Business Users**: Natural language access to CrewAI automations
 - **Organizations**: Combine semantic reasoning with workflow automation
 - **Teams**: Bridge technical automation capabilities with business requirements
 

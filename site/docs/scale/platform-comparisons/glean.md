@@ -20,7 +20,7 @@ A comprehensive comparison between Naas and Glean covering both competitive posi
 | **Licensing** | Open-source (MIT) | Commercial enterprise platform |
 | **Target Users** | AI-first organizations, technical and business teams | All enterprise teams, knowledge workers |
 
-## 🔗 Platform Strategy: Compete or Integrate?
+## Platform Strategy Options
 
 ### Scenario 1: Direct Competition (Platform Replacement)
 **When to consider**: Seeking open-source alternatives, AI-first strategy, semantic reasoning requirements
@@ -56,7 +56,7 @@ A comprehensive comparison between Naas and Glean covering both competitive posi
 
 ### Integration Benefits
 
-- **Knowledge Workers**: Get both search-based and conversational access to enterprise information
+- **Knowledge Workers**: Both search-based and conversational access to enterprise information
 - **IT Teams**: Leverage Glean's enterprise integrations with Naas's AI capabilities
 - **Organizations**: Combine established knowledge management with advanced AI reasoning
 - **Business Users**: Access information through multiple AI-powered interfaces

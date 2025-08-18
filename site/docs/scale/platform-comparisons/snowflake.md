@@ -20,7 +20,7 @@ A comprehensive comparison between Naas and Snowflake covering both competitive 
 | **Licensing** | Open-source (MIT) | Consumption-based commercial |
 | **Target Users** | AI-first teams, conversational analytics | Data analysts, BI developers, SQL experts |
 
-## 🔗 Platform Strategy: Compete or Integrate?
+## Platform Strategy Options
 
 ### Scenario 1: Direct Competition (Platform Replacement)
 **When to consider**: Starting fresh, AI-first strategy, dissatisfaction with SQL-centric workflows
@@ -55,10 +55,10 @@ A comprehensive comparison between Naas and Snowflake covering both competitive 
 
 ### Integration Benefits
 
-- **Business Users**: Get natural language access to Snowflake data without learning SQL
-- **Data Teams**: Keep existing workflows while adding AI-powered automation
+- **Business Users**: Natural language access to Snowflake data without learning SQL
+- **Data Teams**: Maintain existing workflows while adding AI-powered automation
 - **IT Organizations**: Leverage current infrastructure investments while adding modern AI capabilities
-- **Cost Efficiency**: No need to migrate data or rebuild existing systems
+- **Cost Efficiency**: No data migration or system rebuilding required
 
 ## Detailed Comparison
 

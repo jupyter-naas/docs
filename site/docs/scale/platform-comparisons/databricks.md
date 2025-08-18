@@ -20,7 +20,7 @@ Naas complements Databricks by adding conversational AI interfaces and intellige
 | **Licensing** | Open-source (MIT) | Commercial with usage-based pricing |
 | **Target Users** | AI-first teams, business users | Data scientists, ML engineers, analysts |
 
-## 🔗 Platform Strategy: Compete or Integrate?
+## Platform Strategy Options
 
 ### Scenario 1: Direct Competition (Platform Replacement)
 **When to consider**: Starting fresh, AI-first strategy, preference for conversational over code-based development
@@ -56,7 +56,7 @@ Naas complements Databricks by adding conversational AI interfaces and intellige
 ### Integration Benefits
 
 - **Data Scientists**: Continue using familiar Databricks environment for model development
-- **Business Users**: Get natural language access to ML models and insights
+- **Business Users**: Natural language access to ML models and insights
 - **ML Engineers**: Deploy models through conversational interfaces without changing MLOps workflows
 - **Organizations**: Maximize ROI on existing Databricks investment while democratizing AI access
 

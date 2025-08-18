@@ -19,7 +19,7 @@ A comprehensive comparison between Naas and Palantir Foundry covering both compe
 | **Licensing** | Open-source (MIT) | Proprietary commercial |
 | **Target Users** | Technical teams, AI-first organizations | Enterprise analysts, government agencies |
 
-## 🔗 Platform Strategy: Compete or Integrate?
+## Platform Strategy Options
 
 ### Scenario 1: Direct Competition (Platform Replacement)
 **When to consider**: Seeking open-source alternatives, AI-first strategy, dissatisfaction with proprietary lock-in
@@ -54,8 +54,8 @@ A comprehensive comparison between Naas and Palantir Foundry covering both compe
 
 ### Integration Benefits
 
-- **Enterprise Teams**: Keep established Foundry workflows while adding modern AI capabilities
-- **Business Users**: Get conversational access to complex enterprise data integrations
+- **Enterprise Teams**: Maintain established Foundry workflows while adding modern AI capabilities
+- **Business Users**: Conversational access to complex enterprise data integrations
 - **IT Organizations**: Leverage existing Foundry investment while adding AI flexibility
 - **Compliance**: Maintain Foundry's enterprise governance while adding AI transparency
 
