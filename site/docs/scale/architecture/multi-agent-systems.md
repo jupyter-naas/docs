@@ -1,265 +1,225 @@
 ---
-sidebar_position: 1
+sidebar_position: 4
 ---
 
-# Multi-Agent Systems Architecture
+# Multi-Agent Systems
 
-Naas implements a sophisticated multi-agent architecture based on LangGraph, enabling complex AI workflows that combine reasoning, tool usage, and collaborative problem-solving. This technical deep-dive explores the architecture, implementation patterns, and scaling considerations.
+Naas implements sophisticated multi-agent systems that enable complex AI workflows through collaborative problem-solving, distributed reasoning, and coordinated tool usage. This section covers advanced patterns for building agent networks that scale from simple interactions to enterprise-grade orchestration.
 
-## Core Architecture
+## Agent Collaboration Patterns
 
-### LangGraph Foundation
-
-Naas agents are built on LangGraph, a framework for creating stateful, multi-step applications with Large Language Models:
-
-```python
-from langchain_openai import ChatOpenAI
-from abi.services.agent.Agent import Agent, AgentConfiguration, AgentSharedState, MemorySaver
-
-# Core agent creation pattern
-def create_agent(agent_shared_state=None, agent_configuration=None) -> Agent:
-    # Configure LLM model
-    model = ChatOpenAI(model="gpt-4o", temperature=0)
-    
-    # Initialize tools and agents
-    tools = []
-    agents = []
-    
-    # Set configuration and state
-    if agent_configuration is None:
-        agent_configuration = AgentConfiguration(system_prompt=SYSTEM_PROMPT)
-    if agent_shared_state is None:
-        agent_shared_state = AgentSharedState(thread_id=0)
-    
-    return BusinessAgent(
-        name="Business Agent",
-        chat_model=model,
-        tools=tools,
-        agents=agents,
-        state=agent_shared_state,
-        configuration=agent_configuration,
-        memory=MemorySaver()
-    )
-```
-
-### State Management
-
-The agent system uses a sophisticated state machine that manages the flow between model reasoning and tool execution:
+Multi-agent systems in Naas follow established patterns that enable agents to work together effectively:
 
 ```mermaid
-stateDiagram-v2
-    [*] --> AgentNode
-    AgentNode --> ToolNode : Tool Required
-    AgentNode --> End : Complete
-    ToolNode --> AgentNode : Tool Result
-    ToolNode --> MemoryCheckpoint : Store State
-    MemoryCheckpoint --> AgentNode
+graph TD
+    subgraph "Orchestration Pattern"
+        COORD[Coordinator Agent]
+        WORK1[Specialist Agent 1]
+        WORK2[Specialist Agent 2]
+        WORK3[Specialist Agent 3]
+    end
     
-    state AgentNode {
-        [*] --> ProcessMessage
-        ProcessMessage --> GenerateResponse
-        GenerateResponse --> CheckToolCalls
-        CheckToolCalls --> [*]
-    }
+    subgraph "Peer-to-Peer Pattern"
+        A[Agent A]
+        B[Agent B]
+        C[Agent C]
+        STATE[Shared State]
+    end
     
-    state ToolNode {
-        [*] --> ValidateInputs
-        ValidateInputs --> ExecuteTool
-        ExecuteTool --> FormatOutput
-        FormatOutput --> [*]
-    }
+    COORD --> WORK1
+    COORD --> WORK2
+    COORD --> WORK3
+    
+    A <--> STATE
+    B <--> STATE
+    C <--> STATE
+    A <--> B
+    B <--> C
+    
+    style COORD fill:#e1f5fe
+    style STATE fill:#f3e5f5
 ```
 
-### Agent Categories
+**Three core collaboration patterns:**
+- **Orchestration**: Central coordinator delegates tasks to specialized agents
+- **Peer-to-Peer**: Agents collaborate directly through shared state and communication
+- **Pipeline**: Sequential processing with handoffs between specialized stages
 
-Naas provides multiple categories of agents, each optimized for specific domains:
+## Hierarchical Delegation
 
-#### Core System Agents
-- **ABI Agent**: Meta-agent for intelligent routing across models
-- **Model-Specific Agents**: ChatGPT, Claude, Gemini, Grok, Llama, Mistral, DeepSeek
-
-#### Business Function Agents
-- **Sales Agent**: CRM integration, pipeline analysis, lead scoring
-- **Marketing Agent**: Campaign optimization, content generation, analytics
-- **Finance Agent**: Financial modeling, reporting, compliance
-- **Operations Agent**: Process optimization, resource allocation
-
-#### Technical Agents
-- **Development Agent**: Code generation, testing, deployment
-- **DevOps Agent**: Infrastructure management, monitoring, optimization
-- **Data Analysis Agent**: Statistical analysis, visualization, insights
-
-## Tool Integration Architecture
-
-### Tool Definition Pattern
-
-Tools in Naas follow a standardized pattern that makes them accessible to LLM agents:
-
-```python
-from langchain_core.tools import StructuredTool
-from pydantic import BaseModel, Field
-
-class DatabaseQuerySchema(BaseModel):
-    query: str = Field(..., description="SQL query to execute")
-    database: str = Field(..., description="Database connection name")
-
-def query_database(query: str, database: str) -> str:
-    """Execute SQL query and return results."""
-    # Implementation details
-    return result
-
-# Expose as LangChain tool
-database_tool = StructuredTool(
-    name="query_database",
-    description="Execute SQL queries against configured databases",
-    func=query_database,
-    args_schema=DatabaseQuerySchema
-)
-```
-
-### Integration Categories
-
-#### Data Integration Tools
-- **Database connectors**: SQL, NoSQL, graph databases
-- **API clients**: REST, GraphQL, external service integration
-- **File processors**: Excel, CSV, PDF, document parsing
-- **Cloud storage**: S3, GCS, Azure Blob, object storage
-
-#### Analysis Tools
-- **Statistical analysis**: Pandas, NumPy, SciPy integration
-- **Visualization**: Plotly, Matplotlib, interactive charts
-- **Machine learning**: Scikit-learn, TensorFlow, PyTorch models
-- **Business intelligence**: Dashboard generation, KPI calculation
-
-#### Communication Tools
-- **Notifications**: Email, Slack, Teams, webhook delivery
-- **Report generation**: PDF, HTML, automated document creation
-- **Collaboration**: Shared workspace, comment systems
-- **External APIs**: Third-party service integration
-
-## Memory and Context Management
-
-### Conversation Persistence
-
-The MemorySaver component provides persistent conversation history:
-
-```python
-from abi.services.agent.Agent import MemorySaver
-
-# Memory configuration
-memory = MemorySaver()
-
-# Conversation context maintained across interactions
-agent = BusinessAgent(
-    name="Persistent Agent",
-    chat_model=model,
-    tools=tools,
-    memory=memory
-)
-
-# Context available in subsequent interactions
-response = agent.chat("What did we discuss about sales targets?")
-```
-
-### Ontology Integration
-
-Agents can query and reason over the ontology knowledge graph:
-
-```python
-from rdflib import Graph, URIRef, Literal
-from abi.services.triple_store import TripleStoreService
-
-def ontology_query_tool(sparql_query: str) -> str:
-    """Query the ontology knowledge graph."""
-    triple_store = TripleStoreService()
-    results = triple_store.query(sparql_query)
-    return format_results(results)
-
-# Agent can reason over structured knowledge
-sparql_tool = StructuredTool(
-    name="query_ontology",
-    description="Query the knowledge graph using SPARQL",
-    func=ontology_query_tool,
-    args_schema=SPARQLQuerySchema
-)
-```
-
-## Agent Composition Patterns
-
-### Hierarchical Delegation
-
-Complex tasks can be decomposed using agent hierarchies:
+Complex tasks decomposed using agent hierarchies:
 
 ```python
 class OrchestratorAgent(Agent):
+    """
+    High-level agent that coordinates workflows by delegating 
+    to specialized sub-agents.
+    """
+    
     def __init__(self):
-        # Initialize with sub-agents as tools
+        self.data_analyst = create_data_analysis_agent()
+        self.visualization_agent = create_visualization_agent()
+        self.reporting_agent = create_reporting_agent()
+        
         super().__init__(
-            name="Orchestrator",
-            tools=[],
-            agents=[
-                data_analysis_agent,
-                visualization_agent,
-                reporting_agent
-            ]
+            name="Workflow Orchestrator",
+            agents=[self.data_analyst, self.visualization_agent, self.reporting_agent]
         )
     
-    def complex_workflow(self, requirements):
-        # Delegate to specialized agents
-        data = self.call_agent("data_analysis", requirements.data_query)
-        charts = self.call_agent("visualization", data)
-        report = self.call_agent("reporting", {"data": data, "charts": charts})
-        return report
+    async def execute_workflow(self, requirements):
+        """Coordinate analytical workflow across agents."""
+        
+        # Step 1: Data Analysis
+        analysis = await self.call_agent("data_analyst", {
+            "data_sources": requirements["data_sources"],
+            "analysis_type": requirements.get("analysis_type")
+        })
+        
+        # Step 2: Visualization
+        charts = await self.call_agent("visualization_agent", {
+            "data": analysis["data"],
+            "chart_types": requirements["visualizations"]
+        })
+        
+        # Step 3: Report Generation
+        report = await self.call_agent("reporting_agent", {
+            "analysis": analysis["insights"],
+            "visualizations": charts["charts"],
+            "format": requirements["report_format"]
+        })
+        
+        return {
+            "status": "completed",
+            "results": report,
+            "agents_used": ["data_analyst", "visualization_agent", "reporting_agent"]
+        }
 ```
 
-### Parallel Processing
+## Parallel Processing
 
-For independent tasks, agents can work in parallel:
+Independent tasks executed concurrently for improved performance:
 
 ```python
-import asyncio
-from concurrent.futures import ThreadPoolExecutor
-
-async def parallel_analysis(data_sources):
-    tasks = []
-    for source in data_sources:
-        agent = create_analysis_agent()
-        task = asyncio.create_task(agent.analyze(source))
-        tasks.append(task)
+class ParallelAgentProcessor:
+    """Manages parallel execution of multiple agents."""
     
-    results = await asyncio.gather(*tasks)
-    return aggregate_results(results)
+    def __init__(self, max_concurrent: int = 5):
+        self.max_concurrent = max_concurrent
+        self.semaphore = asyncio.Semaphore(max_concurrent)
+    
+    async def process_parallel_tasks(self, tasks):
+        """Execute multiple agent tasks concurrently."""
+        
+        async def execute_task(task):
+            async with self.semaphore:
+                agent = self.get_agent_instance(task["agent_name"])
+                return await agent.process_async(task["inputs"])
+        
+        # Execute all tasks concurrently
+        results = await asyncio.gather(
+            *[execute_task(task) for task in tasks],
+            return_exceptions=True
+        )
+        
+        return self.process_results(tasks, results)
+
+# Example: Business Intelligence Workflow
+async def business_intelligence_analysis(data_requirements):
+    processor = ParallelAgentProcessor()
+    
+    parallel_tasks = [
+        {
+            "agent_name": "sales_agent",
+            "inputs": {"metrics": ["revenue", "conversion"], "period": "Q4"}
+        },
+        {
+            "agent_name": "marketing_agent", 
+            "inputs": {"metrics": ["cac", "ltv"], "campaigns": "all"}
+        },
+        {
+            "agent_name": "finance_agent",
+            "inputs": {"analysis": "profitability", "breakdown": ["product", "region"]}
+        }
+    ]
+    
+    return await processor.process_parallel_tasks(parallel_tasks)
 ```
 
-### Consensus and Validation
+## Consensus and Validation
 
-Multiple agents can provide validation and consensus:
+Multiple agents provide validation for critical decisions:
 
 ```python
 class ConsensusAgent(Agent):
-    def __init__(self, validator_agents):
-        self.validators = validator_agents
-        super().__init__(name="Consensus", tools=[], agents=validator_agents)
+    """Coordinates multiple agents to reach consensus."""
     
-    def validate_decision(self, proposal):
-        votes = []
-        for validator in self.validators:
-            vote = validator.evaluate(proposal)
-            votes.append(vote)
+    def __init__(self, validator_agents, consensus_threshold=0.75):
+        self.validators = validator_agents
+        self.threshold = consensus_threshold
+        super().__init__(name="Consensus Coordinator", agents=validator_agents)
+    
+    async def validate_decision(self, proposal):
+        """Get consensus from multiple agents on a proposal."""
         
-        consensus = calculate_consensus(votes)
-        return consensus
+        # Submit to all validators
+        validations = await asyncio.gather(*[
+            self.get_validation(validator, proposal) 
+            for validator in self.validators
+        ])
+        
+        # Calculate consensus
+        votes = [v["confidence"] for v in validations if "confidence" in v]
+        avg_confidence = sum(votes) / len(votes) if votes else 0
+        
+        return {
+            "consensus": avg_confidence >= self.threshold,
+            "confidence": avg_confidence,
+            "validator_responses": validations,
+            "recommendation": self.generate_recommendation(avg_confidence)
+        }
+    
+    async def get_validation(self, agent, proposal):
+        """Get validation from single agent."""
+        prompt = f"Evaluate this proposal and provide confidence (0-1): {proposal}"
+        response = await agent.process_async(prompt)
+        return self.parse_validation_response(response)
 ```
+
+## Communication Protocols
+
+Structured communication ensures reliable agent coordination:
+
+```mermaid
+sequenceDiagram
+    participant Coordinator
+    participant AgentA
+    participant AgentB
+    participant SharedState
+    
+    Coordinator->>AgentA: Task Assignment
+    AgentA->>SharedState: Update Context
+    AgentA->>AgentB: Request Collaboration
+    AgentB->>SharedState: Read Context
+    AgentB->>AgentA: Provide Input
+    AgentA->>SharedState: Update Results
+    AgentA->>Coordinator: Report Completion
+```
+
+**Communication methods:**
+- **Message Passing**: Direct agent-to-agent communication
+- **Shared State**: Common data structures for coordination
+- **Event-Driven**: Reactive communication based on system events
+- **Request-Response**: Synchronous interactions for immediate feedback
 
 ## Scaling Considerations
 
 ### Horizontal Scaling
-
-Agent workloads can be distributed across multiple instances:
+Distribute agent workloads across multiple instances:
 
 ```python
-# Agent pool configuration
 class AgentPool:
+    """Manages pool of agent instances for load distribution."""
+    
     def __init__(self, agent_factory, pool_size=10):
         self.agents = [agent_factory() for _ in range(pool_size)]
         self.current = 0
@@ -274,144 +234,43 @@ class AgentPool:
         return await agent.process_async(request)
 ```
 
-### Resource Management
-
-Tools and agents can be configured with resource limits:
-
-```python
-from dataclasses import dataclass
-
-@dataclass
-class ResourceLimits:
-    max_tokens: int = 4000
-    timeout_seconds: int = 30
-    memory_limit_mb: int = 512
-    concurrent_requests: int = 5
-
-# Agent with resource constraints
-agent = BusinessAgent(
-    name="Resource-Limited Agent",
-    chat_model=model,
-    tools=tools,
-    resource_limits=ResourceLimits()
-)
-```
-
 ### Performance Monitoring
-
-Comprehensive monitoring enables optimization:
-
-```python
-import time
-from functools import wraps
-
-def monitor_performance(func):
-    @wraps(func)
-    async def wrapper(*args, **kwargs):
-        start_time = time.time()
-        try:
-            result = await func(*args, **kwargs)
-            duration = time.time() - start_time
-            log_success(func.__name__, duration)
-            return result
-        except Exception as e:
-            duration = time.time() - start_time
-            log_error(func.__name__, duration, e)
-            raise
-    return wrapper
-
-# Apply monitoring to agent methods
-@monitor_performance
-async def agent_process(self, message):
-    return await self.workflow.ainvoke(message)
-```
-
-## Security and Governance
-
-### Access Control
-
-Fine-grained access control for tools and agents:
+Track multi-agent system performance:
 
 ```python
-from enum import Enum
-
-class Permission(Enum):
-    READ_DATA = "read_data"
-    WRITE_DATA = "write_data"
-    EXTERNAL_API = "external_api"
-    SENSITIVE_INFO = "sensitive_info"
-
-class SecureAgent(Agent):
-    def __init__(self, permissions: List[Permission]):
-        self.permissions = permissions
-        # Filter tools based on permissions
-        allowed_tools = self.filter_tools_by_permission(all_tools, permissions)
-        super().__init__(tools=allowed_tools)
+class MultiAgentMonitor:
+    """Monitor performance across agent networks."""
     
-    def validate_tool_access(self, tool_name):
-        required_permission = TOOL_PERMISSIONS.get(tool_name)
-        return required_permission in self.permissions
-```
-
-### Audit Logging
-
-All agent actions are logged for compliance:
-
-```python
-import logging
-from datetime import datetime
-
-class AuditLogger:
-    def log_agent_action(self, agent_name, action, inputs, outputs, user_id):
-        audit_record = {
-            "timestamp": datetime.utcnow().isoformat(),
-            "agent": agent_name,
-            "action": action,
-            "user_id": user_id,
-            "inputs_hash": hash_sensitive_data(inputs),
-            "outputs_hash": hash_sensitive_data(outputs),
-            "success": True
+    def __init__(self):
+        self.metrics = {}
+        self.coordination_overhead = 0
+    
+    def track_workflow(self, workflow_id, agents_used, execution_time):
+        """Track multi-agent workflow performance."""
+        self.metrics[workflow_id] = {
+            "agents": agents_used,
+            "duration": execution_time,
+            "coordination_time": self.coordination_overhead,
+            "efficiency": self.calculate_efficiency(agents_used, execution_time)
         }
-        logging.info("AUDIT", extra=audit_record)
-```
-
-## Integration with Ontologies
-
-### Semantic Reasoning
-
-Agents can perform semantic reasoning over the knowledge graph:
-
-```python
-def semantic_query_tool(natural_language_query: str) -> str:
-    """Convert natural language to SPARQL and execute."""
-    # Use LLM to convert natural language to SPARQL
-    sparql_query = llm_to_sparql(natural_language_query)
     
-    # Execute against ontology
-    results = triple_store.query(sparql_query)
-    
-    # Convert results back to natural language
-    return format_for_llm(results)
+    def get_performance_report(self):
+        """Generate performance analysis."""
+        return {
+            "total_workflows": len(self.metrics),
+            "avg_agents_per_workflow": self.avg_agents_used(),
+            "avg_execution_time": self.avg_execution_time(),
+            "coordination_overhead": self.avg_coordination_overhead(),
+            "efficiency_trends": self.analyze_efficiency_trends()
+        }
 ```
 
-### Knowledge Graph Updates
+## Integration with Foundation
 
-Agents can update the knowledge graph based on new information:
+Multi-agent systems build on the LangGraph foundation covered in previous sections:
 
-```python
-def update_ontology_tool(entity: str, relation: str, value: str) -> str:
-    """Update the knowledge graph with new information."""
-    # Validate against ontology schema
-    if validate_ontology_update(entity, relation, value):
-        # Create RDF triple
-        triple = create_rdf_triple(entity, relation, value)
-        
-        # Insert into knowledge graph
-        triple_store.insert(triple)
-        
-        return f"Successfully updated {entity} {relation} {value}"
-    else:
-        return f"Invalid ontology update: {entity} {relation} {value}"
-```
+- **[Architecture Overview](./overview)**: Platform architecture and component relationships
+- **[LangGraph Foundation](./langgraph-foundation)**: Core state management and workflow patterns
+- **[Tool Integration](./tool-integration)**: How agents access external systems and data
 
-This multi-agent architecture enables Naas to handle complex, real-world AI workflows while maintaining scalability, security, and integration with enterprise systems.
+This multi-agent architecture enables Naas to handle complex enterprise scenarios requiring coordination between multiple AI systems while maintaining reliability, scalability, and clear accountability.

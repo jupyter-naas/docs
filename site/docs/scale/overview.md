@@ -21,19 +21,19 @@ Naas scales from individual prototypes to enterprise-grade deployments that riva
 
 Naas adopts a **hybrid scaling model** that recognizes the reality of modern AI development: you need both local control for rapid iteration and cloud infrastructure for production scale. Rather than forcing you to choose between local development or cloud deployment, the platform bridges both worlds seamlessly.
 
-The key insight is that scaling isn't just about handling more traffic or data—it's about scaling your **development velocity**, **operational complexity**, and **team collaboration**. Each component in the Naas ecosystem is designed to reduce friction at different stages of your scaling journey.
+The key insight is that scaling isn't just about handling more traffic or data, it's about scaling your **development and iteration velocity**, **operational complexity**, and **team collaboration**. Each component in the Naas ecosystem is designed to reduce friction at different stages of your scaling journey.
 
 ## Three Pillars of Scale
 
 ### 1. Local AI Orchestration
 
-Your scaling journey begins locally with the **[ABI API](/scale/api-integration/abi-api)**, which provides a complete AI operating system that runs on your machine. This isn't just a development tool—it's a production-capable system that handles multi-agent orchestration, ontology management, and complex workflow automation.
+Your scaling journey begins locally with the **[ABI API](/scale/api-integration/abi-api)**, which provides a complete AI operating system that runs on your machine. The ABI API functions as a production-capable system that handles multi-agent orchestration, ontology management, and complex workflow automation, delivering enterprise-grade capabilities from day one.
 
 The power of starting locally means you can iterate rapidly without cloud costs, test complex agent interactions in controlled environments, and maintain full visibility into your AI system's behavior. When you're ready to scale, the same patterns and APIs translate directly to cloud deployment.
 
 ### 2. Cloud Infrastructure Automation
 
-The **[naas-python SDK](/scale/client-sdks/python)** serves as your infrastructure automation layer, built on hexagonal architecture principles for maximum flexibility. This SDK doesn't just manage cloud resources—it implements infrastructure-as-code patterns that make scaling predictable and repeatable.
+The **[naas-python SDK](/scale/client-sdks/python)** serves as your infrastructure automation layer, built on hexagonal architecture principles for maximum flexibility. This SDK implements infrastructure-as-code patterns that make scaling predictable and repeatable while providing complete control over cloud resource provisioning.
 
 Whether you're provisioning storage buckets, deploying containerized applications to Spaces, or managing multi-user workspaces, the SDK abstracts complexity while maintaining full control. The hexagonal architecture means you can adapt the SDK to your specific infrastructure patterns without being locked into rigid workflows.
 
@@ -41,12 +41,12 @@ Whether you're provisioning storage buckets, deploying containerized application
 
 The **[API Gateway](/scale/api-integration/api-gateway)** provides 16 comprehensive service APIs that handle every aspect of production scale: from serverless application deployment and vector databases to secure credential management and comprehensive observability.
 
-These aren't just utility APIs—they're designed as building blocks for complex systems. The Chat API can orchestrate multiple AI models, the Pipeline API handles DAG-based workflows with resource optimization, and the Workspace API provides enterprise-grade multi-tenancy with granular permissions.
+These aren't just utility APIs, they're designed as building blocks for complex systems. The Chat API can orchestrate multiple AI models, the Pipeline API handles DAG-based workflows with resource optimization, and the Workspace API provides enterprise-grade multi-tenancy with granular permissions.
 
 ## Architecture Overview
 
 ```mermaid
-graph TB
+graph LR
     subgraph "Local Development Layer"
         A[ABI API] --> B[Multi-AI Agents]
         A --> C[Ontology Engine]
@@ -89,7 +89,7 @@ graph TB
 
 As an individual developer, your scaling path focuses on **velocity and simplicity**. Start with the ABI API running locally to prototype AI agents and workflows without any cloud dependencies or costs. This local-first approach lets you experiment freely, test complex multi-agent interactions, and validate your business logic before committing to cloud resources.
 
-When you're ready to share your work or need persistent storage, the naas-python SDK provides a natural bridge to cloud infrastructure. You can deploy your local workflows to Spaces for public access, store datasets in Object Storage, and share results through the Asset API—all while maintaining the same development patterns you used locally.
+When you're ready to share your work or need persistent storage, the naas-python SDK provides a natural bridge to cloud infrastructure. You can deploy your local workflows to Spaces for public access, store datasets in Object Storage, and share results through the Asset API, all while maintaining the same development patterns you used locally.
 
 ### Small Teams: Collaboration at Scale
 
@@ -101,19 +101,19 @@ The Chat API enables collaborative AI interactions where team members can share 
 
 Enterprise scaling demands **reliability, observability, and governance**. The full API Gateway integration provides enterprise-grade capabilities: Pipeline API for complex workflow orchestration, Graph Database for organizational knowledge management, and comprehensive audit trails through the Event API.
 
-The key enterprise insight is using Vector Databases for organizational memory—every chat, document, and analysis becomes part of a searchable knowledge base that improves over time. This transforms AI from individual tools into organizational intelligence that scales with your team's collective knowledge.
+The key enterprise insight is using Vector Databases for organizational memory, every chat, document, and analysis becomes part of a searchable knowledge base that improves over time. This transforms AI from individual tools into organizational intelligence that scales with your team's collective knowledge.
 
 ## Technical Integration Patterns
 
 ### Progressive Enhancement Architecture
 
-The Naas platform is designed for **progressive enhancement**—each layer adds capabilities without requiring you to rebuild existing work. Start with local ABI development, enhance with SDK automation, and scale with platform services. Your code patterns remain consistent across all scaling levels.
+The Naas platform is designed for **progressive enhancement**, each layer adds capabilities without requiring you to rebuild existing work. Start with local ABI development, enhance with SDK automation, and scale with platform services. Your code patterns remain consistent across all scaling levels.
 
 ### Protocol-Driven Development
 
 The [naas-models](https://github.com/jupyter-naas/naas-models) repository provides the type-safe foundation that makes scaling reliable. Protocol Buffers ensure that your local development, SDK automation, and platform integrations all speak the same language with compile-time guarantees.
 
-This isn't just about avoiding runtime errors—it's about **scaling confidence**. When you can trust that your local AI agent workflows will behave identically in production, scaling becomes a deployment decision rather than a reimplementation project.
+This isn't just about avoiding runtime errors, it's about **scaling confidence**. When you can trust that your local AI agent workflows will behave identically in production, scaling becomes a deployment decision rather than a reimplementation project.
 
 ## Implementation Roadmap
 

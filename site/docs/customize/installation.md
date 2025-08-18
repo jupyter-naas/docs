@@ -43,7 +43,7 @@ Before installing ABI, ensure you have:
 
 - **[Docker Desktop](https://www.docker.com/products/docker-desktop/)** - Required for Oxigraph triple store
 - **[uv](https://docs.astral.sh/uv/getting-started/installation/)** - Modern Python package manager
-- **Python 3.8+** - For running ABI components
+- **Python 3.11+** - For running ABI components
 - **Git** - For cloning repositories
 
 Optional but recommended:
