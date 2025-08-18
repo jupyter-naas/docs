@@ -1,0 +1,8 @@
+{
+  "label": "Enterprise Deployment",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Enterprise-grade deployment patterns for secure, scalable, and compliant Naas installations including air-gapped environments, DoD requirements, and GovCloud deployments."
+  }
+}

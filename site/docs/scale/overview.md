@@ -2,9 +2,20 @@
 sidebar_position: 0
 ---
 
-# Approach
+# Scaling Naas for Enterprise
 
-Understanding how to scale your Naas deployment requires a strategic approach that combines local development capabilities with cloud-native infrastructure. The platform is designed around three core scaling pillars that work together to support everything from individual prototypes to enterprise-grade deployments.
+Naas scales from individual prototypes to enterprise-grade deployments that rival platforms like Palantir Foundry. The platform's modular architecture supports everything from startup teams to Fortune 500 organizations and government agencies with the most stringent security requirements.
+
+## Enterprise Positioning
+
+**Naas provides enterprise-grade capabilities with open-source transparency.** Unlike proprietary platforms, Naas gives organizations complete control over their AI and data infrastructure while delivering the scale, security, and governance features expected in enterprise environments.
+
+**Key enterprise differentiators:**
+- **Open-source foundation** with commercial support options
+- **Air-gapped deployment** capability for maximum security
+- **Formal ontology standards** (W3C RDF/OWL) for semantic interoperability  
+- **Multi-LLM architecture** avoiding vendor lock-in
+- **Kubernetes-native** scaling and high availability
 
 ## Scaling Philosophy
 
@@ -117,16 +128,32 @@ Integrate with the full API Gateway for production requirements. Implement Pipel
 
 This phased approach ensures you're always building on solid foundations while progressively adding the capabilities needed for your specific scaling requirements.
 
-## Repository Links
+## Enterprise Scaling Resources
 
+### Technical Implementation
+- **[Multi-Agent Systems](/scale/architecture/multi-agent-systems)**: Deep-dive into LangGraph-based agent architecture
+- **[API Integration](/scale/api-integration/)**: Complete API reference and integration patterns
+- **[Client SDKs](/scale/client-sdks/)**: Multi-language SDKs for platform automation
+
+### Enterprise Deployment
+- **[Enterprise Deployment](/scale/enterprise-deployment/)**: Security, compliance, and production deployment guides
+- **[vs. Competitors](/scale/vs-competitors/palantir-foundry)**: Detailed comparison with Palantir Foundry and migration strategies
+
+### Development Resources
 - **[jupyter-naas/abi](https://github.com/jupyter-naas/abi)**: Local AI agent orchestration system
 - **[jupyter-naas/naas-python](https://github.com/jupyter-naas/naas-python)**: Infrastructure management SDK  
 - **[jupyter-naas/naas-models](https://github.com/jupyter-naas/naas-models)**: Protocol buffer definitions
 
 ## Getting Started
 
+### For Individual Developers
 1. **Local Development**: Clone [ABI repository](https://github.com/jupyter-naas/abi) and run `make api`
-2. **Infrastructure Management**: Install `pip install naas-python` and configure workspace
-3. **Platform Integration**: Get API key from [naas.ai](https://naas.ai) and explore [API Gateway](https://api.naas.ai/redoc)
+2. **Cloud Integration**: Install `pip install naas-python` and configure workspace
+3. **Platform APIs**: Get API key from [naas.ai](https://naas.ai) and explore [API Gateway](https://api.naas.ai/redoc)
+
+### For Enterprise Teams
+1. **Enterprise Assessment**: Review [deployment options](/scale/enterprise-deployment/) and security requirements
+2. **Competitive Analysis**: Compare with [existing platforms](/scale/vs-competitors/palantir-foundry) for migration planning
+3. **Architecture Planning**: Study [multi-agent systems](/scale/architecture/multi-agent-systems) for technical implementation
 
 Start your scaling journey with the [naas-python SDK](/scale/client-sdks/python) or [ABI API](/scale/api-integration/abi-api) for AI orchestration.
