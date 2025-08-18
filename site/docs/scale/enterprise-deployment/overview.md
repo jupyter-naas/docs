@@ -2,9 +2,13 @@
 sidebar_position: 1
 ---
 
-# Enterprise Deployment Overview
+# Enterprise Implementation
 
 Naas is architected for enterprise-grade deployments that meet the most stringent security, compliance, and operational requirements. From air-gapped government installations to multi-tenant SaaS deployments, our platform's modular architecture enables secure scaling without compromising functionality.
+
+:::info Professional Services Implementation
+The enterprise capabilities described in this section represent our ability to implement these solutions through our professional services team. Each deployment is customized to your specific requirements and implemented with dedicated support. Contact our enterprise team at [support@naas.ai](mailto:support@naas.ai) to discuss your needs and implementation timeline.
+:::
 
 ## Enterprise-Ready Architecture
 

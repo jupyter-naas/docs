@@ -6,6 +6,10 @@ sidebar_position: 3
 
 Naas implements enterprise-grade security controls and compliance frameworks to meet the most stringent organizational requirements. Our security-by-design approach ensures data protection, regulatory compliance, and operational security across all deployment models.
 
+:::info Professional Services Implementation
+The enterprise capabilities described in this section represent our ability to implement these solutions through our professional services team. Each deployment is customized to your specific requirements and implemented with dedicated support. Contact our enterprise team at [support@naas.ai](mailto:support@naas.ai) to discuss your needs and implementation timeline.
+:::
+
 ## Security Architecture
 
 ### Zero Trust Security Model
