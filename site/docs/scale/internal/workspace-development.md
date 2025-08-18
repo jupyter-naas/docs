@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Workspace Development (Private)
+# Workspace Development
 
 :::warning Private Repository
 The workspace repository is private and only accessible to Naas team members. For enterprise clients requiring custom workspace development or special forks, we offer enterprise licensing agreements. Contact [support@naas.ai](mailto:support@naas.ai) for enterprise development licensing options.
