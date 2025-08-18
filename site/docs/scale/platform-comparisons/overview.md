@@ -173,11 +173,23 @@ Analysts ↔ Palantir/Foundry ↔ Naas Agents ↔ Automated Workflows
 ## Next Steps
 
 ### Detailed Platform Comparisons
-Each comparison covers both competitive positioning and integration strategies:
+Each comparison follows a consistent framework covering competitive positioning and integration strategies:
 
 - **[Naas vs. Palantir Foundry](./palantir-foundry)**: AI-native platform vs. enterprise integration - compete or integrate?
 - **[Naas vs. Snowflake](./snowflake)**: Conversational AI vs. cloud data warehouse - replacement or enhancement?
 - **[Naas vs. Databricks](./databricks)**: Multi-agent orchestration vs. unified analytics - standalone or complementary?
+- **[Naas vs. CrewAI](./crewai)**: Semantic reasoning vs. workflow automation - framework choice or integration?
+- **[Naas vs. Glean](./glean)**: Multi-agent intelligence vs. enterprise search - advanced AI or knowledge management?
+
+#### Comparison Framework
+Each platform comparison includes:
+1. **Offering**: Core value propositions and platform capabilities
+2. **Capabilities**: Technical features and functional strengths
+3. **Positioning**: Market positioning and competitive differentiation
+4. **Integration Approach**: How platforms can work together
+5. **Migration Strategies**: Practical guidance for platform transitions
+6. **Decision Framework**: Evaluation criteria for choosing or integrating
+7. **Getting Started**: Quick start paths for each platform and integration scenarios
 
 ### Decision Support
 - **[Requirements Assessment](./requirements-assessment)**: Framework for evaluating your specific needs

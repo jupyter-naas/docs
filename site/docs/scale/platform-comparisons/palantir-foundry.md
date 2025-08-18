@@ -212,6 +212,50 @@ db_data = database.connect(url).query("SELECT * FROM customers")
 
 **Evaluation**: Naas offers long-term cost efficiency through open-source licensing; Foundry provides predictable enterprise budgeting with comprehensive managed services
 
+### 7. Getting Started
+
+#### Starting with Naas
+**Quick Start Path**:
+1. **Platform Setup**: Deploy Naas in your preferred environment (cloud, on-prem, hybrid)
+2. **Data Integration**: Connect to your existing data sources and enterprise systems
+3. **Ontology Development**: Create semantic models using W3C standards for your business domain
+4. **Agent Configuration**: Set up AI agents with multi-LLM capabilities and domain expertise
+5. **User Training**: Onboard teams on conversational AI interfaces and semantic reasoning
+
+**First Use Cases**:
+- Conversational analytics and business intelligence
+- Semantic data integration across enterprise systems
+- AI-powered decision support with formal reasoning
+- Natural language interfaces to complex data relationships
+
+#### Starting with Foundry
+**Quick Start Path**:
+1. **Data Pipeline Setup**: Connect Foundry to your enterprise data sources
+2. **Ontology Workshop**: Use visual tools to model your business objects and relationships
+3. **Application Development**: Build custom applications using Foundry's development environment
+4. **User Onboarding**: Train analysts on Foundry's visual workshops and applications
+5. **Governance Setup**: Configure enterprise security, compliance, and access controls
+
+**First Use Cases**:
+- Enterprise data integration and transformation
+- Visual analytics and business intelligence dashboards
+- Custom application development for specific business needs
+- Compliance reporting and audit trail management
+
+#### Integration Quick Start
+**Hybrid Approach**:
+1. **Assessment**: Evaluate current Foundry investment and advanced AI requirements
+2. **Pilot Integration**: Start with Naas agents that enhance specific Foundry workflows
+3. **API Integration**: Connect Naas conversational interfaces to Foundry data pipelines
+4. **User Experience Design**: Create seamless experience between platforms
+5. **Gradual Expansion**: Scale successful integration patterns across the organization
+
+**Success Metrics**:
+- User adoption of conversational interfaces to Foundry data
+- Efficiency gains from AI-enhanced enterprise workflows
+- Integration effectiveness and system performance
+- Business impact from combined platform capabilities
+
 ## Migration Strategies
 
 ### From Foundry to Naas
