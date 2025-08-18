@@ -11,6 +11,7 @@ Tools are the bridge between AI agents and external systems, enabling agents to 
 The tool integration system follows a layered architecture that ensures consistency, security, and maintainability:
 
 ```mermaid
+%%{init: {'theme':'base', 'themeVariables': {'primaryColor': '#f8fafc', 'primaryTextColor': '#1e293b', 'primaryBorderColor': '#e2e8f0', 'lineColor': '#64748b'}}}%%
 graph TD
     subgraph "Agent Layer"
         AGENT[AI Agent]
@@ -293,6 +294,7 @@ api_call_tool = StructuredTool(
 Tools for data analysis and computational tasks:
 
 ```mermaid
+%%{init: {'theme':'base', 'themeVariables': {'primaryColor': '#f8fafc', 'primaryTextColor': '#1e293b', 'primaryBorderColor': '#e2e8f0', 'lineColor': '#64748b'}}}%%
 graph LR
     subgraph "Input Processing"
         RAW[Raw Data]
@@ -544,6 +546,7 @@ class SecureToolRegistry:
 Comprehensive monitoring ensures tools perform reliably at scale:
 
 ```mermaid
+%%{init: {'theme':'base', 'themeVariables': {'primaryColor': '#f8fafc', 'primaryTextColor': '#1e293b', 'primaryBorderColor': '#e2e8f0', 'lineColor': '#64748b'}}}%%
 graph TD
     EXEC[Tool Execution] --> METRICS[Collect Metrics]
     METRICS --> LATENCY[Latency Tracking]

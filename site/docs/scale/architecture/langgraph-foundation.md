@@ -11,6 +11,7 @@ LangGraph provides the core state management and workflow orchestration for Naas
 LangGraph implements a sophisticated state machine that manages the flow between AI model reasoning and tool execution:
 
 ```mermaid
+%%{init: {'theme':'base', 'themeVariables': {'primaryColor': '#f8fafc', 'primaryTextColor': '#1e293b', 'primaryBorderColor': '#e2e8f0', 'lineColor': '#64748b'}}}%%
 stateDiagram-v2
     [*] --> AgentNode
     AgentNode --> ToolNode : Tool Required
@@ -113,6 +114,7 @@ def create_agent(agent_shared_state=None, agent_configuration=None) -> Agent:
 The LangGraph framework orchestrates complex workflows through a series of nodes and edges:
 
 ```mermaid
+%%{init: {'theme':'base', 'themeVariables': {'primaryColor': '#f8fafc', 'primaryTextColor': '#1e293b', 'primaryBorderColor': '#e2e8f0', 'lineColor': '#64748b'}}}%%
 graph TD
     START([Start]) --> INPUT[Receive Input]
     INPUT --> PARSE[Parse Request]
@@ -229,6 +231,7 @@ class EnhancedMemoryAgent(Agent):
 Robust error handling ensures reliable agent operation even when external systems fail:
 
 ```mermaid
+%%{init: {'theme':'base', 'themeVariables': {'primaryColor': '#f8fafc', 'primaryTextColor': '#1e293b', 'primaryBorderColor': '#e2e8f0', 'lineColor': '#64748b'}}}%%
 graph TD
     EXEC[Execute Action] --> CHECK{Success?}
     CHECK -->|Yes| SUCCESS[Return Result]

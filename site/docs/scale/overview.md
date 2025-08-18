@@ -46,6 +46,7 @@ These aren't just utility APIs, they're designed as building blocks for complex 
 ## Architecture Overview
 
 ```mermaid
+%%{init: {'theme':'base', 'themeVariables': {'primaryColor': '#f8fafc', 'primaryTextColor': '#1e293b', 'primaryBorderColor': '#e2e8f0', 'lineColor': '#64748b'}}}%%
 graph LR
     subgraph "Local Development Layer"
         A[ABI API] --> B[Multi-AI Agents]
@@ -81,6 +82,17 @@ graph LR
     T -->|"Type Safety"| A
     T -->|"Service Contracts"| E
     T -->|"API Definitions"| J
+    
+    classDef userExp fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#2e7d32
+    classDef platform fill:#e3f2fd,stroke:#2196f3,stroke-width:1px,color:#1565c0
+    classDef aiEngine fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#e65100
+    classDef dataLayer fill:#f3e5f5,stroke:#9c27b0,stroke-width:1px,color:#4a148c
+    classDef infrastructure fill:#fce4ec,stroke:#e91e63,stroke-width:1px,color:#880e4f
+    
+    class A,B,C,D aiEngine
+    class E,F,G,H,I platform
+    class J,K,L,M,N,O,P,Q,R,S infrastructure
+    class T,U,V,W dataLayer
 ```
 
 ## Scaling Strategies by Use Case

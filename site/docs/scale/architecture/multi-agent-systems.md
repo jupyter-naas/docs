@@ -11,6 +11,7 @@ Naas implements sophisticated multi-agent systems that enable complex AI workflo
 Multi-agent systems in Naas follow established patterns that enable agents to work together effectively:
 
 ```mermaid
+%%{init: {'theme':'base', 'themeVariables': {'primaryColor': '#f8fafc', 'primaryTextColor': '#1e293b', 'primaryBorderColor': '#e2e8f0', 'lineColor': '#64748b'}}}%%
 graph TD
     subgraph "Orchestration Pattern"
         COORD[Coordinator Agent]
@@ -198,6 +199,7 @@ class ConsensusAgent(Agent):
 Structured communication ensures reliable agent coordination:
 
 ```mermaid
+%%{init: {'theme':'base', 'themeVariables': {'primaryColor': '#f8fafc', 'primaryTextColor': '#1e293b', 'primaryBorderColor': '#e2e8f0', 'lineColor': '#64748b'}}}%%
 sequenceDiagram
     participant Coordinator
     participant AgentA
