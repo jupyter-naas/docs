@@ -51,6 +51,17 @@ const config = {
 
   themes: ['@docusaurus/theme-mermaid'],
 
+  plugins: [
+    [
+      require.resolve('./plugins/algolia-index'),
+      {
+        appId: 'NGBDVK8FYQ',
+        adminApiKey: process.env.ALGOLIA_ADMIN_API_KEY, // We'll use environment variable for security
+        indexName: 'docs.naas.ai',
+      },
+    ],
+  ],
+
   markdown: {
     mermaid: true,
   },
@@ -70,9 +81,9 @@ const config = {
       ],
       // Algolia search configuration
       algolia: {
-        appId: 'YOUR_APP_ID',
-        apiKey: 'YOUR_SEARCH_API_KEY',
-        indexName: 'naas-docs',
+        appId: 'NGBDVK8FYQ',
+        apiKey: 'f6ee1784b03f118828d7de35b9f7c178',
+        indexName: 'docs.naas.ai',
         contextualSearch: true,
         searchParameters: {},
         searchPagePath: 'search',
