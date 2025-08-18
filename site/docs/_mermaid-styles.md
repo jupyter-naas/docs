@@ -143,7 +143,11 @@ sequenceDiagram
 ```markdown
 ```mermaid
 graph TD
-    %% Your diagram content here
+    %% Use ID-based subgraphs for styling control
+    subgraph SUB1 ["Subgraph Title"]
+        NODE1[Node 1]
+        NODE2[Node 2]
+    end
     
     %% Standard class definitions (copy these to every diagram)
     classDef userExp fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#2e7d32
@@ -151,18 +155,23 @@ graph TD
     classDef aiEngine fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#e65100
     classDef dataLayer fill:#f3e5f5,stroke:#9c27b0,stroke-width:1px,color:#4a148c
     classDef infrastructure fill:#fce4ec,stroke:#e91e63,stroke-width:1px,color:#880e4f
-    
-    %% Note: Subgraphs use default styling (white background) for consistency
+    classDef subgraphClear fill:none,stroke:#333,stroke-width:1px,color:#333
     
     %% Apply classes to your nodes
     class NODE1,NODE2 userExp
-    class NODE3,NODE4 platform
-    %% etc.
+    %% Apply transparent background to subgraphs
+    class SUB1 subgraphClear
 ```
 
 ### Subgraph Styling
 
-**Important**: Subgraphs should maintain white/transparent backgrounds for consistency with the platform overview. Do NOT apply custom styling to subgraphs themselves - only to the nodes within them.
+**Critical for consistency**: To ensure transparent subgraph backgrounds like the platform overview:
+
+1. **Use ID-based subgraphs**: `subgraph SUB_ID ["Display Name"]`
+2. **Create subgraphClear class**: `classDef subgraphClear fill:none,stroke:#333,stroke-width:1px,color:#333`
+3. **Apply to all subgraphs**: `class SUB1,SUB2,SUB3 subgraphClear`
+
+This ensures white/transparent backgrounds in both light and dark modes.
 
 ### Validation Checklist
 - [ ] Color scheme matches Naas brand guidelines

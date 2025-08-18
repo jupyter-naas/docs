@@ -12,20 +12,20 @@ The Naas platform consists of three interconnected layers that work together to 
 
 ```mermaid
 graph TB
-    subgraph "User Interface Layer"
+    subgraph UI_LAYER ["User Interface Layer"]
         UI[AI Workspace Browser]
         EXT[Chrome Extension]
         CLI[ABI Local CLI]
     end
     
-    subgraph "AI Orchestration Layer"
+    subgraph AI_LAYER ["AI Orchestration Layer"]
         AGENTS[Multi-Agent System]
         ONTOLOGY[Ontology Engine]
         MEMORY[Memory & Context]
         TOOLS[Tool Integration]
     end
     
-    subgraph "Infrastructure Layer"
+    subgraph INFRA_LAYER ["Infrastructure Layer"]
         API[API Gateway]
         DB[(Knowledge Graph)]
         VECTOR[(Vector Database)]
@@ -52,13 +52,13 @@ graph TB
     classDef aiEngine fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#e65100
     classDef dataLayer fill:#f3e5f5,stroke:#9c27b0,stroke-width:1px,color:#4a148c
     classDef infrastructure fill:#fce4ec,stroke:#e91e63,stroke-width:1px,color:#880e4f
-    
-    %% Note: Subgraphs use default styling (white background) for consistency
+    classDef subgraphClear fill:none,stroke:#333,stroke-width:1px,color:#333
     
     class UI,EXT,CLI userExp
     class API,PIPELINE platform
     class AGENTS,ONTOLOGY,MEMORY,TOOLS aiEngine
     class DB,VECTOR,STORAGE dataLayer
+    class UI_LAYER,AI_LAYER,INFRA_LAYER subgraphClear
 ```
 
 **The three-layer architecture enables:**
@@ -109,7 +109,7 @@ The platform supports multiple data integration patterns to connect with existin
 
 ```mermaid
 graph LR
-    subgraph "External Systems"
+    subgraph EXT_SYS ["External Systems"]
         CRM[CRM Systems]
         ERP[ERP Systems]  
         DB[Databases]
@@ -117,13 +117,13 @@ graph LR
         FILES[File Systems]
     end
     
-    subgraph "Naas Integration"
+    subgraph NAAS_INT ["Naas Integration"]
         DRIVERS[Data Drivers]
         TRANSFORM[Transformation]
         ONTOLOGY[Ontology Mapping]
     end
     
-    subgraph "AI Processing"
+    subgraph AI_PROC ["AI Processing"]
         AGENTS[AI Agents]
         ANALYSIS[Analysis]
         AUTOMATION[Automation]
@@ -147,13 +147,13 @@ graph LR
     classDef aiEngine fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#e65100
     classDef dataLayer fill:#f3e5f5,stroke:#9c27b0,stroke-width:1px,color:#4a148c
     classDef infrastructure fill:#fce4ec,stroke:#e91e63,stroke-width:1px,color:#880e4f
-    
-    %% Note: Subgraphs use default styling (white background) for consistency
+    classDef subgraphClear fill:none,stroke:#333,stroke-width:1px,color:#333
     
     class CRM,ERP,DB,EXTAPI,FILES infrastructure
     class DRIVERS,TRANSFORM platform
     class ONTOLOGY dataLayer
     class AGENTS,ANALYSIS,AUTOMATION aiEngine
+    class EXT_SYS,NAAS_INT,AI_PROC subgraphClear
 ```
 
 **Integration capabilities include:**
