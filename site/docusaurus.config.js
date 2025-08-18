@@ -68,6 +68,15 @@ const config = {
         {property: 'og:image:height', content: '630'},
         {property: 'og:type', content: 'website'},
       ],
+      // Algolia search configuration
+      algolia: {
+        appId: 'YOUR_APP_ID',
+        apiKey: 'YOUR_SEARCH_API_KEY',
+        indexName: 'naas-docs',
+        contextualSearch: true,
+        searchParameters: {},
+        searchPagePath: 'search',
+      },
       fontFamily: {
         sans: ["San Francisco", "Arial", "sans-serif"],
       },
