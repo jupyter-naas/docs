@@ -5,7 +5,7 @@
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Naas - Universal Data & AI Platform",
+  title: "NaasAI Platform Docs",
   tagline: "Build AI Networks as a Service with ontology-powered intelligence. Create, deploy, and scale AI assistants that understand relationships across your data, models, and workflows.",
   favicon: "img/favicon.ico",
 
