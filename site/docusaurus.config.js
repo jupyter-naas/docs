@@ -128,6 +128,11 @@ const config = {
             className: "navbar__item--cta",
           },
           {
+            to: "https://ontology.naas.ai/",
+            label: "Ontology",
+            position: "right",
+          },
+          {
             type: "dropdown",
             label: "Resources",
             position: "right",
