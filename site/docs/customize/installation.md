@@ -5,49 +5,63 @@ slug: /customize
 
 # ABI Installation
 
-Install ABI (Agentic Brain Infrastructure) locally for development, customization, and full control over your AI applications.
+**ABI** (Agentic Brain Infrastructure) is an AI Network development framework. The open source platform enables intelligent, multi-agent systems that run on servers and cloud infrastructure, with mobile and edge deployment under research. Your entire AI Network is defined in a single configuration file.
 
 ## What is ABI?
 
-**ABI is your local AI development framework** - the open source core that powers the Naas platform. While the cloud platform gives you immediate access to AI capabilities, ABI lets you:
-
-🔧 **Customize everything** - Build custom agents for your specific needs  
-🏠 **Run locally** - Keep sensitive data on your infrastructure  
-⚙️ **Full control** - Modify, extend, and integrate however you want  
-🚀 **Open source** - Complete transparency and community contributions  
-
-Think of ABI as the **CLI and development framework** that complements the cloud platform experience.
+**Key Benefits:**
+- **Configuration-Driven** - Define your entire AI Network in a single file
+- **Zero Code Changes** - Modify agent behavior through configuration
+- **Intelligent Routing** - Commands automatically reach the right agents
+- **Complete Memory** - Knowledge graphs, SQL databases, and vector storage
+- **Portable** - Run on servers and cloud, with mobile/edge research underway
+- **Open Source** - Complete transparency and open to community contributions
 
 ## When to Use ABI
 
-### ✅ Use ABI When You Need:
-- **Custom AI agents** for specific business processes
-- **Local data processing** for sensitive information
-- **Deep customization** of AI behavior and tools
-- **Offline capabilities** without internet dependency
-- **Full control** over AI models and data
-- **Development environment** for building platform integrations
+**Use ABI when you need:**
+- Custom AI agents for specific processes
+- Local and cloud deployment capabilities
+- Local data processing for sensitive information
+- Full control over AI models and deployment
+- Development environment for platform integrations
 
-### 🌐 Use Cloud Platform When You Need:
-- **Quick start** without any setup
-- **Team collaboration** and sharing
-- **Managed infrastructure** and scaling
-- **Browser-based interface** for non-technical users
-- **Immediate productivity** with pre-built agents
+**Use the Naas.ai cloud platform when you need:**
+- Quick start without setup
+- Team collaboration and sharing
+- Managed infrastructure and scaling
 
-Most users start with the [cloud platform](/get-started/quickstart) and add ABI for customization later.
+Most users start with the cloud platform and add ABI for customization later.
+
+## Portable Deployment
+
+Deploy the same configuration across different devices and environments:
+
+**Development**
+- Develop and test locally on your machine
+- Full control over data and processing
+- Offline capabilities
+
+**Cloud Infrastructure**  
+- Deploy to cloud servers for scaling
+- Leverage cloud compute for heavy workloads
+- Integrate with cloud services
+
+**Mobile and Edge Devices** *(Research Stage)*
+- Exploring deployment on phones, tablets, and IoT devices
+- Research into distributed processing at the network edge
+- Future capability to bring AI closer to users
+
+The same configuration file works everywhere.
 
 ## Prerequisites
 
 Before installing ABI, ensure you have:
 
-- **[Docker Desktop](https://www.docker.com/products/docker-desktop/)** - Required for Oxigraph triple store
-- **[uv](https://docs.astral.sh/uv/getting-started/installation/)** - Modern Python package manager
+- **[Docker Desktop](https://www.docker.com/products/docker-desktop/)** - Required for Oxigraph triple store, Dagster, and PostgreSQL
+- **[uv](https://docs.astral.sh/uv/getting-started/installation/)** - Python package manager
 - **Python 3.11+** - For running ABI components
 - **Git** - For cloning repositories
-
-Optional but recommended:
-- **[Naas Platform Account](https://naas.ai)** - For cloud storage and publishing
 
 ## Installation Options
 
@@ -61,7 +75,7 @@ git clone https://github.com/jupyter-naas/abi.git
 cd abi
 ```
 
-### 2. Fork Repository  
+### 2. Fork Repository
 Best for: Contributing back to the project
 
 ```bash
@@ -91,13 +105,13 @@ git push
 ### 1. Configure Environment Variables
 
 Copy the example environment file:
+
 ```bash
 cp .env.example .env
 ```
 
-Edit `.env` with your preferred editor and configure:
+Edit `.env` with your preferred editor and configure at least one AI model provider:
 
-**AI Model Providers** (at least one required):
 ```bash
 # OpenAI (recommended for getting started)
 OPENAI_API_KEY=sk-your-openai-api-key
@@ -112,180 +126,170 @@ GOOGLE_API_KEY=your-google-api-key
 MISTRAL_API_KEY=your-mistral-api-key
 ```
 
-**Optional Cloud Integration**:
-```bash
-# Naas Platform integration (optional)
-NAAS_API_URL=https://api.naas.ai
-NAAS_API_TOKEN=your-naas-token
+**Note:** The .env file should never be committed to version control as it contains sensitive credentials.
 
-# Local vs Cloud AI mode
-AI_MODE=cloud  # or 'local' for Ollama
-```
+### 2. Configure AI Network
 
-💡 **Tip**: The `.env` file should never be committed to version control as it contains sensitive credentials.
+ABI uses a single `config.yaml` file to define your AI Network. The main sections include:
 
-### 2. Configure Project Settings
+**System Configuration:**
+- `workspace_id`: Naas Platform workspace ID for storage and publishing
+- `github_project_repository`: Your GitHub repository (e.g. "jupyter-naas/abi")
+- `api_title`: API title displayed in documentation
+- `storage_name` and `space_name`: Storage configuration
 
-Copy the configuration template:
-```bash
-cp config.yaml.example config.yaml
-```
-
-Edit `config.yaml` to customize your installation:
+**AI Network Configuration:**
+The `ai_network` section defines your agents:
 
 ```yaml
-# Project identification
-workspace_id: "your-workspace-id"  # From naas.ai/account/settings
-github_project_repository: "your-username/your-abi-project"
-github_support_repository: "your-username/your-abi-project" 
-github_project_id: 12  # GitHub project number
+ai_network:
+  # ABI Orchestrator with centralized intent mapping
+  abi:
+    enabled: true
+    description: "Multi-agent orchestrator"
+    strengths: "Orchestration, strategic advisory"
+    use_when: "Identity, strategy, coordination"
+    intent_mapping:
+      raw_intents:
+        "what is your name": "My name is ABI"
+        "who are you": "I am ABI, developed by NaasAI"
+      tool_intents:
+        open_knowledge_graph_explorer:
+          - "show knowledge graph"
+          - "sparql query"
+        check_ai_network_config:
+          - "list agents"
+          - "agent status"
+      agent_intents:
+        chatgpt:
+          - "use chatgpt"
+          - "web search"
+        claude:
+          - "use claude"
+          - "anthropic"
 
-# Storage configuration
-triple_store_path: "storage/triplestore"
-storage_name: "your-project-abi"
-space_name: "your-project-abi"
+  # Foundation AI Models
+  chatgpt:
+    enabled: true
+    description: "OpenAI ChatGPT"
+    strengths: "General conversation, coding"
+    use_when: "General tasks, coding help"
 
-# API documentation
-api_title: "Your Project ABI API"
-api_description: "Custom ABI instance for your organization"
-logo_path: "assets/logo.png"
-favicon_path: "assets/favicon.ico"
+  claude:
+    enabled: true
+    description: "Anthropic Claude"
+    strengths: "Analysis, writing"
+    use_when: "Detailed analysis"
+
+  # Disabled agents (ready for activation)
+  llama:
+    enabled: false
+    description: "Meta Llama"
+    strengths: "Local, private"
+    use_when: "Private tasks"
 ```
+
+## Configuration-Driven Architecture
+
+ABI uses a single configuration file to define your AI Network:
+
+```mermaid
+%%{init: {'theme':'base', 'themeVariables': {'primaryColor': '#f8fafc', 'primaryTextColor': '#1e293b', 'primaryBorderColor': '#e2e8f0', 'lineColor': '#64748b'}}}%%
+graph TB
+    User["User Input<br/>'use claude for analysis'"] --> ABI["ABI Orchestrator<br/>Intent Routing"]
+    
+    ABI --> Claude["Claude Agent<br/>Analysis & Writing"]
+    ABI --> ChatGPT["ChatGPT Agent<br/>General & Coding"]
+    ABI --> Gemini["Gemini Agent<br/>Multimodal"]
+    ABI --> Tools["Tools<br/>Knowledge Graph Explorer<br/>Config Check"]
+    
+    Config["config.yaml<br/>• Agent definitions<br/>• Intent mappings<br/>• Enable/disable"] -.-> ABI
+    
+    subgraph "Memory Services"
+        KG["Knowledge Graph<br/>Triple Store<br/>Ontologies & Relations"]
+        SQL["SQL Database<br/>Structured Data<br/>Agent Memory"]
+        Vector["Vector Store<br/>Embeddings<br/>(Coming Soon)"]
+    end
+    
+    Claude <--> KG
+    Claude <--> SQL
+    Claude <--> Vector
+    ChatGPT <--> KG
+    ChatGPT <--> SQL
+    ChatGPT <--> Vector
+    Gemini <--> KG
+    Gemini <--> SQL
+    Gemini <--> Vector
+    Tools <--> KG
+    Tools <--> SQL
+    Tools <--> Vector
+    
+    Claude --> Response1["Analysis with<br/>contextual knowledge"]
+    ChatGPT --> Response2["Code with<br/>learned patterns"]
+    Gemini --> Response3["Multimodal with<br/>memory context"]
+    Tools --> Response4["System info with<br/>historical data"]
+    
+    %% Standard class definitions
+    classDef userExp fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#2e7d32
+    classDef platform fill:#e3f2fd,stroke:#2196f3,stroke-width:1px,color:#1565c0
+    classDef aiEngine fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#e65100
+    classDef dataLayer fill:#f3e5f5,stroke:#9c27b0,stroke-width:1px,color:#4a148c
+    classDef infrastructure fill:#fce4ec,stroke:#e91e63,stroke-width:1px,color:#880e4f
+    
+    %% Apply classes to nodes
+    class User userExp
+    class ABI platform
+    class Claude,ChatGPT,Gemini aiEngine
+    class Tools platform
+    class Config infrastructure
+    class KG,SQL,Vector dataLayer
+    class Response1,Response2,Response3,Response4 userExp
+```
+
+- **Single Source**: Your entire AI Network in one config.yaml file
+- **Intelligent Routing**: Commands automatically reach the appropriate agents
+- **Intent Mapping**: Support for direct responses, tool routing, and agent routing
+- **Memory Services**: Knowledge graphs, SQL databases, and vector storage for context
+- **Agent Control**: Enable/disable agents with a config change
+- **No Code Changes**: Modify behavior through configuration
+
+### Agent Definition Structure
+
+Each agent contains:
+- **enabled**: Boolean flag for activation
+- **description**: Brief agent description
+- **strengths**: Core capabilities
+- **use_when**: Recommended use cases
+
+### ABI Intent Mapping Types
+
+The ABI agent contains centralized intent mapping with three types:
+- **raw_intents**: Direct text responses (key-value pairs)
+- **tool_intents**: Route to specific tools/functions
+- **agent_intents**: Route to specific agents
+
+**Benefits:**
+- **Agent Control**: Change `enabled: true/false` to activate/deactivate agents
+- **Configuration-Based**: All agent behavior controlled through config.yaml
+- **Consistent Management**: Unified agent identification across your AI Network
+- **Dynamic Mapping**: Add new intents and behaviors through configuration
 
 ## Quick Start
 
-### Start Your First Agent
-
-Once configured, start chatting with the core ABI agent:
+### Start ABI
 
 ```bash
-make chat-abi-agent
-```
-
-This command will:
-1. **Set up the environment** and install Python dependencies
-2. **Start Docker services** (Oxigraph triple store)
-3. **Initialize the knowledge graph** with base ontologies
-4. **Launch the interactive agent** in your terminal
-
-The first run may take a few minutes as it downloads and starts the Oxigraph Docker container.
-
-### Expected Output
-
-You should see something like:
-```
-🚀 Starting ABI Agent...
-🐳 Starting Oxigraph triple store...
-🧠 Initializing knowledge graph...
-💬 ABI Agent ready! Type your message below:
-
-ABI Agent: Hello! I'm your ABI agent. I can help you with:
-- Building custom AI agents
-- Managing ontologies and knowledge graphs  
-- Creating integrations with external services
-- Developing workflows and pipelines
-
-What would you like to work on today?
-
-You: 
+make
 ```
 
 ## Verification
 
-### Test Core Functionality
-
-Try these commands to verify your installation:
-
-```bash
-# Test agent interaction
-echo "What agents are available?" | make chat-abi-agent-prompt
-
-# Test API server (in another terminal)
-make api
-# Then visit http://localhost:8000/docs
-
-# Test knowledge graph
-make chat-ontology-agent
+In the chat, type:
+```
+check agent status
 ```
 
-### Check Services
-
-Verify Docker services are running:
-```bash
-docker ps
-```
-
-You should see the Oxigraph container running on port 7878.
-
-### Browse Documentation
-
-Access the local API documentation:
-```bash
-make api
-# Visit http://localhost:8000/docs for interactive API docs
-```
-
-## Next Steps
-
-Now that ABI is installed, explore its capabilities:
-
-### 🤖 **Explore Built-in Agents**
-```bash
-# Chat with different specialized agents
-make chat-growth-agent
-make chat-finance-agent  
-make chat-content-agent
-```
-
-### 🧠 **Learn the Ontology System**
-```bash
-# Explore the knowledge graph
-make chat-ontology-agent
-```
-
-### 🔧 **Build Your First Custom Agent**
-Follow our guide: [Creating Custom Agents](/customize/agents)
-
-### 🔗 **Add Integrations**
-Connect to external services: [Integration Development](/customize/integrations)
-
-### 📊 **Create Workflows**
-Automate complex processes: [Workflow Development](/customize/workflows)
-
-## Development Tools
-
-ABI includes comprehensive development tools:
-
-### Available Make Commands
-```bash
-# Core functionality
-make chat-abi-agent          # Main agent interface
-make api                     # Start API server
-make setup                   # Install dependencies
-
-# Agent testing
-make chat-{agent-name}       # Chat with specific agents
-make test-agents             # Run agent tests
-
-# Development
-make lint                    # Code linting
-make format                  # Code formatting
-make test                    # Run test suite
-
-# Ontology management
-make ontology-update         # Update knowledge graph
-make ontology-backup         # Backup ontologies
-
-# Publishing
-make publish-module          # Publish to marketplace
-make docker-build           # Build Docker images
-```
-
-### Development Workflow
-1. **Modify agents** in `src/modules/`
-2. **Test changes** with `make test-agents`
-3. **Update ontologies** if needed
-4. **Publish modules** to share with others
+You should see 🟢 indicators for enabled agents.
 
 ## Troubleshooting
 
@@ -329,20 +333,55 @@ curl -H "Authorization: Bearer $OPENAI_API_KEY" \
      https://api.openai.com/v1/models
 ```
 
-### Getting Help
+## Next Steps
 
-**Documentation**:
-- [ABI Repository](https://github.com/jupyter-naas/abi) - Full documentation
-- [Agent Development](/customize/agents) - Creating custom agents
-- [Integration Guides](/customize/integrations) - Connecting external services
+Now that ABI is installed, explore its capabilities:
 
-**Community Support**:
+### Explore Built-in Agents
+```bash
+# Chat with different specialized agents
+make chat-growth-agent
+make chat-finance-agent  
+make chat-content-agent
+```
+
+### Learn the System
+- **Explore the knowledge graph**: `make chat-ontology-agent`
+- **Build custom agents**: Follow our agent development guides
+- **Add integrations**: Connect to external services
+- **Create workflows**: Automate complex processes
+
+### Development Tools
+
+ABI includes comprehensive development tools:
+
+```bash
+# Core functionality
+make chat-abi-agent          # Main agent interface
+make api                     # Start API server
+make setup                   # Install dependencies
+
+# Development
+make lint                    # Code linting
+make format                  # Code formatting
+make test                    # Run test suite
+
+# Ontology management
+make ontology-update         # Update knowledge graph
+make ontology-backup         # Backup ontologies
+```
+
+## Getting Help
+
+**Documentation:** 
+- [ABI Repository](https://github.com/jupyter-naas/abi/tree/main/docs) - Full documentation
+
+**Community Support:**
 - [GitHub Discussions](https://github.com/jupyter-naas/abi/discussions) - Community Q&A
-- [Slack](https://naas-club.slack.com) - Real-time community chat
+- [GitHub Issues](https://github.com/jupyter-naas/abi/issues) - Bug reports and feature requests
 
-**Direct Support**:
-- Email: [support@naas.ai](mailto:support@naas.ai)
-- Create issue: [GitHub Issues](https://github.com/jupyter-naas/abi/issues)
+**Direct Support:**
+- Email: support@naas.ai
 
 ## Updating ABI
 
@@ -371,4 +410,4 @@ git push origin main
 make setup
 ```
 
-Your ABI installation is now ready! Start building custom AI solutions that integrate perfectly with the broader Naas platform ecosystem.
+Your ABI installation is now ready! Start building custom AI solutions with complete configuration-driven flexibility.
